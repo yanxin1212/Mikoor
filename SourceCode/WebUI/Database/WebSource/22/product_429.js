@@ -1,0 +1,15 @@
+﻿(function (window) {
+     if (!window.mikoor) { window.mikoor = {}; }
+     mikoor.pdc_429 = { Name: "诺基亚 640 XL", Product: [
+                                        { ProductId: "3386", PdcId: "429", ProdName: "Painted Leather Case For Nokia Lumia 640 XL - [PLC001]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA640XLPLT02/01001.jpg"},
+                                        { ProductId: "3387", PdcId: "429", ProdName: "Painted Leather Case For Nokia Lumia 640 XL - [PLC002]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA640XLPLT02/01002.jpg"},
+                                        { ProductId: "3388", PdcId: "429", ProdName: "Painted Leather Case For Nokia Lumia 640 XL - [PLC003]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA640XLPLT02/01003.jpg"},
+                                        { ProductId: "3389", PdcId: "429", ProdName: "Painted Leather Case For Nokia Lumia 640 XL - [PLC004]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA640XLPLT02/01004.jpg"},
+                                        { ProductId: "3390", PdcId: "429", ProdName: "Painted Leather Case For Nokia Lumia 640 XL - [PLC005]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA640XLPLT02/01005.jpg"},
+                                        { ProductId: "3391", PdcId: "429", ProdName: "Painted Leather Case For Nokia Lumia 640 XL - [PLC006]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA640XLPLT02/01006.jpg"},
+                                        { ProductId: "3392", PdcId: "429", ProdName: "Painted Leather Case For Nokia Lumia 640 XL - [PLC007]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA640XLPLT02/01007.jpg"},
+                                        { ProductId: "3393", PdcId: "429", ProdName: "Painted Leather Case For Nokia Lumia 640 XL - [PLC008]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA640XLPLT02/01008.jpg"},
+                                        { ProductId: "3394", PdcId: "429", ProdName: "Painted Leather Case For Nokia Lumia 640 XL - [PLC009]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA640XLPLT02/01009.jpg"},
+                                        { ProductId: "3395", PdcId: "429", ProdName: "Painted Leather Case For Nokia Lumia 640 XL - [PLC0010]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA640XLPLT02/01010.jpg"}
+                                        ] };
+})(window);

@@ -1,0 +1,43 @@
+﻿#pageContentForm #areaTreeFrm
+{
+    margin: 8px 0px 8px 10px;
+    border: 1px solid #DFDFDF;
+    display: inline-block; padding: 5px; min-width: 160px; vertical-align: top; float: left;
+    overflow-y: scroll
+}
+
+#expServiceFrm
+{
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+}
+
+#dvGlobalArea
+{
+    float: left;
+    width: 160px;
+    border: 1px solid #DFDFDF;
+    overflow-y: scroll;
+    height: 248px;
+    margin: 0px 10px 0px 0px;
+    background-color: #FFFFFF;
+    padding: 5px 0px 5px 5px;
+}
+
+#dvExpService
+{
+    float: left;
+    width: 775px;
+}
+
+#expServiceTabs .ui-widget-header, #lstSolutionTabs_v .ui-widget-header, #expServiceTab_v .ui-widget-header
+{
+    border: 1px solid #C0C0C0;
+    background: #D7D7D7;
+}
+
+#expServiceTabs .ui-state-default, #lstSolutionTabs_v .ui-state-default, #expServiceTab_v .ui-state-default
+{
+    background: #F6F6F6;
+}

@@ -1,0 +1,10 @@
+﻿#supplierTabs .ui-widget-header, #viewSupplierTabs .ui-widget-header, #queryProdTabs .ui-widget-header, #_sysdv_queryTabs1 .ui-widget-header
+{
+    border: 1px solid #C0C0C0;
+    background: #D7D7D7; 
+}
+
+#supplierTabs .ui-state-default, #viewSupplierTabs .ui-state-default, #queryProdTabs .ui-state-default, #_sysdv_queryTabs1 .ui-state-default
+{
+    background: #F6F6F6; 
+}

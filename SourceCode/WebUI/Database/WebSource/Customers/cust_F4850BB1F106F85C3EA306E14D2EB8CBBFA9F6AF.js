@@ -1,0 +1,4 @@
+﻿(function (window) {
+     if (!window.mikoor) { window.mikoor = {}; }
+     mikoor.cust_F4850BB1F106F85C3EA306E14D2EB8CBBFA9F6AF ={"Customer_Id":5,"Seq":4,"CustomerGroup_Id":1,"CustName":"ararafi","Email":"test","Tel":"(478)284-9501","ContactInfo":"","Pwd":"123","CreateTime":"\/Date(1403732480000+0800)\/","UpdatedTime":null,"Remark":"","GlobalArea_Id":122,"UpdatedBy":0,"CreatedBy":2,"SalePlatform_Id":8,"RvAddressCount":1,"CustKey":"","ScriptVersion":0,"CustToken":null,"ScriptToken":"F4850BB1F106F85C3EA306E14D2EB8CBBFA9F6AF","RvAddresses":[{"Customer_RvAddress_Id":4,"Customer_Id":5,"RvSeq":1,"RvFullName":"Alexis Sharafi","RvTel":"(478)284-9501","GlobalArea_Id":122,"RvProvince":"GA","RvCity":"Macon","RvPostCode":"31204","RvAddress_1":"425 General Winship Dr S","RvAddress_2":"","OtherProps":{}}],"OtherProps":{}}
+})(window);

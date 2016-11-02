@@ -1,0 +1,30 @@
+﻿.ss-opera-a
+{
+    margin: 0px 5px 0px 0px;    
+}
+
+.ssTab li a
+{
+    font-weight: normal
+}
+
+#lbPriceAreaTitle, #lbPriceAreaTitle_view
+{
+    color: #666666;
+    float: left;
+}
+
+#handlerSSTabs, #handlerViewSSTabs
+{
+    width: 998px;    
+}
+
+#handlerSSTabs .ui-widget-header, #viewSalePlatformFrm .ui-widget-header
+{
+    border: 1px solid #C0C0C0;
+    background: #D7D7D7;
+}
+#handlerSSTabs .ui-state-default, #viewSalePlatformFrm .ui-state-default
+{
+    background: #F6F6F6;
+}

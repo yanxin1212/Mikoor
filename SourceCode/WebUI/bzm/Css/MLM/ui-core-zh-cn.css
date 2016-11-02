@@ -1,0 +1,5 @@
+﻿body, .text-input, .normal-bt, .dropdown-list, #ddlLanguage, .ui-dialog .ui-dialog-buttonpane button, .simple-text-input, .multitext-input, .text-long-input, .multitext-input-b, .text-long-input-a, .text-long-input-b, .multitext-input-a
+{
+    font: 12px/1.5 \5fae\8f6f\96c5\9ed1;
+    letter-spacing: 1px
+}

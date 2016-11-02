@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="expires" content="Saturday 31 December 2022 23:59 GMT" />
+
+    <link type='text/css' rel='Stylesheet' href='/bzm/css/compress/ui-web-1.0.min.css' />
+    <!-------------- 页面样式 ------------------->
+    <link type="text/css" rel="Stylesheet" href="/BZM/Css/ui-sysuser.css" />
+    <!--------------------------------->
+</head>
+<body>
+    <form id="form" runat="server">
+        <div id="pageWaittingArea" style="text-align: center; margin: 300px 0px 0px 0px;">
+            <div style="font: 12px/1.5 Arial, Helvetica, sans-serif; letter-spacing: 0px;">system loading, please wait!</div>
+            <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+        <div id="pageFrame" style="display: none">
+            <div id="pageHeader">
+                <div id="sysSymbol">
+                    <img src="/bzm/Css/Images/syslogo.png" style="height: 35px" />
+                </div>
+                <div id="userOpera">
+                    <a id="userInfo" href="javascript:void(0)"></a><span id="userInfoDivide">|</span>
+                    <a id="signOut" href="javascript:void(0)"></a><span id="signOutDivide">|</span>
+                    <a id="language" href="javascript:void(0)"></a>
+                </div>
+                <div id="bizMenuBar">
+                    <div id="menuContainer"></div>
+                </div>
+            </div>
+
+            <!-------------- 页面内容 ------------------->
+            <div id="pageContent">
+
+                <!-------------- 详细页面内容 ------------------->
+                <div id="pageTitleTag">
+                    <ul>
+                        <li id="sysUserTag" class="selected" tag="tagSysUser">
+                            <div></div>
+                            <span id="lbSysUserTag"></span>
+                            <div class="last"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="pageContentForm">
+                    <div id="tagSysUser">
+                        <div class="formToolbar">
+                            <span id="lbSysUserTitle" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btQuerySysUser" type="button" class="normal-bt separetor" />
+                                <input id="btNewSysUser" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div id="sysUserForm" class="mainform">
+                            <table id="userTable"></table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerUserFrm" style="display: none;">
+                    <div id="sysUserTabs">
+                        <ul>
+                            <li><a id="lkUserInfo" href="#basicInfo"></a></li>
+                            <li><a id="lkDataPopedom" href="#dataPopedom"></a></li>
+                            <li><a id="lkMenuPopedom" href="#sysPopedom"></a></li>
+                        </ul>
+                        <div id="basicInfo">
+                            <div class="submitForm form-width-a">
+                                 <div class="submitForm-tr first-item">
+                                    <span class="left-cell">
+                                        <span id="lbUserNameSymbol" class="title"></span>
+                                        <input id="txtUserName" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                        <span class="lb-alert">*</span>
+                                        <span id="lbSymbol_1" class="lb-symbol"></span>
+                                    </span>
+                                    <span class="right-cell">
+                                        <span id="lbEmailSymbol" class="title"></span>
+                                        <input id="txtEmail" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                        <span class="lb-alert">*</span>
+                                        <span id="lbSymbol_2" class="lb-symbol"></span>
+                                    </span>
+                                </div>
+                                <div class="submitForm-tr">
+                                    <span>
+                                        <span id="lbTelSymbol" class="title"></span>
+                                        <input id="txtTel" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                    </span>
+                                </div>
+                                <div class="submitForm-tr last-item">
+                                    <span>
+                                        <span id="lbRemarkSymbol" class="title"></span>
+                                        <textarea id="txtRemark" cols="20" rows="4" class="multitext-input-a" onkeypress="uicontrol.func.checkInput(event);"></textarea>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="dataPopedom">
+                            <div class="submitForm form-width-a">
+                                <div class="submitForm-tr first-item last-item">
+                                    <span id="lbSaleSiteSymbol" class="title"></span>
+                                    <span id="chkSaleSite" class="optionContainer" style="width: 750px"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sysPopedom">
+                            <div style="height: 420px; overflow-y: scroll;">
+                                <ul id="ulSysPopedom"></ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+
+                <div id="queryUserFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span class="left-cell">
+                                <span id="lbSaleSiteSymbol_q" class="title"></span>
+                                <select id="ddlSaleSite_q" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbPopedom_q" class="title"></span>
+                                <select id="ddlPopedom_q" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------->
+
+                <!-------------- 个人信息部分 ------------------->
+                <div id="myInfoFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbUserName_my" class="title"></span>
+                            <span id="viewUserName"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbEmail_my" class="title"></span>
+                            <span id="viewEmail"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbPwd_my" class="title"></span>
+                            <span id="viewPwd">******</span>
+                            <input id="btSendPwd" type="button" class="normal-bt separetor" />
+                            <input id="btModifyPwd" type="button" class="normal-bt separetor" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbTel_my" class="title"></span>
+                            <span id="viewTel"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbContactInfo_my" class="title"></span>
+                            <span id="viewContact" style="display: inline-block"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="handlerPwdFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbOldPwdSymbol" class="title"></span>
+                            <input id="txtOldPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_1" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbNewPwdSymbol" class="title"></span>
+                            <input id="txtNewPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_2" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbConfirmPwdSymbol" class="title"></span>
+                            <input id="txtConfirmPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_3" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="checkSalePlatformFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbCheckSSSymbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------->
+            </div>
+            <!--------------------------------->
+
+            <div id="pageFooter">
+                <span>Copyright&copy;2003-2011  ArkEC, All rights reserved.</span>
+            </div>
+        </div>
+
+        <div id="alertDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="alertInfo"></span>
+            </p>
+        </div>
+
+        <div id="askDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="askInfo"></span>
+            </p>
+        </div>
+
+        <div id="switchLanguageFrm" style="display: none">
+	        <div class="submitForm form-width">
+                <div class="submitForm-tr first-item last-item">
+                    <span id="lbLanguage" class="title"></span> 
+                    <select id="ddlLanguage" class="dropdown-list"></select>
+                </div>
+            </div>
+        </div>
+
+        <div id="processBg"></div>
+        <div id="processBar">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+
+        <div id="processBg_opera"></div>
+        <div id="processBar_opera">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+    </form>
+
+    <script type="text/javascript" src="/bzm/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/BZM/Scripts/BizService/compress/biz-1.0.min.js"></script>
+    <script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-web-1.0.min.js"></script>
+    <!-------------- 页面脚本 ------------------->
+    <!--<script type="text/javascript" src="/BZM/Scripts/BizUI/ui-sysuser.js"></script>-->
+    <script type="text/javascript" src="/BZM/Scripts/BizUI/compress/ui-sysuser-1.0.min.js"></script>
+    <!--------------------------------->
+</body>
+</html>

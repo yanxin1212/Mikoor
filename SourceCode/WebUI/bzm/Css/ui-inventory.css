@@ -1,0 +1,25 @@
+﻿#pageContentForm #warehouseFrm
+{
+    margin: 8px 0px 8px 10px;
+    border: 1px solid #DFDFDF;
+    display: inline-block; padding: 5px; min-width: 160px; vertical-align: top; float: left;
+    overflow-y: scroll
+}
+
+#inventoryFrm
+{
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+}
+
+#queryInventoryFrm .ui-widget-header, #_sysdv_queryTabs1 .ui-widget-header
+{
+    border: 1px solid #C0C0C0;
+    background: #D7D7D7;
+}
+
+#queryInventoryFrm .ui-state-default, #_sysdv_queryTabs1 .ui-state-default
+{
+    background: #F6F6F6;
+}

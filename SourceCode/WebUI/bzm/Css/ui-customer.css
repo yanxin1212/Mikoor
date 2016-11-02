@@ -1,0 +1,9 @@
+﻿#ssCustTabs .ui-widget-header, #view_customerTabs .ui-widget-header
+{
+    border: 1px solid #C0C0C0;
+    background: #D7D7D7;
+}
+#ssCustTabs .ui-state-default, #view_customerTabs .ui-state-default
+{
+    background: #F6F6F6;
+}

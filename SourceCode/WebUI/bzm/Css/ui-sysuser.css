@@ -1,0 +1,27 @@
+﻿#sysUserTabs .ui-widget-header
+{
+    border: 1px solid #C0C0C0;
+    background: #D7D7D7;
+}
+
+#sysUserTabs .ui-state-default
+{
+    background: #F6F6F6;
+}
+
+.syspopedom-remark
+{
+    margin: 5px 0px 5px 20px; 
+    width: 780px;
+    /* ff */
+    float: left;
+    /* ie7 */
+    *float: none !important;
+    /* ie9 */
+    float: left\0; 
+}
+
+.optionContainer li
+{
+    width: 240px    
+}

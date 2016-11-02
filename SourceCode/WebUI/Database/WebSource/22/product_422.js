@@ -1,0 +1,16 @@
+﻿(function (window) {
+     if (!window.mikoor) { window.mikoor = {}; }
+     mikoor.pdc_422 = { Name: "诺基亚 930", Product: [
+                                        { ProductId: "3348", PdcId: "422", ProdName: "Painted Leather Case For Nokia Lumia 930 - [PLC001]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA930PLT02/01001.jpg"},
+                                        { ProductId: "3349", PdcId: "422", ProdName: "Painted Leather Case For Nokia Lumia 930 - [PLC002]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA930PLT02/01002.jpg"},
+                                        { ProductId: "3350", PdcId: "422", ProdName: "Painted Leather Case For Nokia Lumia 930 - [PLC003]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA930PLT02/01003.jpg"},
+                                        { ProductId: "3351", PdcId: "422", ProdName: "Painted Leather Case For Nokia Lumia 930 - [PLC004]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA930PLT02/01004.jpg"},
+                                        { ProductId: "3352", PdcId: "422", ProdName: "Painted Leather Case For Nokia Lumia 930 - [PLC005]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA930PLT02/01005.jpg"},
+                                        { ProductId: "3353", PdcId: "422", ProdName: "Painted Leather Case For Nokia Lumia 930 - [PLC006]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA930PLT02/01006.jpg"},
+                                        { ProductId: "3354", PdcId: "422", ProdName: "Painted Leather Case For Nokia Lumia 930 - [PLC007]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA930PLT02/01007.jpg"},
+                                        { ProductId: "3355", PdcId: "422", ProdName: "Painted Leather Case For Nokia Lumia 930 - [PLC008]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA930PLT02/01008.jpg"},
+                                        { ProductId: "3356", PdcId: "422", ProdName: "Painted Leather Case For Nokia Lumia 930 - [PLC009]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA930PLT02/01009.jpg"},
+                                        { ProductId: "3357", PdcId: "422", ProdName: "Painted Leather Case For Nokia Lumia 930 - [PLC0010]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/NOKIA930PLT02/01010.jpg"},
+                                        { ProductId: "4266", PdcId: "422", ProdName: "Frosted Matte Plastic Hard For Nokia Lumia 930", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000298/G298_00005.jpg"}
+                                        ] };
+})(window);

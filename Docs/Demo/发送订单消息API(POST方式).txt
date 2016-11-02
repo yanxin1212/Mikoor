@@ -1,0 +1,44 @@
+
+                        Dictionary<string, string> smt_sign_paramDic = new Dictionary<string, string>();
+                        smt_sign_paramDic.Add("access_token", access_token);
+                        smt_sign_paramDic.Add("channelId", socode);
+                        smt_sign_paramDic.Add("buyerId", custkey);
+                        smt_sign_paramDic.Add("content", _content);
+                        smt_sign_paramDic.Add("msgSources", "order_msg");
+
+                        StringBuilder requestparam = new StringBuilder();
+                        foreach (KeyValuePair<string, string> item in smt_sign_paramDic)
+                        {
+                            requestparam.Append(string.Format("{0}={1}", item.Key, HttpUtility.UrlEncode(item.Value, myEncoding))).Append("&");
+                        }
+                        requestparam = requestparam.Remove(requestparam.Length - 1, 1);
+
+                        string _smt_api_sign = CommonService.SMTAPISign(appSecret, "param2/1/aliexpress.open/api.addMsg/" + appKey, smt_sign_paramDic);
+                        string _requestkey = string.Format("http://gw.api.alibaba.com:80/openapi/param2/1/aliexpress.open/api.addMsg/{0}", appKey);
+
+                        HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(_requestkey);
+                        myHttpWebRequest.Method = "POST";
+                        myHttpWebRequest.ContentType = "application/x-www-form-urlencoded;encoding='utf-8'";
+
+                        byte[] data = Encoding.UTF8.GetBytes(string.Format("_aop_signature={0}&{1}", _smt_api_sign, requestparam.ToString()));
+                        using (Stream stream = myHttpWebRequest.GetRequestStream())
+                        {
+                            stream.Write(data, 0, data.Length);
+                        }
+
+                        HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+                        if (myHttpWebResponse.StatusCode.Equals(HttpStatusCode.OK))
+                        {
+                            Stream receiveStream = myHttpWebResponse.GetResponseStream();
+                            StreamReader readStream = new StreamReader(receiveStream, System.Text.Encoding.UTF8);
+                            string receiveData = readStream.ReadToEnd();
+
+                            Dictionary<string, object> tempDicts = ObjectConvertion.JsonToObject<Dictionary<string, object>>(receiveData);
+
+                            Dictionary<string, object> messageDicts = ObjectConvertion.JsonToObject<Dictionary<string, object>>(tempDicts["result"].ToString());
+                            string isSuccess = messageDicts["isSuccess"].ToString().Trim().ToUpper();
+
+                            receiveStream.Close();
+                            readStream.Close();
+                        }
+                        myHttpWebResponse.Close();

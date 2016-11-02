@@ -1,0 +1,27 @@
+﻿
+#importantGAreaTable
+{
+    margin: 0px 5px 5px 15px;
+}
+#importantGAreaTable li
+{
+    float: left;
+    min-width: 120px;
+    margin: 5px 10px 0px 0px;
+    cursor: pointer;
+}
+#handlerInnerAreaFrm
+{
+    display: none; background-color: #F5F5F5
+}
+#dvInnerAreaHead
+{
+    margin: 0px 5px 5px 5px
+}
+#dvInnerArea
+{
+    border: 1px solid #DFDFDF; 
+    background: none repeat scroll 0 0 #FFFFFF; 
+    height: 400px;
+    overflow-y: auto;
+}

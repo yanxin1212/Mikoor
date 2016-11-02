@@ -1,0 +1,10 @@
+﻿#viewSupplierTabs .ui-widget-header, #viewPOTabs .ui-widget-header, #supplierTabs .ui-widget-header
+{
+    border: 1px solid #C0C0C0;
+    background: #D7D7D7;
+}
+
+#viewSupplierTabs .ui-state-default, #viewPOTabs .ui-state-default, #supplierTabs .ui-state-default
+{
+    background: #F6F6F6;
+}

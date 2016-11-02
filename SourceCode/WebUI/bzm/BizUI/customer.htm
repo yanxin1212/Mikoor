@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="expires" content="Saturday 31 December 2022 23:59 GMT" />
+
+    <link type='text/css' rel='Stylesheet' href='/bzm/css/compress/ui-web-1.0.min.css' />
+    <!-------------- 页面样式 ------------------->
+    <link type="text/css" rel="Stylesheet" href="/BZM/Css/ui-customer.css" />
+    <!--------------------------------->
+</head>
+<body>
+    <form id="form" runat="server">
+        <div id="pageWaittingArea" style="text-align: center; margin: 300px 0px 0px 0px;">
+            <div style="font: 12px/1.5 Arial, Helvetica, sans-serif; letter-spacing: 0px;">system loading, please wait!</div>
+            <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+        <div id="pageFrame" style="display: none">
+            <div id="pageHeader">
+                <div id="sysSymbol">
+                    <img src="/bzm/Css/Images/syslogo.png" style="height: 35px" />
+                </div>
+                <div id="userOpera">
+                    <a id="userInfo" href="javascript:void(0)"></a><span id="userInfoDivide">|</span>
+                    <a id="signOut" href="javascript:void(0)"></a><span id="signOutDivide">|</span>
+                    <a id="language" href="javascript:void(0)"></a>
+                </div>
+                <div id="bizMenuBar">
+                    <div id="menuContainer"></div>
+                </div>
+            </div>
+
+            <!-------------- 页面内容 ------------------->
+            <div id="pageContent">
+
+                <!-------------- 详细页面内容 ------------------->
+                <div id="pageTitleTag">
+                    <ul>
+                        <li id="customerTag" class="selected" tag="tagCustomer">
+                            <div></div>
+                            <span id="lbCustomerTag">个人客户</span>
+                        </li>
+                        <li id="customerGroupTag" tag="tagCustomerGroup">
+                            <div></div>
+                            <span id="lbCustomerGroupTag"></span>
+                            <div class="last"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="pageContentForm">
+                    <div id="tagCustomer">
+                        <div class="formToolbar">
+                            <span id="lbCustomerTitle" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btQueryCust" type="button" class="normal-bt separetor" />
+                                <input id="btNewCustomer" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div id="customerForm" class="mainform">
+                            <table id="customerList"></table>
+                        </div>
+                    </div>
+                    <div id="tagCustomerGroup" style="display: none">
+                        <div class="formToolbar">
+                            <span id="lbCustomerGroupTitle" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btNewCustomerGroup" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div id="customerGroupForm" class="mainform">
+                
+                            <table id="customerGroupList"></table>
+                        </div>
+                    </div>
+                </div>
+                <div id="handlerCGFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbCGSymbol" class="title"></span>
+                                <input id="txtCGName" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                <span class="lb-alert">*</span>
+                                <span id="lbSymbol_1" class="lb-symbol"></span>
+                            </span>
+                            <span class="right-cell">
+                                <span id="lbCGSeq" class="title"></span>
+                                <input id="txtCGSeq" type="text" class="text-input" onkeypress="uicontrol.func.checkInputInt(event);" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span>
+                                <span id="lbCGRemarkSymbol" class="title"></span>
+                                <textarea id="txtCGRemark" cols="20" rows="2" class="multitext-input" onkeypress="uicontrol.func.checkInput(event);"></textarea>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="handlerCustFrm" style="display: none;">
+                    <div id="ssCustTabs">
+                        <ul class="custTab">
+                            <li><a id="lbCustInfoSymbol" href="#ssCustInfo"></a></li>
+                            <li><a id="lbExpressInfoSymbol" href="#ssExpressInfo"></a></li>
+                        </ul>
+                        <div id="ssCustInfo">
+                            <div class="submitForm form-width-a">
+                                <div class="submitForm-tr first-item">
+                                    <span class="left-cell">
+                                        <span id="lbCustNameSymbol" class="title"></span>
+                                        <input id="txtCustName" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                        <span class="lb-alert">*</span>
+                                        <span id="lbSymbol_2" class="lb-symbol"></span>
+                                    </span>
+                                    <span class="right-cell">
+                                        <span id="lbCustGroupSymbol" class="title"></span>
+                                        <select id="ddlCustGroup" class="dropdown-list"></select>
+                                        <span class="lb-alert">*</span>
+                                        <span id="lbSymbol_5" class="lb-symbol"></span>
+                                    </span>
+                                </div>
+                                <div class="submitForm-tr">
+                                    <span class="left-cell">
+                                        <span id="lbEmailSymbol" class="title"></span>
+                                        <input id="txtEmail" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                    </span>
+                                    <span class="right-cell">
+                                        <span id="lbTelSymbol" class="title"></span>
+                                        <input id="txtTel" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                    </span>
+                                </div>
+                                <div class="submitForm-tr">
+                                    <span class="left-cell">
+                                        <span id="lbCustCountrySymbol" class="title"></span>
+                                        <span id="ddlCustCountry"></span>
+                                    </span>
+                                    <span class="right-cell">
+                                        <span id="lbRegSiteSymbol" class="title"></span>
+                                        <select id="ddlRegSite" class="dropdown-list"></select>
+                                    </span>
+                                </div>
+                                <div class="submitForm-tr">
+                                    <span id="lbContactInfoSymbol" class="title"></span>
+                                    <textarea id="txtContactInfo" cols="20" rows="2" class="multitext-input-a" onkeypress="uicontrol.func.checkInput(event);"></textarea>
+                                </div>
+                                <div class="submitForm-tr last-item">
+                                    <span>
+                                        <span id="lbCustRemark" class="title"></span>
+                                        <textarea id="txtCustRemark" cols="20" rows="2" class="multitext-input-a" onkeypress="uicontrol.func.checkInput(event);"></textarea>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ssExpressInfo">
+                            <div class="submitForm form-width-a">
+                                <div class="submitForm-tr first-item last-item">
+                                    <div style="height: 30px">
+                                        <span id="lbRvAddressTitle" class="lb-title list-title"></span>
+                                        <input id="btAddRvAddress" type="button" class="normal-bt" style="float: right;" />
+                                    </div>
+                                    <table id="rvaddressList"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="queryCustFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbKeywordsSymbol" class="title"></span>
+                            <input id="txtKeywords" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span class="left-cell">
+                                <span id="lbCG_Q_Symbol" class="title"></span>
+                                <select id="ddlCG_Q" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbShopSite_Q_Symbol" class="title"></span>
+                                <select id="ddlShopSite_Q" class="dropdown-list"></select>
+                            </span>
+                        </div>
+            
+                    </div>
+                </div>
+                <div id="handlerRvAddressFrm" style="display: none;">
+                    <div class="submitForm form-width-a">
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbFullNameSymbol" class="title"></span>
+                                <input id="txtFullName" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                <span class="lb-alert">*</span>
+                                <span id="lbSymbol_6" class="lb-symbol"></span>
+                            </span>
+                            <span class="right-cell">
+                                <span id="lbLinkPhoneSymbol" class="title"></span>
+                                <input id="txtLinkPhone" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbCountrySymbol" class="title"></span>
+                                <span id="ddlRvCountry"></span>
+                                <span class="lb-alert">*</span>
+                                <span id="lbSymbol_7" class="lb-symbol"></span>
+                            </span>
+                            <span class="right-cell">
+                                <span id="lbProvinceSymbol" class="title"></span>
+                                <input id="txtProvince" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbCitySymbol" class="title"></span>
+                                <input id="txtCity" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                            <span class="right-cell">
+                                <span id="lbPostCodeSymbol" class="title"></span>
+                                <input id="txtPostCode" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                <span class="lb-alert">*</span>
+                                <span id="lbSymbol_8" class="lb-symbol"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbStreetSymbol" class="title"></span>
+                            <input id="txtStreet_1" type="text" class="text-long-input-b" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span id="lb1stSymbol" class="title" style="width: 50px"></span>
+                            <span class="lb-alert">*</span>
+                            <span id="lbSymbol_9" class="lb-symbol"></span>
+                            <br />
+                            <div style="margin: 5px 0px 0px 105px">
+                                <input id="txtStreet_2" type="text" class="text-long-input-b" onkeypress="uicontrol.func.checkInput(event);" />
+                                <span id="lb2ndSymbol" class="title"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------->
+
+                <!-------------- 个人信息部分 ------------------->
+                <div id="myInfoFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbUserName_my" class="title"></span>
+                            <span id="viewUserName"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbEmail_my" class="title"></span>
+                            <span id="viewEmail"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbPwd_my" class="title"></span>
+                            <span id="viewPwd">******</span>
+                            <input id="btSendPwd" type="button" class="normal-bt separetor" />
+                            <input id="btModifyPwd" type="button" class="normal-bt separetor" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbTel_my" class="title"></span>
+                            <span id="viewTel"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbContactInfo_my" class="title"></span>
+                            <span id="viewContact" style="display: inline-block"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="handlerPwdFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbOldPwdSymbol" class="title"></span>
+                            <input id="txtOldPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_1" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbNewPwdSymbol" class="title"></span>
+                            <input id="txtNewPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_2" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbConfirmPwdSymbol" class="title"></span>
+                            <input id="txtConfirmPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_3" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="checkSalePlatformFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbCheckSSSymbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------->
+            </div>
+            <!--------------------------------->
+
+            <div id="pageFooter">
+                <span>Copyright&copy;2003-2011  ArkEC, All rights reserved.</span>
+            </div>
+        </div>
+
+        <div id="alertDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="alertInfo"></span>
+            </p>
+        </div>
+
+        <div id="askDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="askInfo"></span>
+            </p>
+        </div>
+
+        <div id="switchLanguageFrm" style="display: none">
+	        <div class="submitForm form-width">
+                <div class="submitForm-tr first-item last-item">
+                    <span id="lbLanguage" class="title"></span> 
+                    <select id="ddlLanguage" class="dropdown-list"></select>
+                </div>
+            </div>
+        </div>
+
+        <div id="processBg"></div>
+        <div id="processBar">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+
+        <div id="processBg_opera"></div>
+        <div id="processBar_opera">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+    </form>
+    
+    <script type="text/javascript" src="/bzm/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/BZM/Scripts/BizService/compress/biz-1.0.min.js"></script>
+    <script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-web-1.0.min.js"></script>
+    <!-------------- 页面脚本 ------------------->
+    <script type="text/javascript" src="/BZM/Scripts/BizUI/compress/ui-customer-1.0.min.js"></script>
+    <!--<script type="text/javascript" src="/BZM/Scripts/BizUI/ui-customer.js"></script>-->
+    <!--------------------------------->
+</body>
+</html>

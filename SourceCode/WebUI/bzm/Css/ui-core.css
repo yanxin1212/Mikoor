@@ -1,0 +1,1021 @@
+﻿html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, 
+cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, 
+ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td 
+{
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+body
+{
+    background-color: #F5F5F5;
+}
+body, .text-input, .normal-bt, .dropdown-list, #ddlLanguage, .simple-text-input
+{
+    line-height: 1; /* 字体像素为12px, 行高为1.5倍 */
+}
+ul, span
+{
+    list-style: none;    
+}
+
+/* 页面框架 */
+#pageFrame
+{
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    width: 99%;
+    min-width: 800px;
+    max-width: 1250px;
+    min-height: 600px;
+}
+
+/* 
+-----页面框架中的头区域----- 
+*/
+#pageHeader
+{
+    background-color: #232323;
+    height: 50px;
+}
+
+#sysSymbol
+{
+    padding: 8px 5px 0px 5px;
+    float: left;
+}
+
+#pageHeader #userOpera
+{
+    float: right; margin: 25px 10px 0px 0px;
+}
+
+#userInfo, #signOut, #language
+{
+    color: #41B9F3;
+    font-weight: bold;
+    text-decoration: none;    
+}
+#userOpera span
+{
+    color: #E3E3E3;
+    margin: 0px 5px 0px 5px;
+}
+/*-------------------------------*/
+
+/* 
+-----页面框架中的业务菜单导航----- 
+*/
+#bizMenuBar
+{
+    -moz-box-shadow: 0 2px 0 0 #262626, 0 -1px 0 0 #171717; 
+    /* height: 35px;
+    background-color: #333333;
+    border-top: 1px solid #383838;*/
+    display: block;
+    float: left;
+    margin: 20px 0px 0px 15px;
+}
+#bizMenus li
+{
+    float: left;
+    cursor: pointer;
+    padding: 5px 7px 5px 7px;
+    margin: 1px;
+}
+#bizMenus li, #bizMenus li a
+{
+    color: #E3E3E3;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.sonBizMenus
+{
+    border: 1px solid #0D95D7;
+    position: absolute;
+    display: none;
+    background-color: #FFFFFF;
+    z-index: 100;
+}
+.sonBizMenus li
+{
+    float: none;
+    cursor: pointer;
+    padding: 8px 50px 8px 8px;
+    margin: 1px;
+}
+
+#languageArea
+{
+    float: right; color: #41B9F3; margin: 7px 5px; font-weight: bold;
+}
+/*-------------------------------*/
+
+/* 
+-----页面框架中的主体内容区域----- 
+*/
+#pageContent
+{
+    min-height: 520px;
+}
+
+/* 页面标题栏 */
+#pageTitleTag
+{
+    background: none repeat scroll 0 0 #D7D7D7;
+    border-bottom: 1px solid #BABABA;
+    border-top: 1px solid #000000;    
+    width: 100%;
+    height: 30px;
+    position: relative;
+}
+#pageTitleTag ul
+{
+    margin: 5px 0 0 5px
+}
+#pageTitleTag li
+{
+    background: transparent url('/BZM/Css/Images/tabs-e8305714bc.png') repeat-x scroll 0 0;
+    display: inline;
+    float: left;
+    height: 26px;
+    line-height: 26px;
+    margin: 0;
+    cursor: pointer;
+}
+#pageTitleTag li span
+{
+    color: #383838;
+    display: block;
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+/* 工具栏第一个元素 */
+#pageTitleTag li:first-child div:first-child
+{
+    background: transparent url('/BZM/Css/Images/tabs-e8305714bc.png') no-repeat scroll 0 -27px;
+    width: 10px;
+}
+#pageTitleTag li.selected:first-child div:first-child
+{
+    background: url('/BZM/Css/Images/tabs-e8305714bc.png') no-repeat scroll 0 -81px transparent;
+}
+#pageTitleTag li.selected
+{
+    background: url("/BZM/Css/Images/tabs-e8305714bc.png") repeat-x scroll 0 -270px transparent    
+}
+#pageTitleTag li.selected + li div
+{
+    background: url("/BZM/Css/Images/tabs-e8305714bc.png") repeat-x scroll 0 -297px transparent    
+}
+#pageTitleTag li.selected div
+{
+    background: url("/BZM/Css/Images/tabs-e8305714bc.png") no-repeat scroll 0 -324px transparent;    
+}
+#pageTitleTag li div
+{
+    background: url('/BZM/Css/Images/tabs-e8305714bc.png') no-repeat scroll 0 -135px transparent;
+    float: left;
+    height: 26px;
+    width: 26px;    
+}
+#pageTitleTag ul li div.last
+{
+    background: url('/BZM/Css/Images/tabs-e8305714bc.png') no-repeat scroll 0 -54px transparent;
+    width: 21px;
+}
+#pageTitleTag ul li.selected div.last
+{
+    background: url('/BZM/Css/Images/tabs-e8305714bc.png') no-repeat scroll 0 -108px transparent;
+    width: 21px;
+}
+
+/* 销售平台标题栏 */
+#shopTitleTag
+{
+    float: right;
+    margin: 0px 10px 0px 0px;
+}
+
+
+/* 个人信息操作按钮的样式 */
+#btSendPwd, #btModifyPwd
+{
+    float: right; margin: -3px 0px 0px 0px
+}
+
+/* 内容表单区域 */
+#pageContentForm
+{
+    border-top: 1px solid #FFFFFF;
+    width: 100%;
+}
+.formToolbar
+{
+    margin: 5px 10px 0px 10px; height: 26px;
+}
+.formToolbar .lb-title
+{
+    float: left;
+}
+.formToolbar .operaToolBar
+{
+    float: right;
+}
+.formToolbar .separetor
+{
+    margin: 0px -3px 0px 0px;    
+}
+#pageContentForm .mainform
+{
+    margin: 5px 10px 5px 10px;
+    background: #FFFFFF;
+    overflow: auto;
+}
+
+/* 简单的数据表行 */
+#pageContentForm .s-table-tr
+{
+    margin: 15px 10px 15px 10px;
+}
+#pageContentForm .s-table-tr .title
+{
+    width: 120px;
+    display: inline-block;
+    color: #666666;
+}
+
+/* 提交表单的样式 */
+.submitForm
+{
+    background-color: #F4F4F4; 
+    border: 1px solid #BBBBBB;
+}
+.form-width
+{
+    width: 778px;
+}
+.form-width-a
+{
+    width: 875px;
+}
+.form-width-b
+{
+    width: 975px;
+}
+.form-width-c
+{
+    width: 1225px;
+}
+.form-width-d
+{
+    width: 1080px;
+}
+.submitForm .left-cell
+{
+    display: inline-block; width: 50%;
+}
+.submitForm .right-cell
+{
+    display: inline-block;
+}
+.submitForm-tr, .submitForm-tr-a
+{
+    border-bottom: 1px solid #D5D5D5;
+    letter-spacing: 1px;
+    text-align: left; 
+    padding: 7px 10px 7px 10px;
+    vertical-align: top;
+    vertical-align: middle;
+}
+.submitForm-tr-a
+{
+    padding: 10px;
+}
+.submitForm-tr.last-item, .submitForm-tr-a.last-item
+{
+    border-bottom: 0px;
+}
+.submitForm .title
+{
+    width: 100px;
+    display: inline-block;
+    color: #666666;
+}
+.submitForm .list-title
+{
+    color: #666666;
+    float: left;
+}
+
+/*-------------------------------*/
+
+/* 
+-----页面框架中的结尾区域----- 
+*/
+#pageFooter
+{
+    height: 25px;
+    -moz-box-shadow: 0 2px 0 0 #262626, 0 -1px 0 0 #171717; 
+    background-color: #232323;
+    letter-spacing: 0px;
+    padding: 5px 0 0 0;
+    text-align: center;
+    
+}
+#pageFooter, #pageFooter a
+{
+    color: #E3E3E3;
+}
+/*-------------------------------*/
+
+/* 
+-----页面框架中的请求等待条背景----- 
+*/
+#processBg, #processBg_opera
+{
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 3; filter:alpha(opacity=20);-moz-opacity:0.2;opacity: 0.2; position: absolute; display: none;
+    z-index: 1999; 
+}
+#processBar, #processBar_opera
+{
+    position: absolute;
+    display: none;
+    background: none repeat scroll 0 0 transparent; text-align: center; z-index: 2000;
+}
+/*-------------------------------*/
+
+/* 
+-----标签模式----- 
+*/
+.lb-title
+{
+    font-size: 16px;    
+}
+.lb-alert
+{
+    color: #FF0000;
+}
+.lb-light-alert
+{
+    color: #990000;
+}
+.lb-symbol
+{
+    color: #747474;
+}
+.lb-gray-symbol
+{
+    color: #999999;
+}
+.lb-import-alert
+{
+    margin: 0px 5px 0px 5px;
+    color: #FF0000;
+    font-weight: bold;
+}
+/*-------------------------------*/
+
+/* 
+-----文本输入框模式----- 
+*/
+.text-input
+{
+    height: 20px;
+    width: 150px;
+    color: #383838;
+}
+
+.text-long-input, .text-long-input-b
+{
+    height: 20px;
+    width: 535px;
+    color: #383838;
+}
+
+.text-long-input-b
+{
+    width: 580px;
+}
+
+.text-long-input-a
+{
+    height: 20px;
+    width: 635px;
+    color: #383838;
+}
+
+.multitext-input
+{
+    width: 535px;
+}
+
+.multitext-input-a
+{
+    width: 580px;
+}
+.multitext-input-b
+{
+    width: 635px;
+}
+/*-------------------------------*/
+
+/* 
+-----下拉输入框模式----- 
+*/
+.dropdown-list
+{
+    width: 155px;
+    color: #383838;
+}
+/*-------------------------------*/
+
+/* 
+-----按钮模式----- 
+*/
+.normal-bt
+{
+    background-color: #0D95D7;
+    border-style: solid;
+    border-width: 1px;
+    color: #FFFFFF;
+    height: 25px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    overflow: visible;
+    padding: 0px 10px 0px 10px;
+}
+/*-------------------------------*/
+
+/* 
+-----链接模式----- 
+*/
+.bt-link
+{
+    margin: 0px 3px 0px 3px;
+}
+/*-------------------------------*/
+
+/* 
+-----简单表格控件----- 
+*/
+.simple-table
+{
+    border: 1px solid #C0C0C0;
+    float: left;
+}
+.simple-table .content
+{
+    /* overflow-y: auto; */
+}
+.simple-table .content ul
+{
+    float: left;
+}
+.simple-table .content li
+{
+    float: left;
+    margin: 5px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #C0C0C0;
+}
+.paging-frame
+{
+    padding: 5px;
+}
+.paging-frame .p-area
+{
+    float: right
+}
+.paging-frame .p-area .p-txt
+{
+    width: 40px; margin: 0px 5px 0px 5px
+}
+.paging-frame .p-area .p-lable
+{
+    margin: 0px 5px 0px 5px
+}
+.paging-frame .p-area .p-totalcount
+{
+    margin: 0px 10px 0px 0px
+}
+/*-------------------------------*/
+
+/* 
+-----分组列表控件----- 
+*/
+.group-table
+{
+    overflow-y: auto;
+    border: 1px solid #C0C0C0;
+    padding: 0px 5px 0px 5px;
+}
+.group-table .simple-table
+{
+    border: 0px;
+}
+.group-table .list-item .title-area
+{
+    border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #0D95D7; height: 27px; float: left; width: 100%
+}
+.group-table .list-item .title-area span
+{
+    margin: 5px; float: left
+}
+.group-table .list-item .title-area .hover-bt
+{
+    background-color: #333333
+}
+/*-------------------------------*/
+
+/* 
+-----树型结构的单元格样式----- 
+*/
+.treeview-td
+{
+    vertical-align: middle;
+    height: 20px;
+}
+
+.treeview-pdcli
+{
+    float: left;
+    min-width: 160px;
+    border: 1px solid #DFDFDF;
+    margin: 3px;
+    padding: 5px;
+}
+
+.tv_bt_click
+{
+    text-decoration: underline;
+    color: #0D95D7;
+}
+/*-------------------------------*/
+
+/* 
+-----商品种类选择控件的样式----- 
+*/
+.select-pdc .bt, .select-brand .bt, .bt
+{
+    padding: 3px;
+    cursor: pointer;
+    /* ff */
+    margin: 0px 0px -5px 0px;
+    /* ie7 */
+    *margin: 0px 0px -5px 0px !important;
+    /* ie9 */
+    margin: 0px 0px -5px 0px\0; 
+    
+}
+.hover-bt, .select-pdc .hover-bt
+{
+    background-color: #CCCCCC;
+}
+/*-------------------------------*/
+
+/* 
+-----商品品牌选择控件的样式----- 
+*/
+.select-brand-overli
+{
+    background-color: #CCCCCC;
+}
+
+/*-------------------------------*/
+
+/* 
+-----图片控件的样式----- 
+*/
+.picSlipView
+{
+     text-align: center;    
+}
+.picSlip
+{
+    width: 100%;
+    text-align: left;
+    margin: 5px 0px 0px 0px;
+}
+.picSlip .last-arrow, .picSlip .next-arrow
+{
+    width: 15px;
+    height: 30px;
+    background-image: url('http://localhost:16916/bzm/css/Images/arrows_sprite.png');
+    margin: 17px 3px 0px 3px;
+    cursor: pointer;
+}
+.picSlip .last-arrow
+{
+    background-position: 0px 0px;
+}
+.picSlip .next-arrow
+{
+    background-position: -15px 0px;
+}
+.picSlip .down-last-arrow
+{
+    background-position: 0px 30px;
+}
+.picSlip .down-next-arrow
+{
+    background-position: -15px 30px;
+}
+.picSlip li, .bigPicSlip li
+{
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+}
+.picSlip .img-li, .bigPicSlip .img-li
+{
+    border: 1px solid #ccc;
+    margin: 2px;
+    cursor: pointer;
+    display: inline-block;
+    height: 65px;
+}
+.bigPicSlipView
+{
+    width: 700px; text-align: center; float: left
+}
+.bigPicSlip
+{
+    width: 200px; height: 525px; float:right; border: 1px solid #ccc;
+}
+/*-------------------------------*/
+
+/* 
+-----选项区域----- 
+*/
+.optionContainer
+{
+    display: inline-block; margin: 0px 0px -5px -3px;
+}
+/*-------------------------------*/
+
+/* 
+-----查看商品控件的样式----- 
+*/
+#viewProdFrm .ui-widget-header, #viewSSProdFrm .ui-widget-header
+{
+    border: 1px solid #C0C0C0;
+    background: #D7D7D7;
+}
+#viewProdFrm .ui-state-default, #viewSSProdFrm .ui-state-default
+{
+    background: #F6F6F6;
+}
+.product-list-img, .product-list-img-sl, .product-list-img-s
+{
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 5px;
+    max-width: 138px;
+    max-height: 138px;
+}
+.product-list-img-s
+{
+    max-width: 110px;
+    max-height: 110px;
+}
+.product-list-img-sl
+{
+    max-width: 75px;
+    max-height: 75px;
+}
+.view-product .submitForm
+{
+    background-color: transparent; 
+    border: 0px;
+}
+.view-product #prodInfo_view, #detailInfo, #skuList_view
+{
+    width: 883px
+}
+.view-product .pic-container
+{
+    border: 1px solid #BBBBBB; float: left; width: 420px; text-align: center; margin: 0px 10px 0px 0px;
+    padding: 10px 0px 10px 0px;
+}
+
+.view-product .detail-container
+{
+    float: left; width: 450px
+}
+
+.view-product .desc-container
+{
+    width: 862px; max-height: 550px; overflow: auto; text-align: center
+}
+
+.view-product .color-pic
+{
+    float: left; margin: 0px 3px 2px 0px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.view-product .skuprop-item
+{
+    display: inline-block; margin: 0px 0px -7px 0px;
+    width: 325px;
+}
+.view-product .expandprop-item
+{
+    display: inline-block; margin: 0px 0px 0px 0px;
+    width: 150px;
+}
+.view-product .prodTab
+{
+    width: 897px
+}
+.view-product .prodTab li a
+{
+    font-weight: normal
+}
+.view-product .proddesc-container
+{
+    text-align: left;
+    margin: 10px 0px;
+}
+.view-product .exparea-container
+{
+    float: left;
+    width: 160px;
+    border: 1px solid #DFDFDF;
+    overflow-y: scroll;
+    height: 440px;
+    margin: 0px 10px 0px 0px;
+    background-color: #FFFFFF;
+    padding: 5px 0px 5px 5px;
+}
+/*-------------------------------*/
+
+/* 
+-----商品横向列表视图的样式----- 
+*/
+
+.prod-galleryView
+{
+    width: 1120px; min-height: 510px
+}
+.prod-galleryView .pgv-content
+{
+    height: 500px;
+    overflow-y: auto;
+}
+/*-------------------------------*/
+
+/* 
+-----查看配送服务模板的样式----- 
+*/
+#dvGlobalArea_v_estemplate
+{
+    float: left;
+    width: 160px;
+    border: 1px solid #DFDFDF;
+    overflow-y: scroll;
+    height: 248px;
+    margin: 0px 10px 0px 0px;
+    background-color: #FFFFFF;
+    padding: 5px 0px 5px 5px;
+}
+
+#dvExpService_v_estemplate
+{
+    float: left;
+    width: 775px;
+}
+
+/*-------------------------------*/
+
+/* 
+-----复合框架的样式----- 
+*/
+#pageContentForm .mulframe-left
+{
+    margin: 8px 10px 8px 10px;
+    border: 1px solid #DFDFDF;
+    display: inline-block;
+    padding: 5px;
+    width: 190px;
+    vertical-align: top;
+    float: left;
+    overflow-y: scroll;
+    clear: both;
+    white-space:nowrap; 
+}
+#pageContentForm .mulframe-left .tree
+{
+    min-width: 160px;
+}
+#pageContentForm .mulframe-main
+{
+    margin: 8px 0px 8px 0px;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+}
+#pageContentForm .mulframe-toolbar
+{
+    width: 100%;
+    height: 30px;
+}
+/*-------------------------------*/
+
+/* 
+-----按钮容器的样式----- 
+*/
+.multiButtonContainer
+{
+    border: 1px solid #C0C0C0; display: none; position: absolute; z-index: 9000; background-color: #F5F5F5;
+}
+.multiButtonContainer li
+{
+    padding: 7px 10px 7px 10px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;cursor: pointer
+}
+.multiButtonContainer li.last-item
+{
+    border-bottom: 0px;
+}
+.multiButtonContainer li.hover, .multiButtonContainer li.hover a
+{
+    background-color: #0D95D7;
+    color: #FFFFFF;    
+}
+/*-------------------------------*/
+
+/* 
+-----数据列表的样式----- 
+*/
+.flexigrid div.bDiv td .innerTr
+{
+    padding: 0px;
+}
+.flexigrid div.bDiv td .innerTr .content-td
+{
+    margin: 0px 0px 0px 5px
+}
+/*-------------------------------*/
+
+/* 
+-----提示的样式----- 
+*/
+#tooltip {
+	position: absolute;
+	z-index: 3000;
+	border: 1px solid #111;
+	background-color: #eee;
+	padding: 5px;
+	opacity: 0.85;
+}
+#tooltip h3, #tooltip div { margin: 0; }
+/*-------------------------------*/
+
+/* 
+-----空间图片控件的样式----- 
+*/
+.spacefile-container
+{
+    width: 1113px
+}
+.spacefile-container .depthoption
+{
+    height: 25px;
+}
+.spacefile-container .query-bt
+{
+    width: 80px;
+}
+.spacefile-container .filelist
+{
+    width: 1113px; border-width: 0px 1px 1px 1px; height: 485px; overflow: auto;
+}
+.spacefile-container .more-container
+{
+    width: 100%; float: left
+}
+.spacefile-container .more-tr
+{
+    text-align: center; margin: 10px 0px 0px 0px
+}
+.spacefile-container .bt-morepics
+{
+    cursor: pointer;
+    color: #999999;
+    font-size: 14px;
+}
+.spacefile-view
+{
+    text-align: center; width: 960px; max-height: 530px
+}
+.spacefile-view .picurl
+{
+    margin: 5px 0px 10px 0px
+}
+.product-pic, .spacefile-container .item
+{
+    width: 105px; height: 105px;
+}
+.product-pic-img, .spacefile-container .pic-item
+{
+    max-height: 105px; max-width: 105px;
+}
+.name-item
+{
+    width: 105px; letter-spacing: 0px; overflow: hidden; word-break:break-all; word-wrap:break-word
+}
+.picture-item, .spacefile-container .spacefile-item
+{
+    cursor: pointer;    
+}
+.spacefile-container .over-load-bt
+{
+    color: #990000;
+}
+/*-------------------------------*/
+
+/* 
+-----选择商品控件的样式----- 
+*/
+.selectproduct-container
+{
+    width: 1113px
+}
+.selectproduct-container .productlist
+{
+    width: 1113px; border-width: 0px 1px 1px 1px; height:485px; overflow: auto; margin: 0px 0px 0px -1px;
+}
+.selectproduct-container .item
+{
+    width: 105px; height: 105px;
+}
+.selectproduct-container .pic-item
+{
+    max-height: 105px; max-width: 105px;
+}
+.selectproduct-container .skuoption
+{
+    width: 100px;
+    margin: 5px 0px 0px 0px;
+}
+.selectproduct-container .product-item
+{
+    cursor: pointer;
+    height: 180px;
+}
+.selectproduct-container .more-container
+{
+    width: 100%; float: left
+}
+.selectproduct-container .more-tr
+{
+    text-align: center; margin: 10px 0px 0px 0px
+}
+.selectproduct-container .bt-morepics
+{
+    cursor: pointer;
+    color: #999999;
+    font-size: 14px;
+}
+/*-------------------------------*/
+
+/* 
+-----选择全球区域控件的样式----- 
+*/
+.importarea-container
+{
+    margin: 5px; width: 99%; height: 20px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #0d95d7;    
+}
+.importarea-content
+{
+    margin: 5px 5px 0px 10px; overflow: auto; height: 50px
+}
+.allarea-content
+{
+    margin: 5px 5px 0px 10px; overflow: auto;
+}
+/*-------------------------------*/
+
+/* 
+-----销售区域控件----- 
+*/
+.shopOption
+{
+    width: 200px; margin: 0px 0px 0px 5px
+}
+/*-------------------------------*/

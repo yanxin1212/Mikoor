@@ -1,0 +1,15 @@
+﻿#salereportTable, #salesitestatTable, #salehourtimestatTable, #sitesaleqtyTable, #siteSaleProfitTable, #saleprofitbysiteTable
+{
+    border: 1px solid #DFDFDF;
+}
+
+#saosaledetailstatTabs .ui-widget-header
+{
+    border: 1px solid #C0C0C0;
+    background: #D7D7D7;
+}
+
+#saosaledetailstatTabs .ui-state-default
+{
+    background: #F6F6F6;
+}

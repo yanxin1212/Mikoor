@@ -1,0 +1,913 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile>2016-03-04T21:56:45.2640516+08:00</TimeStampOfAssociatedLegacyPublishXmlFile>
+    <_PublishTargetUrl>D:\Mikoor\C-IT系统\A-运营管理系统\V1.0\应用程序</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/ArkEC.CoreCom.CacheStore.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/ArkEC.CoreCom.Datastruct.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/ArkEC.CoreCom.FileHandle.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/ArkEC.CoreCom.Office.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/ArkEC.CoreCom.Runtime.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/ArkEC.CoreCom.Security.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/ArkEC.CoreCom.Transaction.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/ArkEC.CoreCom.WebHandler.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/ArkEC.SEMs.BizObject.dll">
+      <publishTime>03/06/2016 21:46:44</publishTime>
+    </File>
+    <File Include="bin/ArkEC.SEMs.Business.dll">
+      <publishTime>03/06/2016 21:46:48</publishTime>
+    </File>
+    <File Include="bin/ArkEC.SEMs.DataAccess.dll">
+      <publishTime>03/06/2016 21:46:45</publishTime>
+    </File>
+    <File Include="bin/ArkEC.SEMs.WebUI.dll">
+      <publishTime>03/06/2016 21:46:49</publishTime>
+    </File>
+    <File Include="bin/eBay.Service.dll">
+      <publishTime>03/04/2016 21:59:13</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/Ionic.Zip.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/IPQuery.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/04/2016 21:58:06</publishTime>
+    </File>
+    <File Include="bin/NPOI.dll">
+      <publishTime>03/04/2016 21:59:24</publishTime>
+    </File>
+    <File Include="bzm/AjaxActionMapping.xml">
+      <publishTime>03/06/2016 17:28:26</publishTime>
+    </File>
+    <File Include="bzm/BizAjaxHandler.ashx">
+      <publishTime>03/04/2016 21:57:44</publishTime>
+    </File>
+    <File Include="bzm/BizLogin.ashx">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/BizUI/accountinout.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/aftersale.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/brand.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/custemail.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/customer.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/expressorder.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/expressservice.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/fundaccount.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/globalarea.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/inventory.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/inventorystat.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/logisticssolution.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/managingcost.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/multilanguage.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/performancereport.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/prodcategory.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/prodproperty.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/product.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/purchaseorder.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/purchaseprice.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/saleorder.htm">
+      <publishTime>03/06/2016 17:31:54</publishTime>
+    </File>
+    <File Include="bzm/BizUI/saleplatform.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/salereport.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/salestrategy.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/syscurrency.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/syskeyparam.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/sysuser.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/_email.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/_proddesc.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/BizUI/_soprint.htm">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Compress/ui-login-1.0.min.css">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Compress/ui-web-1.0.min.css">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Compress/ui-web-all.css">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/flexigrid.pack.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/arrows_sprite.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/bg.gif">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/btn-sprite.gif">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ddn.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/dn.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/fhbg.gif">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/filedir.jpg">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/fileserver.jpg">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/first.gif">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/hl.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/important.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/last.gif">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/line.gif">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/load.gif">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/load.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/loading.gif">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/magnifier.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/next.gif">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/nopic.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/prev.gif">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/Store.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/syslogo.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/tabs-e8305714bc.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-bg_flat_55_fbec88_40x100.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-bg_glass_75_d0e5f5_1x400.png">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-bg_glass_85_dfeffc_1x400.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-bg_gloss-wave_55_5c9ccc_500x100.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-bg_inset-hard_100_f5f8f9_1x100.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-bg_inset-hard_100_fcfdfd_1x100.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-icons_217bc0_256x240.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-icons_2e83ff_256x240.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-icons_469bdd_256x240.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-icons_6da8d5_256x240.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-icons_d8e7f3_256x240.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/ui-icons_f9bd01_256x240.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/up.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/upfile.JPG">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/uup.png">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/Images/wbg.gif">
+      <publishTime>03/04/2016 21:58:05</publishTime>
+    </File>
+    <File Include="bzm/Css/jquery-ui-1.8.16.custom.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/MLM/ui-core-de.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/MLM/ui-core-en-us.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/MLM/ui-core-es.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/MLM/ui-core-fr.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/MLM/ui-core-it.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/MLM/ui-core-ja.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/MLM/ui-core-ko.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/MLM/ui-core-ru.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/MLM/ui-core-zh-cn.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/MLM/ui-core-zh-hk.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-accountinout.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-aftersale.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-brand.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-core.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-custemail.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-customer.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-expressorder.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-expressservice.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-filespace.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-fundaccount.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-globalarea.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-inventory.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-inventorystat.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-login.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-logisticssolution.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-managingcost.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-multilanguage.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-performancereport.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-prodcategory.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-prodproperty.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-product.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-purchaseorder.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-purchaseprice.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-saleorder.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-saleplatform.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-salereport.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-salestrategy.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-soprint.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-syscurrency.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-syskeyparam.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Css/ui-sysuser.css">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/login.htm">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/main.htm">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/arkec.corecom.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-selectbrand.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-selectcostsubject.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-selectcustomer.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-selectexpservice.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-selectglobalarea.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-selectLstsolution.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-selectpdc.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-selectproduct.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-selectsolstsolution.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-selectssproduct.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-selectsupplier.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-selectwarehouse.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-spacefile.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-viewaccountinrecord.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-viewaccountoutrecord.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-viewasproblem.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-viewcustomer.js">
+      <publishTime>03/06/2016 10:58:03</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-viewexpressorder.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-viewexpressservice.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-viewlstsolution.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-viewproduct.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-viewpurchaseorder.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-viewsaleorder.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-viewssproduct.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizControl/ctrl-viewsupplier.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-accountfund.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-accountinrecord.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-accountoutrecord.js">
+      <publishTime>03/04/2016 21:57:46</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-as_problem.js">
+      <publishTime>03/04/2016 21:57:46</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-brand.js">
+      <publishTime>03/04/2016 21:57:46</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-brandtype.js">
+      <publishTime>03/04/2016 21:57:46</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-costsubject.js">
+      <publishTime>03/04/2016 21:57:46</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-countrytax.js">
+      <publishTime>03/04/2016 21:57:46</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-customer.js">
+      <publishTime>03/04/2016 21:57:46</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-customergroup.js">
+      <publishTime>03/04/2016 21:57:46</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-expressorder.js">
+      <publishTime>03/04/2016 21:57:46</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-expressservice.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-financereport.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-fundaccount.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-fundflowrecord.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-fundtransferrecord.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-globalarea.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-inoutstock.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-inventory.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-lanresource.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-lstcompany.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-lstsolution.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-multilanguage.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-pdcproperty.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-prodcategory.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-prodproperty.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-product.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-purchaseorder.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-purchaseprice.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-purchaseproduct.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-saleorder.js">
+      <publishTime>03/06/2016 17:29:35</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-salepdcnavigation.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-saleplatform.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-salereport.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-salesite.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-skuproduct.js">
+      <publishTime>03/04/2016 21:57:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-ss_gift.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-ss_innerprod.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-ss_product.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-ss_tyingprod.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-supplier.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-supplierlinker.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-syscurrency.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-syscurrrate.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-sysemail.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-syskeyparam.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-sysrole.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-sysuser.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-tempuploadfile.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-tempuploadpic.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/biz-warehouse.js">
+      <publishTime>03/04/2016 21:57:48</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/Compress/biz-1.0.all.js">
+      <publishTime>03/06/2016 17:29:59</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizService/Compress/biz-1.0.min.js">
+      <publishTime>03/06/2016 17:30:16</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-accountinout-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-aftersale-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-brand-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-custemail-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-customer-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-email-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-expressorder-1.0.min.js">
+      <publishTime>03/06/2016 17:58:47</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-expressservice-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-fundaccount-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-globalarea-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-inventory-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-inventorystat-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-login-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-logisticssolution-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-managingcost-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-multilanguage-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-performancereport-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-prodcategory-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-prodproperty-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-product-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-purchaseorder-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-purchaseprice-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-saleorder-1.0.min.js">
+      <publishTime>03/06/2016 17:34:10</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-saleplatform-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-salereport-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-salestrategy-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-soprint-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-syscurrency-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-syskeyparam-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-sysuser-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-web-1.0.min.js">
+      <publishTime>03/06/2016 12:33:17</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/Compress/ui-web-all.js">
+      <publishTime>03/06/2016 10:58:40</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-accountinout.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-aftersale.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-brand.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-core.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-custemail.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-customer.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-email.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-expressorder.js">
+      <publishTime>03/06/2016 17:58:18</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-expressservice.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-fundaccount.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-globalarea.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-inventory.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-inventorystat.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-login.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-logisticssolution.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-main.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-managingcost.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-multilanguage.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-performancereport.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-prodcategory.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-prodproperty.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-product.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-purchaseorder.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-purchaseprice.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-saleorder.js">
+      <publishTime>03/06/2016 17:33:32</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-saleplatform.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-salereport.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-salestrategy.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-soprint.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-syscurrency.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-syskeyparam.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/BizUI/ui-sysuser.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/flexigrid.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/jquery-1.7.1.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/jquery-ui-1.8.22.custom.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/jquery.tooltip.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/jscharts.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/MLM/common_res_en-us.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/MLM/common_res_zh-cn.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/MLM/Compress/common_res_en-us-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/MLM/Compress/common_res_zh-cn-1.0.min.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/UserPopedom/7E7C7056A672A4A1.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/Scripts/UserPopedom/92EBDC74CF8C2422.js">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="bzm/SMTTask.ashx">
+      <publishTime>03/04/2016 21:57:45</publishTime>
+    </File>
+    <File Include="Database/File/Temp/Web.config">
+      <publishTime>03/04/2016 21:57:44</publishTime>
+    </File>
+    <File Include="index.htm">
+      <publishTime>03/05/2016 10:06:15</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/06/2016 21:46:53</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

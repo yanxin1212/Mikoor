@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="expires" content="Saturday 31 December 2022 23:59 GMT" />
+
+    <!--<link type="text/css" rel="Stylesheet" href="/BZM/Css/ui-core.css" />
+    <link type='text/css' rel='Stylesheet' href='/BZM/Css/flexigrid.pack.css' />
+    <link type='text/css' rel='Stylesheet' href='/BZM/Css/jquery-ui-1.8.16.custom.css' />-->
+
+    <link type='text/css' rel='Stylesheet' href='/bzm/css/compress/ui-web-1.0.min.css' />
+    <!-------------- 页面样式 ------------------->
+    <!--------------------------------->
+    
+</head>
+<body>
+    <form id="form" runat="server">
+        <div id="pageFrame">
+            <div id="pageHeader">
+                <div id="sysSymbol">
+                    <img src="/bzm/Css/Images/syslogo.png" style="height: 35px" />
+                </div>
+                <div id="userOpera">
+                    <a id="userInfo" href="javascript:void(0)"></a><span id="userInfoDivide">|</span>
+                    <a id="signOut" href="javascript:void(0)"></a><span id="signOutDivide">|</span>
+                    <a id="language" href="javascript:void(0)"></a>
+                </div>
+                <div id="bizMenuBar">
+                    <div id="menuContainer"></div>
+                </div>
+            </div>
+
+            <!-------------- 页面内容 ------------------->
+            <div id="pageContent">
+                <!--------------------------------->
+
+                <!-------------- 详细页面内容 ------------------->
+
+                <!--------------------------------->
+
+                <!-------------- 个人信息部分 ------------------->
+                <div id="myInfoFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbUserName_my" class="title"></span>
+                            <span id="viewUserName"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbEmail_my" class="title"></span>
+                            <span id="viewEmail"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbPwd_my" class="title"></span>
+                            <span id="viewPwd">******</span>
+                            <input id="btSendPwd" type="button" class="normal-bt separetor" />
+                            <input id="btModifyPwd" type="button" class="normal-bt separetor" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbTel_my" class="title"></span>
+                            <span id="viewTel"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbContactInfo_my" class="title"></span>
+                            <span id="viewContact" style="display: inline-block"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="handlerPwdFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbOldPwdSymbol" class="title"></span>
+                            <input id="txtOldPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_1" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbNewPwdSymbol" class="title"></span>
+                            <input id="txtNewPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_2" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbConfirmPwdSymbol" class="title"></span>
+                            <input id="txtConfirmPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_3" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="checkSalePlatformFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbCheckSSSymbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------->
+            </div>
+            <!--------------------------------->
+
+            <div id="pageFooter">
+                <span>Copyright&copy;2003-2011  ArkEC, All rights reserved.</span>
+            </div>
+        </div>
+
+        <div id="alertDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="alertInfo"></span>
+            </p>
+        </div>
+
+        <div id="askDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="askInfo"></span>
+            </p>
+        </div>
+
+        <div id="processBg"></div>
+        <div id="processBar">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+
+        <div id="processBg_opera"></div>
+        <div id="processBar_opera">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+    </form>
+    
+    
+    <script type="text/javascript" src="/bzm/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/BZM/Scripts/BizService/compress/biz-1.0.min.js"></script>
+    <script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-web-1.0.min.js"></script>
+    <!-------------- 页面脚本 ------------------->
+    <script type="text/javascript" src="/BZM/Scripts/BizUI/ui-main.js"></script>
+    <!--------------------------------->
+</body>
+</html>

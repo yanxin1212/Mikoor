@@ -1,0 +1,101 @@
+﻿
+#lbProductTitle
+{
+    float: left;
+}
+
+#btNewProd, #btQueryProd, #btClearPic, #btUploadPic, #btBatchOpera, #btGalleryView, #btClearSSPic, #btUploadSSPic, #btImportProd, #btExportProd, #btManageProdSeq, #btBatchModifyProd, #btExportPic, #btConvertPic
+{
+    float: right;
+}
+
+.prodTab li a
+{
+    font-weight: normal
+}
+
+.skuprop-item
+{
+    display: inline-block; margin: 0px 0px -7px 0px;
+    width: 735px;
+}
+
+.queryprop-item
+{
+    display: inline-block; margin: 0px 0px -10px 0px;
+    width: 655px;
+}
+
+#lbPicListSymbol, #lbSFTitleSymbol, #lbSSPicTitle
+{
+    color: #666666;
+    float: left;
+}
+
+#lbProdDescAlert
+{
+    float: left;
+}
+
+#dvPicList, #dvSSPicList
+{
+    width: 1057px; overflow-y: auto; max-height: 370px; min-height: 120px;
+}
+
+#prodHtmlTool, #ssProdTagsTool
+{
+    width: 1075px;
+    height: 30px;
+}
+#prodHtmlTool, #ssProdHtmlTool
+{
+    width: 1075px;
+    height: 280px;
+}
+
+#previewFrm
+{
+    min-height: 300px;
+    max-height: 550px;    
+}
+
+#newProdTabs
+{
+    width: 1100px
+}
+
+#newProdTabs .ui-widget-header, #ssProdTabs .ui-widget-header, #queryProdTabs .ui-widget-header, #viewProdTabs .ui-widget-header, #_sysdv_queryTabs1 .ui-widget-header, #lstSolutionTabs_v .ui-widget-header, #expServiceTab_v .ui-widget-header, #viewSupplierTabs .ui-widget-header
+{
+    border: 1px solid #C0C0C0;
+    background: #D7D7D7;
+}
+#newProdTabs .ui-state-default, #ssProdTabs .ui-state-default, #queryProdTabs .ui-state-default, #viewProdTabs .ui-state-default, #_sysdv_queryTabs1 .ui-state-default, #lstSolutionTabs_v .ui-state-default, #expServiceTab_v .ui-state-default, #viewSupplierTabs .ui-state-default
+{
+    background: #F6F6F6;
+}
+
+#expService, #analyProfit
+{
+    height: 450px;
+}
+#dvExpArea, #dvAPExpArea
+{
+    float: left;
+    width: 160px;
+    border: 1px solid #DFDFDF;
+    overflow-y: scroll;
+    height: 440px;
+    margin: 0px 10px 0px 0px;
+    background-color: #FFFFFF;
+    padding: 5px 0px 5px 5px;
+}
+#dvExpService, #dvAPExpService
+{
+    float: left;
+    width: 900px;
+}
+
+#dvExpService .formtable
+{
+    width: 898px; margin: 5px 0px 0px 0px; border-bottom-width: 0px
+}

@@ -1,0 +1,16 @@
+﻿(function (window) {
+     if (!window.mikoor) { window.mikoor = {}; }
+     mikoor.pdc_381 = { Name: "索尼 Z4 Mini", Product: [
+                                        { ProductId: "2916", PdcId: "381", ProdName: "Painted Leather Case For Sony Xperia Z4 Mini - [PLC001]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/SONYZ4MINIPLT02/01001.jpg"},
+                                        { ProductId: "2917", PdcId: "381", ProdName: "Painted Leather Case For Sony Xperia Z4 Mini - [PLC002]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/SONYZ4MINIPLT02/01002.jpg"},
+                                        { ProductId: "2918", PdcId: "381", ProdName: "Painted Leather Case For Sony Xperia Z4 Mini - [PLC003]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/SONYZ4MINIPLT02/01003.jpg"},
+                                        { ProductId: "2919", PdcId: "381", ProdName: "Painted Leather Case For Sony Xperia Z4 Mini - [PLC004]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/SONYZ4MINIPLT02/01004.jpg"},
+                                        { ProductId: "2920", PdcId: "381", ProdName: "Painted Leather Case For Sony Xperia Z4 Mini - [PLC005]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/SONYZ4MINIPLT02/01005.jpg"},
+                                        { ProductId: "2921", PdcId: "381", ProdName: "Painted Leather Case For Sony Xperia Z4 Mini - [PLC006]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/SONYZ4MINIPLT02/01006.jpg"},
+                                        { ProductId: "2922", PdcId: "381", ProdName: "Painted Leather Case For Sony Xperia Z4 Mini - [PLC007]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/SONYZ4MINIPLT02/01007.jpg"},
+                                        { ProductId: "2923", PdcId: "381", ProdName: "Painted Leather Case For Sony Xperia Z4 Mini - [PLC008]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/SONYZ4MINIPLT02/01008.jpg"},
+                                        { ProductId: "2924", PdcId: "381", ProdName: "Painted Leather Case For Sony Xperia Z4 Mini - [PLC009]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/SONYZ4MINIPLT02/01009.jpg"},
+                                        { ProductId: "2925", PdcId: "381", ProdName: "Painted Leather Case For Sony Xperia Z4 Mini - [PLC0010]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/SONYZ4MINIPLT02/01010.jpg"},
+                                        { ProductId: "4216", PdcId: "381", ProdName: "Shockproof Protection Case For Sony Xperia Z4 Mini", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000349/G349_00005.jpg"}
+                                        ] };
+})(window);

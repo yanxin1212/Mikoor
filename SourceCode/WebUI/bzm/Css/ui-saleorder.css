@@ -1,0 +1,11 @@
+﻿#soTabs .ui-widget-header, #_sysdv_ss_queryTabs1 .ui-widget-header, #view_customerTabs .ui-widget-header, #expServiceTab_v .ui-widget-header, #lstSolutionTabs_v .ui-widget-header, #viewSOTabs .ui-widget-header, #viewASPTabs .ui-widget-header
+{
+    border: 1px solid #C0C0C0;
+    background: #D7D7D7;
+}
+
+#soTabs .ui-state-default, #_sysdv_ss_queryTabs1 .ui-state-default, #view_customerTabs .ui-state-default, #expServiceTab_v .ui-state-default, #lstSolutionTabs_v .ui-state-default, #viewSOTabs .ui-state-default, #viewASPTabs .ui-state-default
+{
+    background: #F6F6F6;
+}
+

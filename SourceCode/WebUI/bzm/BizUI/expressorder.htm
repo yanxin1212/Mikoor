@@ -1,0 +1,612 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="expires" content="Saturday 31 December 2022 23:59 GMT" />
+
+    <link type='text/css' rel='Stylesheet' href='/bzm/css/compress/ui-web-1.0.min.css' />
+    <!-------------- 页面样式 ------------------->
+    <link type="text/css" rel="Stylesheet" href="/BZM/Css/ui-expressorder.css" />
+    <!--------------------------------->
+</head>
+<body>
+    <form id="form" runat="server">
+        <div id="pageWaittingArea" style="text-align: center; margin: 300px 0px 0px 0px;">
+            <div style="font: 12px/1.5 Arial, Helvetica, sans-serif; letter-spacing: 0px;">system loading, please wait!</div>
+            <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+        <div id="pageFrame" style="display: none">
+            <div id="pageHeader">
+                <div id="sysSymbol">
+                    <img src="/bzm/Css/Images/syslogo.png" style="height: 35px" />
+                </div>
+                <div id="userOpera">
+                    <a id="userInfo" href="javascript:void(0)"></a><span id="userInfoDivide">|</span>
+                    <a id="signOut" href="javascript:void(0)"></a><span id="signOutDivide">|</span>
+                    <a id="language" href="javascript:void(0)"></a>
+                </div>
+                <div id="bizMenuBar">
+                    <div id="menuContainer"></div>
+                </div>
+            </div>
+
+            <!-------------- 页面内容 ------------------->
+            <div id="pageContent">
+
+                <!-------------- 详细页面内容 ------------------->
+                <div id="pageTitleTag">
+                     <ul>
+                        <li id="expressorderTag" tag="tagSaleOrder" class="selected">
+                            <div></div>
+                            <span id="lbExpressOrder"></span>
+                            <div class="last"></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="pageContentForm">
+                    <div id="tagExpressOrder">
+                        <div class="formToolbar">
+                            <span id="lbExpServiceTitle" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btCanceledSMT" type="button" tag="100" class="normal-bt separetor" />
+                                <input id="btWaitCombine" type="button" tag="300" class="normal-bt separetor" />
+                                <input id="btGenerateShipLable" type="button" tag="200" class="normal-bt separetor" />
+                                <input id="btGenerateTracknumbder" type="button" tag="210" class="normal-bt separetor" />
+                                <input id="btWaitPackage" type="button" tag="0" class="normal-bt separetor" />
+                                <input id="btWaitDelivery" type="button" tag="10" class="normal-bt separetor" />
+                                <input id="btShipping" type="button" tag="20" class="normal-bt separetor" />
+                                <input id="btWaitHandleReturn" type="button" tag="40" class="normal-bt separetor" />
+                                <input id="btQueryEO" type="button" class="normal-bt" />
+                                <div id="dvWaitPackage" class="multiButtonContainer">
+                                    <ul>
+                                        <li id="btViewPackage"></li>
+                                        <li id="btImportPackage" tag="importpackage"></li>
+                                        <li id="btExportPackage"></li>
+                                    </ul>
+                                </div>
+                                <div id="dvWaitDelivery" class="multiButtonContainer">
+                                    <ul>
+                                        <li id="btViewDelivery"></li>
+                                        <li id="btImportDelivery" tag="importdelivery"></li>
+                                        <li id="btExportSMTTrkNum"></li>
+                                    </ul>
+                                </div>
+                                <div id="dvHandleEOCharge" class="multiButtonContainer">
+                                    <ul>
+                                        <li id="btExportActualCost"></li>
+                                    </ul>
+                                </div>
+                                <div id="dvGenerateShipLable" class="multiButtonContainer">
+                                    <ul>
+                                        <li id="btGenerateSMTShipLable"></li>
+                                        <li id="btExportSMTShipLable">导出SMT发货标签</li>
+                                    </ul>
+                                </div>
+                                <div id="dvGenerateTrackingnumber" class="multiButtonContainer">
+                                    <ul>
+                                        <li id="btGenerateSMTTrackingnumber"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mainform">
+                            <table id="expressorderList"></table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handleEOPackage" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbPackageInfo"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbWHSymbol" class="title"></span>
+                            <span id="selectWH"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="reHandleEOPackage" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbCancelPackage"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbInWHSymbol" class="title"></span>
+                            <span id="selectInWH"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="submitDeliveryFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbSubmitDeliveryInfo"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbOutEOCodeSymbol" class="title"></span>
+                            <input id="txtOutEOCode" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbActualWeightSymbol" class="title"></span>
+                                <input id="txtActualWeight" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" />
+                                <span id="lbWUnit_3" class="lb-symbol"></span>
+                            </span>
+                            <span>
+                                <span id="lbActualVolumnSymbol" class="title"></span>
+                                <input id="txtActualLength" type="text" class="text-input" style="width: 35px" onkeypress="uicontrol.func.checkInputNumber(event);" /> *
+                                <input id="txtActualWidth" type="text" class="text-input" style="width: 35px" onkeypress="uicontrol.func.checkInputNumber(event);" /> *
+                                <input id="txtActualHeight" type="text" class="text-input" style="width: 35px" onkeypress="uicontrol.func.checkInputNumber(event);" />
+                            </span>
+                        </div>
+                        <div id="dvDv_1" class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbActualCostSymbol" class="title"></span>
+                                <input id="txtActualCost" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" />
+                                <span id="lbCurrCode_3" class="lb-symbol"></span>
+                            </span>
+                            <span id="dvEOTrack">
+                                <span id="lbTrackingNumberSymbol" class="title"></span>
+                                <input id="txtTrackingNumber" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                        <div id="dvDv_2" class="submitForm-tr last-item">
+                            <span id="lbWH_1Symbol" class="title"></span>
+                            <span id="selectWH_1"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="handleEOCostFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbOutEOCode_1Symbol" class="title"></span>
+                            <input id="txtOutEOCode_1" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbActualWeight_1Symbol" class="title"></span>
+                                <input id="txtActualWeight_1" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" />
+                                <span id="lbWUnit_4" class="lb-symbol"></span>
+                            </span>
+                            <span>
+                                <span id="lbActualVolumn_1Symbol" class="title"></span>
+                                <input id="txtActualLength_1" type="text" class="text-input" style="width: 35px" onkeypress="uicontrol.func.checkInputNumber(event);" /> *
+                                <input id="txtActualWidth_1" type="text" class="text-input" style="width: 35px" onkeypress="uicontrol.func.checkInputNumber(event);" /> *
+                                <input id="txtActualHeight_1" type="text" class="text-input" style="width: 35px" onkeypress="uicontrol.func.checkInputNumber(event);" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span class="left-cell">
+                                <span id="lbActualCost_1Symbol" class="title"></span>
+                                <input id="txtActualCost_1" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" />
+                                <span id="lbCurrCode_4" class="lb-symbol"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handleTrackingNumberFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span class="left-cell">
+                                <span id="lbTrackingNumber_1Symbol" class="title"></span>
+                                <input id="txtTrackingNumber_1" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handleDeliveryFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span class="left-cell">
+                                <span id="lbArriveTimeSymbol" class="title"></span>
+                                <input id="txtArriveTime" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                            <span>
+                                <input id="chkIsSendEmail" type="checkbox" checked="checked" /><span id="lbSendEmail"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handleEOLoseFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbEOLoseInfo"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handleEOReturnFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbEOReturnInfo"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="viewEOPackageFrm" style="display: none;">
+                    <div id="eopackageTabs">
+                        <ul>
+                            <li><a id="lbEOProduct" href="#eoproduct"></a></li>
+                            <li><a id="lbEOPackage" href="#eopackage"></a></li>
+                        </ul>
+                        <div id="eoproduct">
+                            <div style="height: 30px">
+                                <span id="lbEPProdTitle" class="lb-title list-title"></span>
+                                <input id="btExportEPProd" type="button" class="normal-bt" style="float: right;" />
+                            </div>
+                            <table id="eoproductList"></table>
+                        </div>
+                        <div id="eopackage">
+                            <div style="height: 30px">
+                                <span id="lbEPEOTtile" class="lb-title list-title"></span>
+                                <input id="btImportPre4PXOrder" type="button" class="normal-bt" style="float: right;" tag="import4pxorder" />
+                                <input id="btExportEPEO" type="button" class="normal-bt" style="float: right;" />
+                            </div>
+                            <table id="eopackageList"></table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="viewDeliveryEOFrm" style="display: none;">
+                    <div style="height: 30px">
+                        <span id="lbDeliveryEOSymbol" class="lb-title list-title"></span>
+                        <input id="btExportDeliveryEO" type="button" class="normal-bt" style="float: right;" />
+                    </div>
+                    <table id="deliveryeoList"></table>
+                </div>
+
+                <div id="handleCombinEOFrm" style="display: none;">
+                    <div class="submitForm form-width-d">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbCustAddressSymbol" class="title"></span>
+                            <a id="lbCustAddress" href="javascript:void('0')"></a>
+                        </div>
+                        <div class="submitForm-tr">
+                            <table id="combinEOList"></table>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbCBWeightSymbol" class="title"></span>
+                                <span id="lbCBWeight"></span>
+                            </span>
+                            <span>
+                                <span id="lbCBVolumnymbol" class="title"></span>
+                                <input id="txtCBLength" type="text" class="text-input" value="" style="width: 35px" onkeypress="uicontrol.func.checkInputNumber(event);" /> *
+                                <input id="txtCBWidth" type="text" class="text-input" value="" style="width: 35px" onkeypress="uicontrol.func.checkInputNumber(event);" /> *
+                                <input id="txtCBHeight" type="text" class="text-input" value="" style="width: 35px" onkeypress="uicontrol.func.checkInputNumber(event);" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbCBWarehouseSymbol" class="title"></span>
+                                <span id="selCBWarehouse"></span>
+                            </span>
+                            <span>
+                                <span id="lbCBLstSolutionSymbol" class="title"></span>
+                                <span id="selCBLstSolution"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbCBEstimatedShipTimeSymbol" class="title"></span>
+                                <input id="txtCBEstimatedShipTime" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                            <span>
+                                <span id="lbCBEstimatedArriveTimeSymbol" class="title"></span>
+                                <input id="txtCBEstimatedArriveTime" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                <span id="lbArriveAlert" class="lb-alert"></span>
+                            </span>
+                        </div>
+                        <div id="dvCBCustom" class="submitForm-tr">
+                            <div style="height: 30px">
+                                <span id="lbCBCustomsTitle" class="lb-title list-title"></span>
+                                <input id="btAddCBCustoms" type="button" class="normal-bt" style="float: right;" />
+                            </div>
+                            <table id="cbcustomsinfoList"></table>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span class="left-cell">
+                                <span id="lbBeforeCoseSymbol" class="title"></span>
+                                <span id="lbBeforeCost"></span>
+                            </span>
+                            <span>
+                                <span id="lbCombinCoseSymbol" class="title"></span>
+                                <span id="lbCombinCost"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerCustomFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbCustomProdNameSymbol" class="title"></span>
+                                <input id="txtCustomProdName" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                            <span>
+                                <span id="lbCustomProdName_CNSymbol" class="title"></span>
+                                <input id="txtCustomProdName_CN" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbCustomQtySymbol" class="title"></span>
+                                <input id="txtCustomQty" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" />
+                            </span>
+                            <span>
+                                <span id="lbCustomValueSymbol" class="title"></span>
+                                <input id="txtCustomValue" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" />
+                                <span>USD</span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span class="left-cell">
+                                <span id="lbFactoryCountrySymbol" class="title"></span>
+                                <span id="selFactoryCountry"></span>
+                            </span>
+                            <span>
+                                <span id="lbCustomCodeSymbol" class="title"></span>
+                                <input id="txtCustomCode" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span class="left-cell">
+                                <span id="lbCustomMaterialSymbol" class="title"></span>
+                                <input id="txtCustomMaterial" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handleCancelEOFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbCancelEOInfo"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handleSplitEOFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbSplitEOInfo"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handleReceiveRetFrm" style="display: none;">
+                    <div class="submitForm form-width-a">
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbReceiveRetTimeSymbol" class="title"></span>
+                                <input id="txtReceiveRetTime" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                            <span>
+                                <span id="lbRevWHSymbol" class="title"></span>
+                                <span id="selectRevWH"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <div style="height: 30px">
+                                <span id="lbRevRetProdTitle" class="lb-title list-title"></span>
+                            </div>
+                            <table id="revretproList"></table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="queryEOFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbEOCustSymbol" class="title"></span>
+                            <input id="txtEOCustKey" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbSOCodeSymbol" class="title"></span>
+                                <input id="txtSOCode" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                            <span>
+                                <span id="lbQASPCodeSymbol" class="title"></span>
+                                <input id="txtQASPCode" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbQEOCodeSymbol" class="title"></span>
+                                <input id="txtQEOCode" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                            <span>
+                                <span id="lbQTrackingNumberSymbol" class="title"></span>
+                                <input id="txtQTrackingNumber" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbQWHSymbol" class="title"></span>
+                                <span id="selQWH"></span>
+                            </span>
+                            <span>
+                                <span id="lbQLstCompanySymbol" class="title"></span>
+                                <select id="ddlQLstCompany" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbQLstSolutionSymbol" class="title"></span>
+                                <input id="txtQLstSolution" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                <img id="btSelLstSolution" class="bt" src="/BZM/Css/Images/magnifier.png" style="margin: 0px 0px -7px -5px" />
+                            </span>
+                            <span>
+                                <span id="lbQGlobalAreaSymbol" class="title"></span>
+                                <span id="selGlobalArea"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbQEOStateSymbol" class="title"></span>
+                            <span style="display: inline-block; margin: 0px 0px -3px 0px; width: 630px"><ul id="ddlQEOState"></ul></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="handlerExportSMTFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span class="left-cell">
+                                <span id="lbSMTSiteSymbol" class="title"></span>
+                                <select id="ddlSMTSite" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerImportFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr last-item">
+                            <span id="lbImportFileSymbol" class="title"></span>
+                            <input id="importFile" type="file" name="importFile" />
+                            <span id="lbimportAlert" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="handlerExportEOFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span class="left-cell">
+                                <span id="lbZTSymbol" class="title"></span>
+                                <input id="txtZTTrackCode" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerExportShippingLableFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span class="left-cell">
+                                <span id="lbESMTSiteSymbol" class="title">站点</span>
+                                <select id="ddlESMTSite" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--------------------------------->
+
+                <!-------------- 个人信息部分 ------------------->
+                <div id="myInfoFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbUserName_my" class="title"></span>
+                            <span id="viewUserName"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbEmail_my" class="title"></span>
+                            <span id="viewEmail"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbPwd_my" class="title"></span>
+                            <span id="viewPwd">******</span>
+                            <input id="btSendPwd" type="button" class="normal-bt separetor" />
+                            <input id="btModifyPwd" type="button" class="normal-bt separetor" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbTel_my" class="title"></span>
+                            <span id="viewTel"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbContactInfo_my" class="title"></span>
+                            <span id="viewContact" style="display: inline-block"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="handlerPwdFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbOldPwdSymbol" class="title"></span>
+                            <input id="txtOldPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_1" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbNewPwdSymbol" class="title"></span>
+                            <input id="txtNewPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_2" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbConfirmPwdSymbol" class="title"></span>
+                            <input id="txtConfirmPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_3" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="checkSalePlatformFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbCheckSSSymbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------->
+            </div>
+            <!--------------------------------->
+
+            <div id="pageFooter">
+                <span>Copyright&copy;2003-2011  ArkEC, All rights reserved.</span>
+            </div>
+        </div>
+
+        <div id="alertDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="alertInfo"></span>
+            </p>
+        </div>
+
+        <div id="askDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="askInfo"></span>
+            </p>
+        </div>
+
+        <div id="switchLanguageFrm" style="display: none">
+	        <div class="submitForm form-width">
+                <div class="submitForm-tr first-item last-item">
+                    <span id="lbLanguage" class="title"></span> 
+                    <select id="ddlLanguage" class="dropdown-list"></select>
+                </div>
+            </div>
+        </div>
+
+        <div id="processBg"></div>
+        <div id="processBar">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+
+        <div id="processBg_opera"></div>
+        <div id="processBar_opera">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+    </form>
+    
+    <script type="text/javascript" src="/bzm/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/BZM/Scripts/BizService/compress/biz-1.0.min.js"></script>
+    <script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-web-1.0.min.js"></script>
+    <!-------------- 页面脚本 ------------------->
+    <!--<script type="text/javascript" src="/bzm/Scripts/bizui/ui-expressorder.js"></script>-->
+    <script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-expressorder-1.0.min.js"></script>
+    <!--------------------------------->
+</body>
+</html>

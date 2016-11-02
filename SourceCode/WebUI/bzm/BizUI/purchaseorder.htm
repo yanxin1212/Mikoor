@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="expires" content="Saturday 31 December 2022 23:59 GMT" />
+
+    <link type='text/css' rel='Stylesheet' href='/bzm/css/compress/ui-web-1.0.min.css' />
+    <!-------------- 页面样式 ------------------->
+    <link type="text/css" rel="Stylesheet" href="/BZM/Css/ui-purchaseorder.css" />
+    <!--------------------------------->
+</head>
+<body>
+    <form id="form" runat="server">
+        <div id="pageWaittingArea" style="text-align: center; margin: 300px 0px 0px 0px;">
+            <div style="font: 12px/1.5 Arial, Helvetica, sans-serif; letter-spacing: 0px;">system loading, please wait!</div>
+            <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+        <div id="pageFrame" style="display: none">
+            <div id="pageHeader">
+                <div id="sysSymbol">
+                    <img src="/bzm/Css/Images/syslogo.png" style="height: 35px" />
+                </div>
+                <div id="userOpera">
+                    <a id="userInfo" href="javascript:void(0)"></a><span id="userInfoDivide">|</span>
+                    <a id="signOut" href="javascript:void(0)"></a><span id="signOutDivide">|</span>
+                    <a id="language" href="javascript:void(0)"></a>
+                </div>
+                <div id="bizMenuBar">
+                    <div id="menuContainer"></div>
+                </div>
+            </div>
+
+            <!-------------- 页面内容 ------------------->
+            <div id="pageContent">
+
+                <!-------------- 详细页面内容 ------------------->
+                <div id="pageTitleTag">
+                     <ul>
+                        <li id="purchaseplanTag" tag="tagPurchasePlan" class="selected">
+                            <div></div>
+                            <span id="lbPurchasePlan"></span>
+                        </li>
+                        <li id="purchaseorderTag" tag="tagPurchaseOrder">
+                            <div></div>
+                            <span id="lbPurchaseOrder"></span>
+                            <div class="last"></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="pageContentForm">
+                    <div id="tagPurchasePlan">
+                        <div class="formToolbar">
+                            <span id="lbPurchasePlanTitle" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btQueryPPProd" type="button" class="normal-bt separetor" />
+                                <input id="btGeneratePPProd" type="button" class="normal-bt separetor" />
+                                <input id="btAddPPProd" type="button" class="normal-bt separetor" />
+                                <input id="btExportPP" type="button" class="normal-bt separetor" />
+                                <input id="btImportPP" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div class="mainform">
+                            <table id="ppprodList"></table>
+                        </div>
+                    </div>
+                    <div id="tagPurchaseOrder" style="display: none">
+                        <div class="formToolbar">
+                            <span id="lbPOTitle" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btNewPO" type="button" class="normal-bt separetor" />
+                                <input id="btWaitSubmitPO" type="button" tag="0" class="normal-bt separetor" />
+                                <input id="btHandlePO" type="button" tag="10" class="normal-bt separetor" />
+                                <input id="btQueryPO" type="button" class="normal-bt separetor" />
+                                <input id="btExportUnRevPO" type="button" class="normal-bt separetor" />
+                                <input id="btExportPOProd" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div class="mainform">
+                            <table id="poList"></table>
+                        </div>
+                    </div>
+                </div>
+                <div id="queryPPProdFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbPdcSymbol" class="title"></span>
+                            <span id="selQPdc"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbProdKeySymbol" class="title"></span>
+                            <input id="txtProdKey" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="handlePPProdFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbProdSymbol" class="title"></span>
+                            <input id="txtProd" type="text" class="text-long-input" disabled="disabled" onkeypress="uicontrol.func.checkInputNumber(event);" />
+                            <img id="btSelectProd" class="bt" src="/BZM/Css/Images/magnifier.png" style="margin: 0px 0px -6px -5px" />
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbPPProdQtySymbol" class="title"></span>
+                            <input id="txtPPProdQty" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" />
+                            <span id="lbProdUnit" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="handlePOFrm" style="display: none;">
+                    <div class="submitForm form-width-b">
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbPOSupplierSymbol" class="title"></span>
+                                <span id="selPOSupplier"></span>
+                            </span>
+                            <span>
+                                <span id="lbPOWarehouseSymbol" class="title"></span>
+                                <span id="selPOWarehouse"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbCreateTimeSymbol" class="title"></span>
+                                <input id="txtCreateTime" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                            <span>
+                                <span id="lbPOEstimateArriveTimeSymbol" class="title"></span>
+                                <input id="txtPOEstimateArriveTime" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbPORevType" class="title"></span>
+                            <select id="ddlPORevType" class="dropdown-list"></select>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbPORevRemarkSymbol" class="title"></span>
+                            <input id="txtPORevRemark" type="text" class="text-long-input-a" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbPORemarkSymbol" class="title"></span>
+                            <textarea id="txtPORemark" cols="20" rows="2" class="multitext-input-b" onkeypress="uicontrol.func.checkInput(event);"></textarea>
+                        </div>
+                        <div class="submitForm-tr">
+                            <div style="height: 30px">
+                                <span id="lbPOProdTitle" class="lb-title list-title"></span>
+                                <input id="btExportPOUnReceiveProd" type="button" class="normal-bt" style="float: right;" />
+                                <input id="btExportPOAllProd" type="button" class="normal-bt" style="float: right;" />
+                                <input id="btAddProd" type="button" class="normal-bt" style="float: right;" />
+                                <input id="btClearPOProd" type="button" class="normal-bt" style="float: right;" />
+                                <input id="btGenerateProd" type="button" class="normal-bt" style="float: right;" />
+                            </div>
+                            <table id="poproductList"></table>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span class="left-cell">
+                                <span id="lbOtherChargeSymbol" class="title"></span>
+                                <input id="txtOtherCharge" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" />
+                                <span id="lbOCCurrCode" class="lb-symbol"></span>
+                            </span>
+                            <span>
+                                <span id="lbTotalPriceSymbol" class="title"></span>
+                                <span id="lbTotalPrice"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerImportFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbImportFileSymbol" class="title"></span>
+                            <input id="importFile" type="file" name="importFile" />
+                            <span id="lbimportAlert" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="submitPOFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbSubmitPOInfo"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="closePOFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbClosePOInfo"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbCloseRemarkSymbol" class="title"></span>
+                            <textarea id="txtCloseRemark" cols="20" rows="2" class="multitext-input-b" onkeypress="uicontrol.func.checkInput(event);"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="queryPOFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbQSuppKeySymbol" class="title"></span>
+                            <input id="txtQSuppKey" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbQProdKeySymbol" class="title"></span>
+                            <input id="txtQProdKey" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbQPdcSymbol" class="title"></span>
+                                <span id="selQPOPdc"></span>
+                            </span>
+                            <span>
+                                <span id="lbQWHSymbol" class="title"></span>
+                                <span id="selQWH"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="ddlQPORevTypeSymbol" class="title"></span>
+                                <select id="ddlQPORevType" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbQPOTypeSymbol" class="title"></span>
+                                <select id="ddlQPOType" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbQPOCodeSymbol" class="title"></span>
+                                <input id="txtQPOCode" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbQCreateTimeSymbol" class="title"></span>
+                            <input id="txtQCreateTime_1" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span id="lbQToSymbol" class="lb-symbol" style="marin: 0px 5px 0px 5px"></span>
+                            <input id="txtQCreateTime_2" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbQPOStateSymbol" class="title"></span>
+                            <span style="display: inline-block; margin: 0px 0px -3px 0px; width: 630px"><ul id="ddlQPOState"></ul></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="exportPOProdFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbPOOptionSymbol" class="title"></span>
+                            <input type="radio" name="exportpooption" value="1" /><span id="lbExportOption_1"></span> 
+                            <input type="radio" name="exportpooption" value="0" checked ><span id="lbExportOption_2"></span> 
+                        </div>
+                    </div>
+                </div>
+
+                <!--------------------------------->
+
+                <!-------------- 个人信息部分 ------------------->
+                <div id="myInfoFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbUserName_my" class="title"></span>
+                            <span id="viewUserName"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbEmail_my" class="title"></span>
+                            <span id="viewEmail"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbPwd_my" class="title"></span>
+                            <span id="viewPwd">******</span>
+                            <input id="btSendPwd" type="button" class="normal-bt separetor" />
+                            <input id="btModifyPwd" type="button" class="normal-bt separetor" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbTel_my" class="title"></span>
+                            <span id="viewTel"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbContactInfo_my" class="title"></span>
+                            <span id="viewContact" style="display: inline-block"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="handlerPwdFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbOldPwdSymbol" class="title"></span>
+                            <input id="txtOldPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_1" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbNewPwdSymbol" class="title"></span>
+                            <input id="txtNewPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_2" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbConfirmPwdSymbol" class="title"></span>
+                            <input id="txtConfirmPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_3" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="checkSalePlatformFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbCheckSSSymbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------->
+            </div>
+            <!--------------------------------->
+
+            <div id="pageFooter">
+                <span>Copyright&copy;2003-2011  ArkEC, All rights reserved.</span>
+            </div>
+        </div>
+
+        <div id="alertDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="alertInfo"></span>
+            </p>
+        </div>
+
+        <div id="askDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="askInfo"></span>
+            </p>
+        </div>
+
+        <div id="switchLanguageFrm" style="display: none">
+	        <div class="submitForm form-width">
+                <div class="submitForm-tr first-item last-item">
+                    <span id="lbLanguage" class="title"></span> 
+                    <select id="ddlLanguage" class="dropdown-list"></select>
+                </div>
+            </div>
+        </div>
+
+        <div id="processBg"></div>
+        <div id="processBar">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+
+        <div id="processBg_opera"></div>
+        <div id="processBar_opera">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+    </form>
+    
+    <script type="text/javascript" src="/bzm/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/BZM/Scripts/BizService/compress/biz-1.0.min.js"></script>
+    <script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-web-1.0.min.js"></script>
+    <!-------------- 页面脚本 ------------------->
+    <!--<script type="text/javascript" src="/bzm/Scripts/bizui/ui-purchaseorder.js"></script>-->
+    <script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-purchaseorder-1.0.min.js"></script>
+    <!--------------------------------->
+</body>
+</html>

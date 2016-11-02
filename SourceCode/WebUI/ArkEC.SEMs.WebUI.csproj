@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77E9A691-5FF8-40C5-ADB5-0988A40A221F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArkEC.SEMs.WebUI</RootNamespace>
+    <AssemblyName>ArkEC.SEMs.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
+    <PublishDatabases>false</PublishDatabases>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ArkEC.CoreCom.CacheStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Third-party Library\ArkEC.CoreCom.CacheStore.dll</HintPath>
+    </Reference>
+    <Reference Include="ArkEC.CoreCom.Datastruct, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Third-party Library\ArkEC.CoreCom.Datastruct.dll</HintPath>
+    </Reference>
+    <Reference Include="ArkEC.CoreCom.Runtime, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Third-party Library\ArkEC.CoreCom.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="ArkEC.CoreCom.Transaction, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Third-party Library\ArkEC.CoreCom.Transaction.dll</HintPath>
+    </Reference>
+    <Reference Include="ArkEC.CoreCom.WebHandler, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Third-party Library\ArkEC.CoreCom.WebHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="ArkEC.SEMs.BizObject, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Third-party Library\ArkEC.SEMs.BizObject.dll</HintPath>
+    </Reference>
+    <Reference Include="ArkEC.SEMs.Business, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Third-party Library\ArkEC.SEMs.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="ArkEC.SEMs.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Third-party Library\ArkEC.SEMs.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="eBay.Service">
+      <HintPath>..\Third-party Library\eBay.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="IPQuery">
+      <HintPath>..\Third-party Library\IPQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.0.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Third-party Library\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\Third-party Library\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bzm\AjaxActionMapping.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bzm\BizUI\accountinout.htm" />
+    <Content Include="bzm\BizUI\aftersale.htm" />
+    <Content Include="bzm\BizUI\brand.htm" />
+    <Content Include="bzm\BizUI\salereport.htm" />
+    <Content Include="bzm\BizUI\custemail.htm" />
+    <Content Include="bzm\BizUI\customer.htm" />
+    <Content Include="bzm\BizUI\expressorder.htm" />
+    <Content Include="bzm\BizUI\expressservice.htm" />
+    <Content Include="bzm\BizUI\fundaccount.htm" />
+    <Content Include="bzm\BizUI\globalarea.htm" />
+    <Content Include="bzm\BizUI\inventory.htm" />
+    <Content Include="bzm\BizUI\inventorystat.htm" />
+    <Content Include="bzm\BizUI\logisticssolution.htm" />
+    <Content Include="bzm\BizUI\managingcost.htm" />
+    <Content Include="bzm\BizUI\multilanguage.htm" />
+    <Content Include="bzm\BizUI\performancereport.htm" />
+    <Content Include="bzm\BizUI\prodcategory.htm" />
+    <Content Include="bzm\BizUI\prodproperty.htm" />
+    <Content Include="bzm\BizUI\product.htm" />
+    <Content Include="bzm\BizUI\purchaseorder.htm" />
+    <Content Include="bzm\BizUI\purchaseprice.htm" />
+    <Content Include="bzm\BizUI\saleorder.htm" />
+    <Content Include="bzm\BizUI\salestrategy.htm" />
+    <Content Include="bzm\BizUI\saleplatform.htm" />
+    <Content Include="bzm\BizUI\syscurrency.htm" />
+    <Content Include="bzm\BizUI\syskeyparam.htm" />
+    <Content Include="bzm\BizUI\sysuser.htm" />
+    <Content Include="bzm\BizUI\_email.htm" />
+    <Content Include="bzm\BizUI\_proddesc.htm" />
+    <Content Include="bzm\BizUI\_soprint.htm" />
+    <Content Include="bzm\Css\Compress\ui-web-all.css" />
+    <Content Include="bzm\Css\ui-salereport.css" />
+    <Content Include="bzm\Css\ui-custemail.css" />
+    <Content Include="bzm\Css\ui-aftersale.css" />
+    <Content Include="bzm\Css\Images\filedir.jpg" />
+    <Content Include="bzm\Css\Images\fileserver.jpg" />
+    <Content Include="bzm\Css\Images\important.png" />
+    <Content Include="bzm\Css\Images\syslogo.png" />
+    <Content Include="bzm\Css\Images\upfile.JPG" />
+    <Content Include="bzm\Css\ui-expressorder.css" />
+    <Content Include="bzm\Css\ui-inventory.css" />
+    <Content Include="bzm\Css\ui-accountinout.css" />
+    <Content Include="bzm\Css\ui-filespace.css" />
+    <Content Include="bzm\Css\ui-globalarea.css" />
+    <Content Include="bzm\Css\ui-inventorystat.css" />
+    <Content Include="bzm\Css\ui-logisticssolution.css" />
+    <Content Include="bzm\Css\ui-purchaseorder.css" />
+    <Content Include="bzm\Css\ui-purchaseprice.css" />
+    <Content Include="bzm\Css\ui-saleorder.css" />
+    <Content Include="bzm\Css\ui-soprint.css" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-viewpurchaseorder.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-viewsaleorder.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-viewasproblem.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-viewexpressorder.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-viewaccountoutrecord.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-viewaccountinrecord.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-selectsolstsolution.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-selectexpservice.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-selectssproduct.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-selectcustomer.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-selectLstsolution.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-selectproduct.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-selectsupplier.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-selectwarehouse.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-viewcustomer.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-viewssproduct.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-spacefile.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-viewlstsolution.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-viewsupplier.js" />
+    <Content Include="bzm\Scripts\BizService\biz-as_problem.js" />
+    <Content Include="bzm\Scripts\BizService\biz-countrytax.js" />
+    <Content Include="bzm\Scripts\BizService\biz-expressorder.js" />
+    <Content Include="bzm\Scripts\BizService\biz-inoutstock.js" />
+    <Content Include="bzm\Scripts\BizService\biz-inventory.js" />
+    <Content Include="bzm\Scripts\BizService\biz-lstcompany.js" />
+    <Content Include="bzm\Scripts\BizService\biz-lstsolution.js" />
+    <Content Include="bzm\Scripts\BizService\biz-purchaseorder.js" />
+    <Content Include="bzm\Scripts\BizService\biz-purchaseprice.js" />
+    <Content Include="bzm\Scripts\BizService\biz-purchaseproduct.js" />
+    <Content Include="bzm\Scripts\BizService\biz-saleorder.js" />
+    <Content Include="bzm\Scripts\BizService\biz-salepdcnavigation.js" />
+    <Content Include="bzm\Scripts\BizService\biz-ss_gift.js" />
+    <Content Include="bzm\Scripts\BizService\biz-ss_innerprod.js" />
+    <Content Include="bzm\Scripts\BizService\biz-ss_product.js" />
+    <Content Include="bzm\Scripts\BizService\biz-ss_tyingprod.js" />
+    <Content Include="bzm\Scripts\BizService\biz-supplier.js" />
+    <Content Include="bzm\Scripts\BizService\biz-supplierlinker.js" />
+    <Content Include="bzm\Scripts\BizService\biz-tempuploadfile.js" />
+    <Content Include="bzm\Scripts\BizService\biz-warehouse.js" />
+    <Content Include="bzm\Scripts\BizService\biz-sysemail.js" />
+    <Content Include="bzm\Scripts\BizService\biz-salereport.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-salereport-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-custemail-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-email-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-soprint-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-inventorystat-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-purchaseorder-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-aftersale-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-inventory-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-purchaseprice-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-brand-1.0.min.js" />
+    <Content Include="bzm\Css\flexigrid.pack.css" />
+    <Content Include="bzm\Css\Images\arrows_sprite.png" />
+    <Content Include="bzm\Css\Images\bg.gif" />
+    <Content Include="bzm\Css\Images\btn-sprite.gif" />
+    <Content Include="bzm\Css\Images\ddn.png" />
+    <Content Include="bzm\Css\Images\dn.png" />
+    <Content Include="bzm\Css\Images\fhbg.gif" />
+    <Content Include="bzm\Css\Images\first.gif" />
+    <Content Include="bzm\Css\Images\hl.png" />
+    <Content Include="bzm\Css\Images\last.gif" />
+    <Content Include="bzm\Css\Images\line.gif" />
+    <Content Include="bzm\Css\Images\load.gif" />
+    <Content Include="bzm\Css\Images\load.png" />
+    <Content Include="bzm\Css\Images\loading.gif" />
+    <Content Include="bzm\Css\Images\magnifier.png" />
+    <Content Include="bzm\Css\Images\next.gif" />
+    <Content Include="bzm\Css\Images\nopic.png" />
+    <Content Include="bzm\Css\Images\prev.gif" />
+    <Content Include="bzm\Css\Images\tabs-e8305714bc.png" />
+    <Content Include="bzm\Css\Images\up.png" />
+    <Content Include="bzm\Css\Images\uup.png" />
+    <Content Include="bzm\Css\Images\wbg.gif" />
+    <Content Include="bzm\Css\MLM\ui-core-ru.css" />
+    <Content Include="bzm\Css\MLM\ui-core-it.css" />
+    <Content Include="bzm\Css\MLM\ui-core-es.css" />
+    <Content Include="bzm\Css\MLM\ui-core-ko.css" />
+    <Content Include="bzm\Css\MLM\ui-core-de.css" />
+    <Content Include="bzm\Css\MLM\ui-core-ja.css" />
+    <Content Include="bzm\Css\MLM\ui-core-fr.css" />
+    <Content Include="bzm\Css\MLM\ui-core-zh-hk.css" />
+    <Content Include="bzm\Css\ui-brand.css" />
+    <Content Include="bzm\Css\ui-customer.css" />
+    <Content Include="bzm\Css\ui-fundaccount.css" />
+    <Content Include="bzm\Css\Compress\ui-login-1.0.min.css" />
+    <Content Include="bzm\Css\ui-managingcost.css" />
+    <Content Include="bzm\Css\ui-multilanguage.css" />
+    <Content Include="bzm\Css\ui-performancereport.css" />
+    <Content Include="bzm\Css\ui-prodcategory.css" />
+    <Content Include="bzm\Css\ui-prodproperty.css" />
+    <Content Include="bzm\Css\ui-product.css" />
+    <Content Include="bzm\Css\ui-salestrategy.css" />
+    <Content Include="bzm\Css\ui-saleplatform.css" />
+    <Content Include="bzm\Css\ui-syscurrency.css" />
+    <Content Include="bzm\Css\ui-syskeyparam.css" />
+    <Content Include="bzm\Css\ui-sysuser.css" />
+    <Content Include="bzm\Css\Images\Store.png" />
+    <Content Include="bzm\Css\Images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="bzm\Css\Images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="bzm\Css\Images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="bzm\Css\Images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="bzm\Css\Images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="bzm\Css\Images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="bzm\Css\Images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="bzm\Css\Images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="bzm\Css\Images\ui-icons_217bc0_256x240.png" />
+    <Content Include="bzm\Css\Images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="bzm\Css\Images\ui-icons_469bdd_256x240.png" />
+    <Content Include="bzm\Css\Images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="bzm\Css\Images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="bzm\Css\Images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="bzm\Css\Images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="bzm\Css\jquery-ui-1.8.16.custom.css" />
+    <Content Include="bzm\Css\MLM\ui-core-en-us.css" />
+    <Content Include="bzm\Css\MLM\ui-core-zh-cn.css" />
+    <Content Include="bzm\Css\ui-core.css" />
+    <Content Include="bzm\Css\ui-login.css" />
+    <Content Include="bzm\Css\Compress\ui-web-1.0.min.css" />
+    <Content Include="bzm\login.htm" />
+    <Content Include="bzm\main.htm" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-selectbrand.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-selectcostsubject.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-selectglobalarea.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-selectpdc.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-viewexpressservice.js" />
+    <Content Include="bzm\Scripts\BizControl\ctrl-viewproduct.js" />
+    <Content Include="bzm\Scripts\BizService\biz-accountfund.js" />
+    <Content Include="bzm\Scripts\BizService\biz-accountinrecord.js" />
+    <Content Include="bzm\Scripts\BizService\biz-accountoutrecord.js" />
+    <Content Include="bzm\Scripts\BizService\biz-brand.js" />
+    <Content Include="bzm\Scripts\BizService\biz-brandtype.js" />
+    <Content Include="bzm\Scripts\BizService\biz-costsubject.js" />
+    <Content Include="bzm\Scripts\BizService\biz-customer.js" />
+    <Content Include="bzm\Scripts\BizService\biz-customergroup.js" />
+    <Content Include="bzm\Scripts\BizService\biz-expressservice.js" />
+    <Content Include="bzm\Scripts\BizService\biz-financereport.js" />
+    <Content Include="bzm\Scripts\BizService\biz-fundaccount.js" />
+    <Content Include="bzm\Scripts\BizService\biz-fundflowrecord.js" />
+    <Content Include="bzm\Scripts\BizService\biz-fundtransferrecord.js" />
+    <Content Include="bzm\Scripts\BizService\biz-globalarea.js" />
+    <Content Include="bzm\Scripts\BizService\biz-lanresource.js" />
+    <Content Include="bzm\Scripts\BizService\biz-multilanguage.js" />
+    <Content Include="bzm\Scripts\BizService\biz-pdcproperty.js" />
+    <Content Include="bzm\Scripts\BizService\biz-prodcategory.js" />
+    <Content Include="bzm\Scripts\BizService\biz-prodproperty.js" />
+    <Content Include="bzm\Scripts\BizService\biz-product.js" />
+    <Content Include="bzm\Scripts\BizService\biz-salesite.js" />
+    <Content Include="bzm\Scripts\BizService\biz-sysrole.js" />
+    <Content Include="bzm\Scripts\BizService\biz-saleplatform.js" />
+    <Content Include="bzm\Scripts\BizService\biz-skuproduct.js" />
+    <Content Include="bzm\Scripts\BizService\biz-syscurrency.js" />
+    <Content Include="bzm\Scripts\BizService\biz-syscurrrate.js" />
+    <Content Include="bzm\Scripts\BizService\biz-syskeyparam.js" />
+    <Content Include="bzm\Scripts\BizService\biz-sysuser.js" />
+    <Content Include="bzm\Scripts\BizService\biz-tempuploadpic.js" />
+    <Content Include="bzm\Scripts\BizService\Compress\biz-1.0.all.js" />
+    <Content Include="bzm\Scripts\BizService\Compress\biz-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-accountinout-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-customer-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-expressservice-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-fundaccount-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-globalarea-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-login-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-logisticssolution-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-managingcost-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-multilanguage-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-performancereport-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-prodcategory-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-prodproperty-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-product-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-saleorder-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-salestrategy-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-saleplatform-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-syscurrency-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-syskeyparam-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-sysuser-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-web-all.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-salereport.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-email.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-custemail.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-accountinout.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-aftersale.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-brand.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-core.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-customer.js" />
+    <Content Include="bzm\Css\ui-expressservice.css" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-expressorder-1.0.min.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-expressorder.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-expressservice.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-fundaccount.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-globalarea.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-inventory.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-inventorystat.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-login.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-logisticssolution.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-main.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-managingcost.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-multilanguage.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-performancereport.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-prodcategory.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-prodproperty.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-product.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-purchaseorder.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-purchaseprice.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-saleorder.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-salestrategy.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-saleplatform.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-soprint.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-syscurrency.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-syskeyparam.js" />
+    <Content Include="bzm\Scripts\BizUI\ui-sysuser.js" />
+    <Content Include="bzm\Scripts\flexigrid.js" />
+    <Content Include="bzm\Scripts\jquery-1.7.1.min.js" />
+    <Content Include="bzm\Scripts\arkec.corecom.js" />
+    <Content Include="bzm\Scripts\jquery-ui-1.8.22.custom.min.js" />
+    <Content Include="bzm\Scripts\jquery.tooltip.js" />
+    <Content Include="bzm\Scripts\jscharts.js" />
+    <Content Include="bzm\Scripts\MLM\common_res_en-us.js" />
+    <Content Include="bzm\Scripts\MLM\common_res_zh-cn.js" />
+    <Content Include="bzm\Scripts\BizUI\Compress\ui-web-1.0.min.js" />
+    <Content Include="bzm\Scripts\MLM\Compress\common_res_en-us-1.0.min.js" />
+    <Content Include="bzm\Scripts\MLM\Compress\common_res_zh-cn-1.0.min.js" />
+    <Content Include="bzm\Scripts\UserPopedom\7E7C7056A672A4A1.js" />
+    <Content Include="bzm\Scripts\UserPopedom\92EBDC74CF8C2422.js" />
+    <Content Include="index.htm" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bzm\BizAjaxHandler.ashx.cs">
+      <DependentUpon>BizAjaxHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="bzm\BizLogin.ashx.cs">
+      <DependentUpon>BizLogin.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="bzm\MKAjaxHandler.ashx.cs">
+      <DependentUpon>MKAjaxHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="bzm\SMTTask.ashx.cs">
+      <DependentUpon>SMTTask.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bzm\Css\Normal\" />
+    <Folder Include="Database\File\Brand\" />
+    <Folder Include="Database\File\ExcelTemplate\" />
+    <Folder Include="Database\File\ProdProperty\" />
+    <Folder Include="Database\File\Product\" />
+    <Folder Include="Database\Temp\" />
+    <Folder Include="Database\Webpages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bzm\BizAjaxHandler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bzm\BizLogin.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\File\Temp\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bzm\SMTTask.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bzm\MKAjaxHandler.ashx" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TaskDemo\TaskDemo.csproj">
+      <Project>{515EFB67-AFE6-42A0-8074-1C79F7594CB9}</Project>
+      <Name>TaskDemo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>41310</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

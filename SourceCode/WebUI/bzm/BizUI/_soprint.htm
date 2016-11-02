@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="expires" content="Saturday 31 December 2022 23:59 GMT" />
+
+    <link type='text/css' rel='Stylesheet' href='/bzm/css/compress/ui-web-1.0.min.css' />
+    <!-------------- 页面样式 ------------------->
+    <link type="text/css" rel="Stylesheet" href="/BZM/Css/ui-soprint.css" />
+    <!--------------------------------->
+</head>
+<body style="background-color: #FFFFFF;">
+    <form id="form" runat="server">
+        <div id="dvPrint">
+            <!--<div style="background-color: #FFFFFF; width: 200mm; height: 285mm; font: 12px/1.5 Arial, Helvetica, sans-serif; letter-spacing: 0px">
+                <div id="dvHeader" style="float: left;  width: 100%;"> 
+                    <div style="text-align: left; margin: 10px 0px 30px 0px; padding: 0px 0px 10px 0px; line-height: 1.2; text-align: center; border-bottom-style: solid; border-bottom-width: 3px; border-bottom-color: #202020; ">
+                        <div style="font-size: 42px; font-weight: bold; letter-spacing: 2px;">MIKOOR</div>
+                        <div style="font-size: 12px; margin: 5px 0px 0px 0px">Focus on high-quality digital fashion accessories, make your life more wonderful</div>
+                    </div>
+                </div>
+                <div style="float: left; margin: 0px 10px 0px 10px">
+                    <div style="float: left; width: 195mm; padding: 0px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">
+                        <div style="float:left; width: 110mm">
+                            <div style="float:left; margin: 0px 10px 0px 0px; width: 100px">Order Number:</div>
+                            <div id="lbSOCode_@KEY@" style="float:left"></div>
+                        </div>
+                        <div style="float:left; width: 80mm">
+                            <div style="float:left; margin: 0px 10px 0px 0px; width: 100px">Customer:</div>
+                            <div id="lbCustomerId_@KEY@"  style="float:left"></div>
+                        </div>
+                    </div>
+                    <div style="float: left; width: 195mm; padding: 0px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">
+                        <div style="float:left; width: 110mm; margin: 10px 0px 0px 0px">
+                            <div style="float:left; margin: 0px 10px 0px 0px; width: 100px">Email:</div>
+                            <div id="lbEmail_@KEY@" style="float:left"></div>
+                        </div>
+                    </div>
+                    <div style="float:left; width: 195mm; margin: 10px 0px 10px 0px">
+                        <div style="float:left; margin: 0px 10px 0px 0px; width: 100px">Ship To:</div>
+                        <div id="lbAddress_@KEY@" style="float:left;"></div>
+                    </div>
+                    <div style="margin: 5px 0px 0px 0px; float:left; width: 195mm">
+                        <table id="productList_@KEY@"></table>
+                    </div>
+                    <div style="float: left; width: 195mm; padding: 10px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">    
+                        <div id="lbTotalPrice_@KEY@" style="float:right;"></div>
+                        <div style="float:right; margin: 0px 10px 0px 0px">Total:</div>
+                    </div>
+                </div>
+                <div style="float: left; width: 100%; padding: 25px 0px 5px 0px; font-size: 14px; font-weight: bold;">
+                    <div>
+                        <span style="margin: 0px 0px 0px 5px">After-Sales Service</span>
+                    </div>
+                    <div style="border-top-style: solid; border-top-width: 3px; border-top-color: #B0B0B0;margin: 10px 0px 0px 0px"></div>
+                    </div>
+                    <div style="float: left; margin: 0px 10px 0px 10px;">
+                    <div style="float: left; width: 195mm; padding: 10px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">
+                        <span style="margin: 0px 5px 0px 0px">(1).</span>If the sale of goods is damaged or other quality problems, please take pictures first, then send the photo and description of the problem to support@mikoor.com, we will reply to you within 24 hours and provide a refund or re-delivery
+                    </div>
+                    <div style="float: left; width: 195mm; padding: 10px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">
+                        <span style="margin: 0px 5px 0px 0px">(2).</span>If you need to return of goods for personal reasons, please follow the steps below. Firstly, send a message to support@mikoor.com, we will reply to you the return address within 24 hours, secondly, you return the product to the specified address, and then we will refund you money within two working days after we received the product. Note: You have to bear the return shipping fees.
+                    </div>
+                    <div style="float: left; width: 195mm; padding: 10px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">
+                        <span style="margin: 0px 5px 0px 0px">(3).</span>Any other questions you can send an email to support@mikoor.com, we will reply to you within 24 hours.
+                    </div>
+                    </div>
+                 
+                <div style="float: left; width: 100%; padding: 25px 0px 5px 0px; font-size: 14px; font-weight: bold;">
+                    <div>
+                        <span style="margin: 0px 0px 0px 5px">Mikoor Shop</span>
+                    </div>
+                    <div style="border-top-style: solid; border-top-width: 3px; border-top-color: #B0B0B0;margin: 10px 0px 0px 0px"></div>
+                    </div>
+                <div style="float: left; margin: 0px 10px 0px 10px;">
+                    <div style="float: left; width: 200mm; padding: 10px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">
+                        <div style="float:left; width: 110mm">
+                            <div style="float:left; margin: 0px 10px 0px 0px; width: 100px">ebay:</div>
+                            <div style="float:left">http://stores.ebay.com/mikoor</div>
+                        </div>
+                        <div style="float:left; width: 85mm">
+                            <div style="float:left; margin: 0px 10px 0px 0px; width: 100px">etsy:</div>
+                            <div style="float:left">https://www.etsy.com/shop/mikoor</div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <!--<div style="background-color: #FFFFFF; width: 200mm; height: 285mm;">
+                <div id="dvHeader" style="float: left;  width: 100%;"> 
+                    <div style="text-align: left; margin: 10px 0px 20px 0px; padding: 0px 0px 10px 0px; line-height: 1.2; text-align: center; border-bottom-style: solid; border-bottom-width: 3px; border-bottom-color: #202020; ">
+                        <div style="font-size: 42px; font-weight: bold; letter-spacing: 2px; font-family: Arial, Helvetica, sans-serif;">MIKOOR</div>
+                        <div style="font-size: 12px; margin: 5px 0px 0px 0px; letter-spacing: 2px; ">专注于高品质的时尚数据配件,让你的生活更加精彩</div>
+                    </div>
+                </div>
+                <div style="float: left; margin: 0px 10px 0px 10px">
+                    <div style="float: left; width: 195mm; padding: 0px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">
+                        <div style="float:left; width: 110mm">
+                            <div style="float:left; margin: 0px 10px 0px 0px; width: 80px">订单:</div>
+                            <div id="lbSOCode_@KEY@" style="float:left"></div>
+                        </div>
+                        <div style="float:left; width: 80mm">
+                            <div style="float:left; margin: 0px 10px 0px 0px; width: 80px">客户:</div>
+                            <div id="lbCustomerId_@KEY@"  style="float:left"></div>
+                        </div>
+                    </div>
+                    <div style="float: left; width: 195mm; padding: 0px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">
+                        <div style="float:left; width: 110mm; margin: 10px 0px 0px 0px">
+                            <div style="float:left; margin: 0px 10px 0px 0px; width: 80px">联系电话:</div>
+                            <div id="lbTel_@KEY@" style="float:left"></div>
+                        </div>
+                        <div style="float:left; margin: 10px 0px 0px 0px">
+                            <div style="float:left; margin: 0px 10px 0px 0px; width: 80px">店铺:</div>
+                            <div style="float:left">http://mikoor.taobao.com</div>
+                        </div>
+                    </div>
+                    <div style="float:left; width: 195mm; margin: 10px 0px 10px 0px">
+                        <div style="float:left; margin: 0px 10px 0px 0px; width: 80px">快递地址:</div>
+                        <div id="lbAddress_@KEY@" style="float:left;"></div>
+                    </div>
+                    <div style="margin: 5px 0px 0px 0px; float:left; width: 195mm">
+                        <table id="productList_@KEY@"></table>
+                    </div>
+                    <div style="float: left; width: 195mm; padding: 10px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">    
+                        <div id="lbTotalPrice_@KEY@" style="float:right;"></div>
+                        <div style="float:right; margin: 0px 10px 0px 0px">合计:</div>
+                    </div>
+                </div>
+                <div style="float: left; width: 100%; padding: 25px 0px 5px 0px; font-size: 14px; font-weight: bold;">
+                    <div>
+                        <span style="margin: 0px 0px 0px 5px">售后服务</span>
+                    </div>
+                    <div style="border-top-style: solid; border-top-width: 3px; border-top-color: #B0B0B0;margin: 10px 0px 0px 0px"></div>
+                    </div>
+                    <div style="float: left; margin: 0px 10px 0px 10px;">
+                    <div style="float: left; width: 195mm; padding: 10px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">
+                        <span style="margin: 0px 5px 0px 0px">(1).</span>在您签收商品之日起, 15天内出现商品质量问题, 我司将提供退换货服务, 往返运费均由我司承担.
+                    </div>
+                    <div style="float: left; width: 195mm; padding: 10px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">
+                        <span style="margin: 0px 5px 0px 0px">(2).</span>如有其他问题需要进行退换货处理, 在商品包装完整, 无损坏, 且不影响二次销售的情况下, 我司将提供退换货服务, 不过往返运费需要由您自身承担.
+                    </div>
+                    <div style="float: left; width: 195mm; padding: 10px 0px 10px 0px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #C0C0C0;">
+                        <span style="margin: 0px 5px 0px 0px">(3).</span>当进行任何退换货处理前, 请先与我司客服人员取得联系, 我们会告知您具体的操作流程, 当接收到货物并检测通过后, 我们会在两个工作日内进行退款或补发货处理.
+                    </div>
+                </div>
+                 
+                <div style="float: left; width: 100%; padding: 25px 0px 5px 0px; font-size: 14px; font-weight: bold;">
+                    <div>
+                        <span style="margin: 0px 0px 0px 5px">店铺二唯码</span>
+                    </div>
+                    <div style="border-top-style: solid; border-top-width: 3px; border-top-color: #B0B0B0;margin: 10px 0px 0px 0px"></div>
+                    </div>
+                <div style="float: left; margin: 0px 10px 0px 10px;">
+                    <div style="float: left; width: 200mm; padding: 10px 0px 0px 0px;">
+                        <div style="float:left; height: 100px; width: 100px; text-align: center">
+                            <img style="height: 100px;" src="../Css/Images/img.png" />
+                            <span>微信</span>
+                        </div>
+                        <div style="float:left; height: 100px; width: 100px; margin: 0px 0px 0px 50px; text-align: center">
+                            <img style="height: 100px;" src="../Css/Images/img.png" />
+                            <span>XXXXX-1</span>
+                        </div>
+                        <div style="float:left; height: 100px; width: 100px; margin: 0px 0px 0px 50px; text-align: center">
+                            <img style="height: 100px;" src="../Css/Images/img.png" />
+                            <span>XXXXX-2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+
+        <div id="processBg"></div>
+        <div id="processBar">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+
+        <div id="processBg_opera"></div>
+        <div id="processBar_opera">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+    </form>
+
+    <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        !window.jQuery && document.write("<script type='text/javascript' src='http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js'><\/script>");
+    </script>-->
+    <script type="text/javascript" src="/BZM/Scripts/BizService/compress/biz-1.0.min.js"></script>
+    <script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-web-1.0.min.js"></script>
+    <!--<script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-web-all.js"></script>-->
+    <!-------------- 页面脚本 ------------------->
+    <!--<script type="text/javascript" src="/bzm/Scripts/bizui/ui-soprint.js"></script>-->
+    <script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-soprint-1.0.min.js"></script>
+    <!--------------------------------->
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿
+#frtimesTag
+{
+    float: right;
+    margin: 0px 10px 0px 0px;
+}
+
+#view_customerTabs .ui-widget-header
+{
+    border: 1px solid #C0C0C0;
+    background: #D7D7D7;
+}
+
+#view_customerTabs .ui-state-default
+{
+    background: #F6F6F6;
+}

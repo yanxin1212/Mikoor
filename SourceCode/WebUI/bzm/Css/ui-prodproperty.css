@@ -1,0 +1,10 @@
+﻿
+#btAddProp, #btSetSkuProp, #btAddPdcProp
+{
+    float: right;    
+}
+
+#propPicList
+{
+    width: 853px; overflow-y: auto; max-height: 300px; min-height: 120px;
+}

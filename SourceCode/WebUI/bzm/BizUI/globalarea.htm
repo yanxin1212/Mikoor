@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="expires" content="Saturday 31 December 2022 23:59 GMT" />
+
+    <!--<link type='text/css' rel='Stylesheet' href='/bzm/css/compress/ui-web-all.css' />-->
+    <link type='text/css' rel='Stylesheet' href='/bzm/css/compress/ui-web-1.0.min.css' />
+    <!-------------- 页面样式 ------------------->
+    <link type="text/css" rel="Stylesheet" href="/BZM/Css/ui-globalarea.css" />
+    <!--------------------------------->
+</head>
+<body>
+    <form id="form" runat="server">
+        <div id="pageWaittingArea" style="text-align: center; margin: 300px 0px 0px 0px;">
+            <div style="font: 12px/1.5 Arial, Helvetica, sans-serif; letter-spacing: 0px;">system loading, please wait!</div>
+            <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+        <div id="pageFrame" style="display: none">
+            <div id="pageHeader">
+                <div id="sysSymbol">
+                    <img src="/bzm/Css/Images/syslogo.png" style="height: 35px" />
+                </div>
+                <div id="userOpera">
+                    <a id="userInfo" href="javascript:void(0)"></a><span id="userInfoDivide">|</span>
+                    <a id="signOut" href="javascript:void(0)"></a><span id="signOutDivide">|</span>
+                    <a id="language" href="javascript:void(0)"></a>
+                </div>
+                <div id="bizMenuBar">
+                    <div id="menuContainer"></div>
+                </div>
+            </div>
+
+            <!-------------- 页面内容 ------------------->
+            <div id="pageContent">
+
+                <!-------------- 详细页面内容 ------------------->
+                <div id="pageTitleTag">
+                    <ul>
+                        <li id="globalareaTag" class="selected" tag="tagGlobalArea">
+                            <div></div>
+                            <span id="lbGlobalAreaTag"></span>
+                            <div class="last"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="pageContentForm">
+                    <div id="tagGlobalArea">
+                        <div class="formToolbar">
+                            <span id="lbGlobalAreaTitle" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btNewGlobalArea" type="button" class="normal-bt separetor" />
+                                <input id="btModifyGlobalArea" type="button" class="normal-bt separetor" />
+                                <input id="btDeleteGlobalArea" type="button" class="normal-bt separetor" />
+                                <input id="btManageInnerArea" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div id="globalAreaFrm" class="mainform" style="border: 1px solid #DFDFDF;">
+                            <div class="importarea-container">
+                                <span class="ui-icon ui-icon-folder-open" style="cursor: pointer; float: left"></span>
+                                <span id="lbImportAreaTitle" style="float: left; margin: 0px 0px 0px 5px"></span>
+                                <span>(</span><span id="lbImportsCount"></span><span>)</span>
+                            </div>
+                            <div class="importarea-content">
+                                <ul id="importantGAreaTable"></ul>
+                            </div>
+                            <div class="importarea-container">
+                                <span class="ui-icon ui-icon-folder-open" style="cursor: pointer; float: left"></span>
+                                <span id="lbAllAreaTitle" style="float: left; margin: 0px 0px 0px 5px"></span>
+                                <span>(</span><span id="lbAllsCount"></span><span>)</span>
+                            </div>
+                            <div id="dvAllGArea" class="allarea-content">
+                                <ul id="globalAreaTable"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerGlobalAreaFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbAreaName" class="title"></span>
+                                <input id="txtAreaName" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                <span class="lb-alert">*</span>
+                                <span id="lbSymbol_1" class="lb-symbol"></span>
+                            </span>
+                            <span>
+                                <span id="lbParentAreaSymbol" class="title"></span>
+                                <input id="txtParentAreaName" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbAreaTypeSymbol" class="title"></span>
+                                <select id="ddlAreaType" class="dropdown-list"></select>
+                            </span>
+                            <span id="dvAreaImport">
+                                <span id="lbIsImportantSymbol" class="title"></span>
+                                <span class="optionContainer"><ul id="chkIsImportant"></ul></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span class="left-cell">
+                                <span id="lbPYSymbol" class="title"></span>
+                                <select id="ddlPY" class="dropdown-list">
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="F">F</option>
+                                    <option value="G">G</option>
+                                    <option value="H">H</option>
+                                    <option value="I">I</option>
+                                    <option value="J">J</option>
+                                    <option value="K">K</option>
+                                    <option value="L">L</option>
+                                    <option value="M">M</option>
+                                    <option value="N">N</option>
+                                    <option value="O">O</option>
+                                    <option value="P">P</option>
+                                    <option value="Q">Q</option>
+                                    <option value="R">R</option>
+                                    <option value="S">S</option>
+                                    <option value="T">T</option>
+                                    <option value="U">U</option>
+                                    <option value="V">V</option>
+                                    <option value="W">W</option>
+                                    <option value="X">X</option>
+                                    <option value="Y">Y</option>
+                                    <option value="Z">Z</option>
+                                </select>
+                            </span>
+                            <span>
+                                <span id="lbGACodeSymbol" class="title"></span>
+                                <input id="txtGACode" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ManageInnerAreaFrm" style="display: none;">
+                    <div id="dvInnerAreaHead" class="formToolbar">
+                        <span id="lbInnerAreaTitle" class="lb-title"></span>
+                        <div class="operaToolBar">
+                            <input id="btNewInnerArea" type="button" class="normal-bt separetor" />
+                            <input id="btModifyInnerArea" type="button" class="normal-bt separetor" />
+                            <input id="btDeleteInnerArea" type="button" class="normal-bt separetor" />
+                        </div>
+                    </div>
+                    <div id="dvInnerArea">
+                        <ul id="innerAreaTable"></ul>
+                    </div>
+                </div>
+
+                <div id="handlerInnerAreaFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span class="left-cell">
+                                <span id="lbInnerAreaNameSymbol" class="title"></span>
+                                <input id="txtInnerAreaName" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                <span class="lb-alert">*</span>
+                                <span id="lbSymbol_2" class="lb-symbol"></span>
+                            </span>
+                            <span>
+                                <span id="lbInnerParentAreaSymbol" class="title"></span>
+                                <input id="txtInnerParentArea" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------->
+
+                <!-------------- 个人信息部分 ------------------->
+                <div id="myInfoFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbUserName_my" class="title"></span>
+                            <span id="viewUserName"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbEmail_my" class="title"></span>
+                            <span id="viewEmail"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbPwd_my" class="title"></span>
+                            <span id="viewPwd">******</span>
+                            <input id="btSendPwd" type="button" class="normal-bt separetor" />
+                            <input id="btModifyPwd" type="button" class="normal-bt separetor" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbTel_my" class="title"></span>
+                            <span id="viewTel"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbContactInfo_my" class="title"></span>
+                            <span id="viewContact" style="display: inline-block"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="handlerPwdFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbOldPwdSymbol" class="title"></span>
+                            <input id="txtOldPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_1" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbNewPwdSymbol" class="title"></span>
+                            <input id="txtNewPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_2" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbConfirmPwdSymbol" class="title"></span>
+                            <input id="txtConfirmPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_3" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="checkSalePlatformFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbCheckSSSymbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------->
+            </div>
+            <!--------------------------------->
+
+            <div id="pageFooter">
+                <span>Copyright&copy;2003-2011  ArkEC, All rights reserved.</span>
+            </div>
+        </div>
+
+        <div id="alertDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="alertInfo"></span>
+            </p>
+        </div>
+
+        <div id="askDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="askInfo"></span>
+            </p>
+        </div>
+
+        <div id="switchLanguageFrm" style="display: none">
+	        <div class="submitForm form-width">
+                <div class="submitForm-tr first-item last-item">
+                    <span id="lbLanguage" class="title"></span> 
+                    <select id="ddlLanguage" class="dropdown-list"></select>
+                </div>
+            </div>
+        </div>
+
+        <div id="processBg"></div>
+        <div id="processBar">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+
+        <div id="processBg_opera"></div>
+        <div id="processBar_opera">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+    </form>
+    
+    <script type="text/javascript" src="/bzm/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/BZM/Scripts/BizService/compress/biz-1.0.min.js"></script>
+    <script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-web-1.0.min.js"></script>
+    <!-------------- 页面脚本 ------------------->
+    <!--<script type="text/javascript" src="/BZM/Scripts/BizUI/ui-globalarea.js"></script>-->
+    <script type="text/javascript" src="/BZM/Scripts/BizUI/compress/ui-globalarea-1.0.min.js"></script>
+    <!--------------------------------->
+</body>
+</html>

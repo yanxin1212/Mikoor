@@ -1,0 +1,4 @@
+﻿body, .text-input, .normal-bt, .dropdown-list, #ddlLanguage, .ui-dialog .ui-dialog-buttonpane button, .simple-text-input, .multitext-input, .text-long-input
+{
+    font: 12px/1.5 Arial, Helvetica, sans-serif;
+}

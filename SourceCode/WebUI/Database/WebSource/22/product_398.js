@@ -1,0 +1,17 @@
+﻿(function (window) {
+     if (!window.mikoor) { window.mikoor = {}; }
+     mikoor.pdc_398 = { Name: "索尼 E3", Product: [
+                                        { ProductId: "3228", PdcId: "398", ProdName: "Painted Leather Case For Sony Xperia E3 - [PLC001]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000516/G516_00002.jpg"},
+                                        { ProductId: "3229", PdcId: "398", ProdName: "Painted Leather Case For Sony Xperia E3 - [PLC002]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000516/G516_00003.jpg"},
+                                        { ProductId: "3230", PdcId: "398", ProdName: "Painted Leather Case For Sony Xperia E3 - [PLC003]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000516/G516_00004.jpg"},
+                                        { ProductId: "3231", PdcId: "398", ProdName: "Painted Leather Case For Sony Xperia E3 - [PLC004]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000516/G516_00005.jpg"},
+                                        { ProductId: "3232", PdcId: "398", ProdName: "Painted Leather Case For Sony Xperia E3 - [PLC005]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000516/G516_00006.jpg"},
+                                        { ProductId: "3233", PdcId: "398", ProdName: "Painted Leather Case For Sony Xperia E3 - [PLC006]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000516/G516_00007.jpg"},
+                                        { ProductId: "3234", PdcId: "398", ProdName: "Painted Leather Case For Sony Xperia E3 - [PLC007]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000516/G516_00008.jpg"},
+                                        { ProductId: "3235", PdcId: "398", ProdName: "Painted Leather Case For Sony Xperia E3 - [PLC008]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000516/G516_00009.jpg"},
+                                        { ProductId: "3236", PdcId: "398", ProdName: "Painted Leather Case For Sony Xperia E3 - [PLC009]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000516/G516_00010.jpg"},
+                                        { ProductId: "3237", PdcId: "398", ProdName: "Painted Leather Case For Sony Xperia E3 - [PLC0010]", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000516/G516_00011.jpg"},
+                                        { ProductId: "4246", PdcId: "398", ProdName: "Frosted Matte Plastic Hard For Sony Xperia E3", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/G00000274/G274_00003.jpg"},
+                                        { ProductId: "4247", PdcId: "398", ProdName: "Leaf Leather Case For Sony Xperia E3", Price: "$0", Currency: "USD", Url: "", MainPic: "http://www.ecdream.com/Database/Product/Electronics/PhoneCase/SONYE3BL01/01/01005.jpg"}
+                                        ] };
+})(window);

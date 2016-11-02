@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Handlers>
+
+  <Assembly TypeAssembly="bin\ArkEC.SEMs.Business.dll" ParamTypeAssembly="bin\ArkEC.SEMs.BizObject.dll" />
+
+  <ActionMapping Key="GetTempUploadFiles" Type="ArkEC.SEMs.Business.SYS.TempUploadFileSerivce" Method="GetTempUploadFiles" />
+  
+  <ActionMapping Key="AuthoriseUserToken" Type="ArkEC.SEMs.Business.UM.SysUserSerivce" Method="AuthoriseUserToken" />
+  <ActionMapping Key="GetSysResponse" Type="ArkEC.SEMs.Business.SPM.SysResponseTaskService" Method="GetSysResponse" />
+
+  <ActionMapping Key="NewSysUser" Type="ArkEC.SEMs.Business.UM.SysUserSerivce" Method="NewSysUser" ParamType="ArkEC.SEMs.BizObject.UM.SysUser" />
+  <ActionMapping Key="ModifySysUser" Type="ArkEC.SEMs.Business.UM.SysUserSerivce" Method="ModifySysUser" />
+  <ActionMapping Key="DeleteSysUser" Type="ArkEC.SEMs.Business.UM.SysUserSerivce" Method="DeleteSysUser" />
+  <ActionMapping Key="ReadSysUser" Type="ArkEC.SEMs.Business.UM.SysUserSerivce" Method="ReadSysUser" />
+  <ActionMapping Key="ModifyPwd" Type="ArkEC.SEMs.Business.UM.SysUserSerivce" Method="ModifyPwd" />
+  <ActionMapping Key="QuerySysUsers" Type="ArkEC.SEMs.Business.UM.SysUserSerivce" Method="QuerySysUsers" />
+  <ActionMapping Key="QueryAllSysRoles" Type="ArkEC.SEMs.Business.UM.SysRoleService" Method="QueryAllSysRoles" />
+  
+  <ActionMapping Key="GetAllSysLanguages" Type="ArkEC.SEMs.Business.MLM.LanResourceService" Method="GetAllSysLanguages" />
+  <ActionMapping Key="GetLanResStat" Type="ArkEC.SEMs.Business.MLM.LanResourceService" Method="GetLanResStat" />
+  <ActionMapping Key="ExportResourceByLRCode" Type="ArkEC.SEMs.Business.MLM.LanResourceService" Method="ExportResourceByLRCode" />
+  <ActionMapping Key="ImportLanResource" Type="ArkEC.SEMs.Business.MLM.LanResourceService" Method="ImportLanResource" />
+  
+  <ActionMapping Key="NewBrandType" Type="ArkEC.SEMs.Business.PDM.BrandTypeSerivce" Method="NewBrandType" ParamType="ArkEC.SEMs.BizObject.PDM.BrandType" />
+  <ActionMapping Key="ModifyBrandType" Type="ArkEC.SEMs.Business.PDM.BrandTypeSerivce" Method="ModifyBrandType" />
+  <ActionMapping Key="DeleteBrandType" Type="ArkEC.SEMs.Business.PDM.BrandTypeSerivce" Method="DeleteBrandType" />
+  <ActionMapping Key="QueryAllBrandType" Type="ArkEC.SEMs.Business.PDM.BrandTypeSerivce" Method="QueryAllBrandType" />
+
+  <ActionMapping Key="NewBrandForFile" Type="ArkEC.SEMs.Business.PDM.BrandSerivce" Method="NewBrandForFile" ParamType="ArkEC.SEMs.BizObject.PDM.Brand" />
+  <ActionMapping Key="NewBrand" Type="ArkEC.SEMs.Business.PDM.BrandSerivce" Method="NewBrand" ParamType="ArkEC.SEMs.BizObject.PDM.Brand" />
+  <ActionMapping Key="ModifyBrandForFile" Type="ArkEC.SEMs.Business.PDM.BrandSerivce" Method="ModifyBrandForFile" />
+  <ActionMapping Key="ModifyBrand" Type="ArkEC.SEMs.Business.PDM.BrandSerivce" Method="ModifyBrand" />
+  <ActionMapping Key="DeleteBrand" Type="ArkEC.SEMs.Business.PDM.BrandSerivce" Method="DeleteBrand" />
+  <ActionMapping Key="QueryAllBrand" Type="ArkEC.SEMs.Business.PDM.BrandSerivce" Method="QueryAllBrand" />
+
+  <ActionMapping Key="NewProdProperty" Type="ArkEC.SEMs.Business.PDM.ProdPropertySerivce" Method="NewProdProperty" ParamType="ArkEC.SEMs.BizObject.PDM.ProdProperty" />
+  <ActionMapping Key="ModifyProdProperty" Type="ArkEC.SEMs.Business.PDM.ProdPropertySerivce" Method="ModifyProdProperty" />
+  <ActionMapping Key="DeleteProdProperty" Type="ArkEC.SEMs.Business.PDM.ProdPropertySerivce" Method="DeleteProdProperty" />
+  <ActionMapping Key="QueryAllProdProperty" Type="ArkEC.SEMs.Business.PDM.ProdPropertySerivce" Method="QueryAllProdProperty" />
+  <ActionMapping Key="ReadProdProperty" Type="ArkEC.SEMs.Business.PDM.ProdPropertySerivce" Method="ReadProdProperty" />
+  <ActionMapping Key="UploadPropPic" Type="ArkEC.SEMs.Business.PDM.ProdPropertySerivce" Method="UploadPropPic" />
+  <ActionMapping Key="QueryPropValueByProd" Type="ArkEC.SEMs.Business.PDM.ProdPropertySerivce" Method="QueryPropValueByProd" />
+
+  <ActionMapping Key="NewProdCategory" Type="ArkEC.SEMs.Business.PDM.ProdCategorySerivce" Method="NewProdCategory" ParamType="ArkEC.SEMs.BizObject.PDM.ProdCategory" />
+  <ActionMapping Key="ModifyProdCategory" Type="ArkEC.SEMs.Business.PDM.ProdCategorySerivce" Method="ModifyProdCategory" />
+  <ActionMapping Key="DeleteProdCategory" Type="ArkEC.SEMs.Business.PDM.ProdCategorySerivce" Method="DeleteProdCategory" />
+  <ActionMapping Key="QueryAllProdCategory" Type="ArkEC.SEMs.Business.PDM.ProdCategorySerivce" Method="QueryAllProdCategory" />
+  <ActionMapping Key="ModifyPdcSeq" Type="ArkEC.SEMs.Business.PDM.ProdCategorySerivce" Method="ModifyPdcSeq" />
+  <ActionMapping Key="ModifyPdcCode" Type="ArkEC.SEMs.Business.PDM.ProdCategorySerivce" Method="ModifyPdcCode" />
+
+  <ActionMapping Key="NewPdcProperty" Type="ArkEC.SEMs.Business.PDM.PdcPropertySerivce" Method="NewPdcProperty" ParamType="ArkEC.SEMs.BizObject.PDM.PdcProperty" />
+  <ActionMapping Key="ModifyPdcProperty" Type="ArkEC.SEMs.Business.PDM.PdcPropertySerivce" Method="ModifyPdcProperty" />
+  <ActionMapping Key="DeletePdcProperty" Type="ArkEC.SEMs.Business.PDM.PdcPropertySerivce" Method="DeletePdcProperty" />
+  <ActionMapping Key="ReadPdcProperty" Type="ArkEC.SEMs.Business.PDM.PdcPropertySerivce" Method="ReadPdcProperty" />
+  <ActionMapping Key="GetPdcProps" Type="ArkEC.SEMs.Business.PDM.PdcPropertySerivce" Method="GetPdcProps" />
+
+  <ActionMapping Key="NewSysCurrency" Type="ArkEC.SEMs.Business.OTHM.SysCurrencySerivce" Method="NewSysCurrency" ParamType="ArkEC.SEMs.BizObject.OTHM.SysCurrency" />
+  <ActionMapping Key="ModifySysCurrency" Type="ArkEC.SEMs.Business.OTHM.SysCurrencySerivce" Method="ModifySysCurrency" />
+  <ActionMapping Key="DeleteSysCurrency" Type="ArkEC.SEMs.Business.OTHM.SysCurrencySerivce" Method="DeleteSysCurrency" />
+  <ActionMapping Key="QueryAllSysCurrency" Type="ArkEC.SEMs.Business.OTHM.SysCurrencySerivce" Method="QueryAllSysCurrency" />
+
+  <ActionMapping Key="SetSysCurrRate" Type="ArkEC.SEMs.Business.OTHM.SysCurrRateSerivce" Method="SetSysCurrRate" ParamType="ArkEC.SEMs.BizObject.OTHM.SysCurrRate" />
+  <ActionMapping Key="QuerySysCurrRate" Type="ArkEC.SEMs.Business.OTHM.SysCurrRateSerivce" Method="QuerySysCurrRate" />
+  <ActionMapping Key="QuerySysCurrBRate" Type="ArkEC.SEMs.Business.OTHM.SysCurrRateSerivce" Method="QuerySysCurrBRate" />
+  <ActionMapping Key="ReadRate" Type="ArkEC.SEMs.Business.OTHM.SysCurrRateSerivce" Method="ReadRate" />
+
+  <ActionMapping Key="ModifySysKeyParam" Type="ArkEC.SEMs.Business.SPM.SysKeyParamSerivce" Method="ModifySysKeyParam" />
+  <ActionMapping Key="ReadSysKeyParam" Type="ArkEC.SEMs.Business.SPM.SysKeyParamSerivce" Method="ReadSysKeyParam" />
+  <ActionMapping Key="GetSettingLanguages" Type="ArkEC.SEMs.Business.SPM.SysKeyParamSerivce" Method="GetSettingLanguages" />
+  <ActionMapping Key="GetWeightUnits" Type="ArkEC.SEMs.Business.SPM.SysKeyParamSerivce" Method="GetWeightUnits" />
+  <ActionMapping Key="GetWeightRate" Type="ArkEC.SEMs.Business.SPM.SysKeyParamSerivce" Method="GetWeightRate" />
+  <ActionMapping Key="GetAllPrintTemplate" Type="ArkEC.SEMs.Business.SPM.SysKeyParamSerivce" Method="GetAllPrintTemplate" />
+
+  <ActionMapping Key="NewProduct" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="NewProduct" ParamType="ArkEC.SEMs.BizObject.PDM.Product" />
+  <ActionMapping Key="ModifyProduct" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="ModifyProduct" />
+  <ActionMapping Key="DeleteProduct" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="DeleteProduct" />
+  <ActionMapping Key="ReadProduct" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="ReadProduct" />
+  <ActionMapping Key="ReadProductWithQuotedPrice" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="ReadProductWithQuotedPrice" />
+  <ActionMapping Key="QueryProducts" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="QueryProducts" />
+  <ActionMapping Key="QueryProdSaleStat" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="QueryProdSaleStat" />
+  <ActionMapping Key="UploadProdPicFile" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="UploadProdPicFile" />
+  <ActionMapping Key="AddProdPicFile" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="AddProdPicFile" />
+  <ActionMapping Key="ClearProdPics" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="ClearProdPics" />
+  <ActionMapping Key="DeleteProdPic" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="DeleteProdPic" />
+  <ActionMapping Key="ModifyProdPic" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="ModifyProdPic" />
+  <ActionMapping Key="GetProdPics" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="GetProdPics" />
+  <ActionMapping Key="GetProdSeqCount" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="GetProdSeqCount" />
+  <ActionMapping Key="ExportProducts" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="ExportProducts" />
+  <ActionMapping Key="ImportProducts" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="ImportProducts" />
+  <ActionMapping Key="GetSkuProducts" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="GetSkuProducts" />
+  <ActionMapping Key="ExportProductSeq" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="ExportProductSeq" />
+  <ActionMapping Key="ImportProductSeq" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="ImportProductSeq" />
+  <ActionMapping Key="ExportProductPicture" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="ExportProductPicture" />
+  <ActionMapping Key="CovertStandProdPics" Type="ArkEC.SEMs.Business.PDM.ProductService" Method="CovertStandProdPics" />
+
+  <ActionMapping Key="ModifyTempUploadPic" Type="ArkEC.SEMs.Business.PDM.TempUploadPicSerivce" Method="ModifyTempUploadPic" />
+  <ActionMapping Key="DeleteTempUploadPic" Type="ArkEC.SEMs.Business.PDM.TempUploadPicSerivce" Method="DeleteTempUploadPic" />
+  <ActionMapping Key="ClearTempUploadPic" Type="ArkEC.SEMs.Business.PDM.TempUploadPicSerivce" Method="ClearTempUploadPic" />
+  <ActionMapping Key="GetTempUploadPics" Type="ArkEC.SEMs.Business.PDM.TempUploadPicSerivce" Method="GetTempUploadPics" />
+
+  <ActionMapping Key="NewSalePlatform" Type="ArkEC.SEMs.Business.SM.SalePlatformSerivce" Method="NewSalePlatform" ParamType="ArkEC.SEMs.BizObject.SM.SalePlatform" />
+  <ActionMapping Key="ModifySalePlatform" Type="ArkEC.SEMs.Business.SM.SalePlatformSerivce" Method="ModifySalePlatform" />
+  <ActionMapping Key="DeleteSalePlatform" Type="ArkEC.SEMs.Business.SM.SalePlatformSerivce" Method="DeleteSalePlatform" />
+  <ActionMapping Key="ReadSalePlatform" Type="ArkEC.SEMs.Business.SM.SalePlatformSerivce" Method="ReadSalePlatform" />
+  <ActionMapping Key="QueryAvaiSaleSites" Type="ArkEC.SEMs.Business.SM.SalePlatformSerivce" Method="QueryAvaiSaleSites" />
+  <ActionMapping Key="QuerySalePlatforms" Type="ArkEC.SEMs.Business.SM.SalePlatformSerivce" Method="QuerySalePlatforms" />
+  <ActionMapping Key="PublishSaleSite" Type="ArkEC.SEMs.Business.SM.SalePlatformSerivce" Method="PublishSaleSite" />
+
+  <ActionMapping Key="NewSaleSite" Type="ArkEC.SEMs.Business.SM.SaleSiteSerivce" Method="NewSaleSite" ParamType="ArkEC.SEMs.BizObject.SM.SaleSite" />
+  <ActionMapping Key="ModifySaleSite" Type="ArkEC.SEMs.Business.SM.SaleSiteSerivce" Method="ModifySaleSite" />
+  <ActionMapping Key="DeleteSaleSite" Type="ArkEC.SEMs.Business.SM.SaleSiteSerivce" Method="DeleteSaleSite" />
+  
+  <ActionMapping Key="UploadSSProdPic" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="UploadSSProdPic" />
+  <ActionMapping Key="NewSS_Product" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="NewSS_Product" ParamType="ArkEC.SEMs.BizObject.SM.SS_Product" />
+  <ActionMapping Key="ModifySS_Product" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ModifySS_Product" />
+  <ActionMapping Key="QuerySSProductByInnerProd" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="QuerySSProductByInnerProd" />
+  <ActionMapping Key="QuerySSProducts" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="QuerySSProducts" />
+  <ActionMapping Key="ReadSS_Product" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ReadSS_Product" />
+  <ActionMapping Key="ReadSSProductWithMainPic" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ReadSSProductWithMainPic" />
+  <ActionMapping Key="DeleteSS_Product" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="DeleteSS_Product" />
+  <ActionMapping Key="ModifySSProdPic" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ModifySSProdPic" />
+  <ActionMapping Key="ExportProductExpServices" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ExportProductExpServices" />
+  <ActionMapping Key="ImportProductExpServices" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ImportProductExpServices" />
+  <ActionMapping Key="ExportSSProducts" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ExportSSProducts" />
+  <ActionMapping Key="ExportSSProductSeq" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ExportSSProductSeq" />
+  <ActionMapping Key="ExportWishProduct" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ExportWishProduct" />
+  <ActionMapping Key="ImportSSProductSeq" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ImportSSProductSeq" />
+  <ActionMapping Key="ImportSSProducts" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ImportSSProducts" />
+  <ActionMapping Key="ExportProductProfit" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ExportProductProfit" />
+  <ActionMapping Key="QueryProdProfit" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="QueryProdProfit" />
+  <ActionMapping Key="QuerySSProdSaleStat" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="QuerySSProdSaleStat" />
+  <ActionMapping Key="RefreshProdProfit" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="RefreshProdProfit" />
+  <ActionMapping Key="SyncSSProducts" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="SyncSSProducts" />
+  <ActionMapping Key="ImportSSProductByPicture" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ImportSSProductByPicture" />
+  <ActionMapping Key="GetSMTGroupAndProperty" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="GetSMTGroupAndProperty" />
+  <ActionMapping Key="SyncSMTProductList" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="SyncSMTProductList" />
+  <ActionMapping Key="GenerateSSProdRemark" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="GenerateSSProdRemark" />
+  <ActionMapping Key="ReadSSProductRemark" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ReadSSProductRemark" />
+  <ActionMapping Key="ReadSSProductPic" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="ReadSSProductPic" />
+  <ActionMapping Key="PublishSMTProduct" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="PublishSMTProduct" />
+  <ActionMapping Key="BatchPublishSMTProduct" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="BatchPublishSMTProduct" />
+  <ActionMapping Key="CheckSMTProductProhibitedWords" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="CheckSMTProductProhibitedWords" />
+  <ActionMapping Key="CheckProhibitedWords" Type="ArkEC.SEMs.Business.SM.SS_ProductSerivce" Method="CheckProhibitedWords" />
+
+  <ActionMapping Key="NewCustomerGroup" Type="ArkEC.SEMs.Business.CM.CustomerGroupSerivce" Method="NewCustomerGroup" ParamType="ArkEC.SEMs.BizObject.CM.CustomerGroup" />
+  <ActionMapping Key="ModifyCustomerGroup" Type="ArkEC.SEMs.Business.CM.CustomerGroupSerivce" Method="ModifyCustomerGroup" />
+  <ActionMapping Key="DeleteCustomerGroup" Type="ArkEC.SEMs.Business.CM.CustomerGroupSerivce" Method="DeleteCustomerGroup" />
+  <ActionMapping Key="ReadCustomerGroup" Type="ArkEC.SEMs.Business.CM.CustomerGroupSerivce" Method="ReadCustomerGroup" />
+  <ActionMapping Key="QueryCustomerGroups" Type="ArkEC.SEMs.Business.CM.CustomerGroupSerivce" Method="QueryCustomerGroups" />
+
+  <ActionMapping Key="NewCustomer" Type="ArkEC.SEMs.Business.CM.CustomerSerivce" Method="NewCustomer" ParamType="ArkEC.SEMs.BizObject.CM.Customer" />
+  <ActionMapping Key="ModifyCustomer" Type="ArkEC.SEMs.Business.CM.CustomerSerivce" Method="ModifyCustomer" />
+  <ActionMapping Key="DeleteCustomer" Type="ArkEC.SEMs.Business.CM.CustomerSerivce" Method="DeleteCustomer" />
+  <ActionMapping Key="ReadCustomer" Type="ArkEC.SEMs.Business.CM.CustomerSerivce" Method="ReadCustomer" />
+  <ActionMapping Key="QueryCustomers" Type="ArkEC.SEMs.Business.CM.CustomerSerivce" Method="QueryCustomers" />
+  <ActionMapping Key="MKSignIn" Type="ArkEC.SEMs.Business.CM.CustomerSerivce" Method="MKSignIn" />
+  <ActionMapping Key="MKGetCustInfo" Type="ArkEC.SEMs.Business.CM.CustomerSerivce" Method="MKGetCustInfo" />
+  <ActionMapping Key="MKChangePwd" Type="ArkEC.SEMs.Business.CM.CustomerSerivce" Method="MKChangePwd" />
+  <ActionMapping Key="MKRefreshCustSource" Type="ArkEC.SEMs.Business.CM.CustomerSerivce" Method="MKRefreshCustSource" />
+  <ActionMapping Key="MKForgetPassword" Type="ArkEC.SEMs.Business.CM.CustomerSerivce" Method="MKForgetPassword" />
+  <ActionMapping Key="MKChangePwdBySelf" Type="ArkEC.SEMs.Business.CM.CustomerSerivce" Method="MKChangePwdBySelf" />
+
+  <ActionMapping Key="NewGlobalArea" Type="ArkEC.SEMs.Business.OTHM.GlobalAreaSerivce" Method="NewGlobalArea" ParamType="ArkEC.SEMs.BizObject.OTHM.GlobalArea" />
+  <ActionMapping Key="ModifyGlobalArea" Type="ArkEC.SEMs.Business.OTHM.GlobalAreaSerivce" Method="ModifyGlobalArea" />
+  <ActionMapping Key="DeleteGlobalArea" Type="ArkEC.SEMs.Business.OTHM.GlobalAreaSerivce" Method="DeleteGlobalArea" />
+  <ActionMapping Key="QueryAllGlobalArea" Type="ArkEC.SEMs.Business.OTHM.GlobalAreaSerivce" Method="QueryAllGlobalArea" />
+  <ActionMapping Key="QueryCountries" Type="ArkEC.SEMs.Business.OTHM.GlobalAreaSerivce" Method="QueryCountries" />
+  <ActionMapping Key="QueryGlobalAreaByCountries" Type="ArkEC.SEMs.Business.OTHM.GlobalAreaSerivce" Method="QueryGlobalAreaByCountries" />
+  <ActionMapping Key="QueryRegionAndCountries" Type="ArkEC.SEMs.Business.OTHM.GlobalAreaSerivce" Method="QueryRegionAndCountries" />
+  <ActionMapping Key="QueryCountryAndInnerRegion" Type="ArkEC.SEMs.Business.OTHM.GlobalAreaSerivce" Method="QueryCountryAndInnerRegion" />
+  <ActionMapping Key="QueryRegions" Type="ArkEC.SEMs.Business.OTHM.GlobalAreaSerivce" Method="QueryRegions" />
+  <ActionMapping Key="QueryGlobalAreaBySaleSite" Type="ArkEC.SEMs.Business.OTHM.GlobalAreaSerivce" Method="QueryGlobalAreaBySaleSite" />
+
+  <ActionMapping Key="NewExpressService" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="NewExpressService" ParamType="ArkEC.SEMs.BizObject.SM.ExpressService" />
+  <ActionMapping Key="ModifyExpressService" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="ModifyExpressService" />
+  <ActionMapping Key="DeleteExpressService" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="DeleteExpressService" />
+  <ActionMapping Key="ReadExpressService" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="ReadExpressService" />
+  <ActionMapping Key="QueryExpressService" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="QueryExpressService" />
+  <ActionMapping Key="QueryExpressServiceForSSProd" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="QueryExpressServiceForSSProd" />
+  <ActionMapping Key="QueryAreaExpressService" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="QueryAreaExpressService" />
+  <ActionMapping Key="ExportAnalyFixExpress" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="ExportAnalyFixExpress" />
+  <ActionMapping Key="ExportAnalyExpress" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="ExportAnalyExpress" />
+  <ActionMapping Key="GetCalFixExpress" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="GetCalFixExpress" />
+  <ActionMapping Key="ExportExpServices" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="ExportExpServices" />
+  <ActionMapping Key="ImportExpServices" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="ImportExpServices" />
+  <ActionMapping Key="QueryExpServiceCountByArea" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="QueryExpServiceCountByArea" />
+  <ActionMapping Key="GetExpServicePrice" Type="ArkEC.SEMs.Business.SM.ExpressServiceSerivce" Method="GetExpServicePrice" />
+
+  <ActionMapping Key="NewSalePdcNavigation" Type="ArkEC.SEMs.Business.SM.SalePdcNavigationSerivce" Method="NewSalePdcNavigation" ParamType="ArkEC.SEMs.BizObject.SM.SalePdcNavigation" />
+  <ActionMapping Key="ModifySalePdcNavigation" Type="ArkEC.SEMs.Business.SM.SalePdcNavigationSerivce" Method="ModifySalePdcNavigation" />
+  <ActionMapping Key="DeleteSalePdcNavigation" Type="ArkEC.SEMs.Business.SM.SalePdcNavigationSerivce" Method="DeleteSalePdcNavigation" />
+  <ActionMapping Key="ModifyPdcNavSeq" Type="ArkEC.SEMs.Business.SM.SalePdcNavigationSerivce" Method="ModifyPdcNavSeq" />
+  <ActionMapping Key="QuerySalePdcNav" Type="ArkEC.SEMs.Business.SM.SalePdcNavigationSerivce" Method="QuerySalePdcNav" />
+
+  <ActionMapping Key="NewFundAccount" Type="ArkEC.SEMs.Business.FM.FundAccountSerivce" Method="NewFundAccount" ParamType="ArkEC.SEMs.BizObject.FM.FundAccount" />
+  <ActionMapping Key="ModifyFundAccount" Type="ArkEC.SEMs.Business.FM.FundAccountSerivce" Method="ModifyFundAccount" />
+  <ActionMapping Key="DeleteFundAccount" Type="ArkEC.SEMs.Business.FM.FundAccountSerivce" Method="DeleteFundAccount" />
+  <ActionMapping Key="QueryAllFundAccount" Type="ArkEC.SEMs.Business.FM.FundAccountSerivce" Method="QueryAllFundAccount" />
+
+  <ActionMapping Key="NewCostSubject" Type="ArkEC.SEMs.Business.FM.CostSubjectSerivce" Method="NewCostSubject" ParamType="ArkEC.SEMs.BizObject.FM.CostSubject" />
+  <ActionMapping Key="ModifyCostSubject" Type="ArkEC.SEMs.Business.FM.CostSubjectSerivce" Method="ModifyCostSubject" />
+  <ActionMapping Key="DeleteCostSubject" Type="ArkEC.SEMs.Business.FM.CostSubjectSerivce" Method="DeleteCostSubject" />
+  <ActionMapping Key="ModifyCostSubjectSeq" Type="ArkEC.SEMs.Business.FM.CostSubjectSerivce" Method="ModifyCostSubjectSeq" />
+  <ActionMapping Key="QueryAllCostSubject" Type="ArkEC.SEMs.Business.FM.CostSubjectSerivce" Method="QueryAllCostSubject" />
+  
+  <ActionMapping Key="GetAvailableAccount" Type="ArkEC.SEMs.Business.FM.AccountFundSerivce" Method="GetAvailableAccount" />
+  <ActionMapping Key="QueryAllAccountFundTable" Type="ArkEC.SEMs.Business.FM.AccountFundSerivce" Method="QueryAllAccountFundTable" />
+  <ActionMapping Key="QueryAvaiAccountFundTable" Type="ArkEC.SEMs.Business.FM.AccountFundSerivce" Method="QueryAvaiAccountFundTable" />
+  <ActionMapping Key="GetAllAccount" Type="ArkEC.SEMs.Business.FM.AccountFundSerivce" Method="GetAllAccount" />
+  <ActionMapping Key="QueryTotalFund" Type="ArkEC.SEMs.Business.FM.AccountFundSerivce" Method="QueryTotalFund" />
+
+  <ActionMapping Key="HandlerAccountOutRecord" Type="ArkEC.SEMs.Business.FM.AccountOutRecordSerivce" Method="HandlerAccountOutRecord" />
+  <ActionMapping Key="CancelAccountOutRecord" Type="ArkEC.SEMs.Business.FM.AccountOutRecordSerivce" Method="CancelAccountOutRecord" />
+  <ActionMapping Key="AbortAccountOutRecord" Type="ArkEC.SEMs.Business.FM.AccountOutRecordSerivce" Method="AbortAccountOutRecord" />
+  <ActionMapping Key="BatchCancelAOR" Type="ArkEC.SEMs.Business.FM.AccountOutRecordSerivce" Method="BatchCancelAOR" />
+  <ActionMapping Key="GetWaitingPaid" Type="ArkEC.SEMs.Business.FM.AccountOutRecordSerivce" Method="GetWaitingPaid"/>
+  <ActionMapping Key="QueryAccountOutRecord" Type="ArkEC.SEMs.Business.FM.AccountOutRecordSerivce" Method="QueryAccountOutRecord" />
+  <ActionMapping Key="ReadAccountOutRecord" Type="ArkEC.SEMs.Business.FM.AccountOutRecordSerivce" Method="ReadAccountOutRecord" />
+  <ActionMapping Key="ExportAccoutOutRecord" Type="ArkEC.SEMs.Business.FM.AccountOutRecordSerivce" Method="ExportAccoutOutRecord" />
+  <ActionMapping Key="ImportPayBill" Type="ArkEC.SEMs.Business.FM.AccountOutRecordSerivce" Method="ImportPayBill" />
+
+  <ActionMapping Key="HandlerAccountInRecord" Type="ArkEC.SEMs.Business.FM.AccountInRecordSerivce" Method="HandlerAccountInRecord" />
+  <ActionMapping Key="CancelAccountInRecord" Type="ArkEC.SEMs.Business.FM.AccountInRecordSerivce" Method="CancelAccountInRecord" />
+  <ActionMapping Key="GetWaitingReceive" Type="ArkEC.SEMs.Business.FM.AccountInRecordSerivce" Method="GetWaitingReceive" />
+  <ActionMapping Key="QueryAccountInRecord" Type="ArkEC.SEMs.Business.FM.AccountInRecordSerivce" Method="QueryAccountInRecord" />
+  <ActionMapping Key="ReadAccountInRecord" Type="ArkEC.SEMs.Business.FM.AccountInRecordSerivce" Method="ReadAccountInRecord" />
+  <ActionMapping Key="ExportAccoutInRecord" Type="ArkEC.SEMs.Business.FM.AccountInRecordSerivce" Method="ExportAccoutInRecord" />
+  <ActionMapping Key="ImportAIFromPaypal" Type="ArkEC.SEMs.Business.FM.AccountInRecordSerivce" Method="ImportAIFromPaypal" />
+  <ActionMapping Key="ImportAIFromAliExpress" Type="ArkEC.SEMs.Business.FM.AccountInRecordSerivce" Method="ImportAIFromAliExpress" />
+  <ActionMapping Key="ImportAIFromTaobao" Type="ArkEC.SEMs.Business.FM.AccountInRecordSerivce" Method="ImportAIFromTaobao" />
+  <ActionMapping Key="ImportReceiveBill" Type="ArkEC.SEMs.Business.FM.AccountInRecordSerivce" Method="ImportReceiveBill" />
+  <ActionMapping Key="BatchCancelAIR" Type="ArkEC.SEMs.Business.FM.AccountInRecordSerivce" Method="BatchCancelAIR" />
+  <ActionMapping Key="AbortAccountInRecord" Type="ArkEC.SEMs.Business.FM.AccountInRecordSerivce" Method="AbortAccountInRecord" />
+  
+  <ActionMapping Key="QueryFundFlowRecord" Type="ArkEC.SEMs.Business.FM.FundFlowRecordSerivce" Method="QueryFundFlowRecord" />
+  <ActionMapping Key="ExportFundFlowRecord" Type="ArkEC.SEMs.Business.FM.FundFlowRecordSerivce" Method="ExportFundFlowRecord" />
+  <ActionMapping Key="GetPayFundFlowRecords" Type="ArkEC.SEMs.Business.FM.FundFlowRecordSerivce" Method="GetPayFundFlowRecords" />
+
+  <ActionMapping Key="QueryTotalOperateReport" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="QueryTotalOperateReport" />
+  <ActionMapping Key="GetFRTimes" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetFRTimes" />
+  <ActionMapping Key="GetTotalFundsByTime" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetTotalFundsByTime" />
+  <ActionMapping Key="QuerySaleSitesInFinance" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="QuerySaleSitesInFinance" />
+  <ActionMapping Key="GetTotalBalanceByTime" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetTotalBalanceByTime" />
+  <ActionMapping Key="GetTotalPayBillByTime" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetTotalPayBillByTime" />
+  <ActionMapping Key="GetLastTotalPayBillByTime" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetLastTotalPayBillByTime" />
+  <ActionMapping Key="GetTotalReceiveBillByTime" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetTotalReceiveBillByTime" />
+  <ActionMapping Key="GetLastTotalRvBillByTime" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetLastTotalRvBillByTime" />
+  <ActionMapping Key="GetTotalPayAccountByTime" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetTotalPayAccountByTime" />
+  <ActionMapping Key="GetTotalReceiveAccountByTime" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetTotalReceiveAccountByTime" />
+  <ActionMapping Key="GetWaitPayByTime" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetWaitPayByTime" />
+  <ActionMapping Key="GetWaitReceiveByTime" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetWaitReceiveByTime" />
+  <ActionMapping Key="GetFundFlowByTime" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetFundFlowByTime" />
+  <ActionMapping Key="GetWaitFundTransferInByTime" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="GetWaitFundTransferInByTime" />
+  <ActionMapping Key="ExportFinanceReport" Type="ArkEC.SEMs.Business.FM.FinanceReport" Method="ExportFinanceReport" />
+
+  <ActionMapping Key="NewFundTransferRecord" Type="ArkEC.SEMs.Business.FM.FundTransferRecordSerivce" Method="NewFundTransferRecord" ParamType="ArkEC.SEMs.BizObject.FM.FundTransferRecord"  />
+  <ActionMapping Key="QueryFundTransferRecord" Type="ArkEC.SEMs.Business.FM.FundTransferRecordSerivce" Method="QueryFundTransferRecord" />
+  <ActionMapping Key="ExportFundTransferRecord" Type="ArkEC.SEMs.Business.FM.FundTransferRecordSerivce" Method="ExportFundTransferRecord" />
+  <ActionMapping Key="OverFundTransfer" Type="ArkEC.SEMs.Business.FM.FundTransferRecordSerivce" Method="OverFundTransfer" />
+  <ActionMapping Key="DeleteFundTransferRecord" Type="ArkEC.SEMs.Business.FM.FundTransferRecordSerivce" Method="DeleteFundTransferRecord" />
+
+  <ActionMapping Key="NewLstCompany" Type="ArkEC.SEMs.Business.LSTM.LstCompanySerivce" Method="NewLstCompany" ParamType="ArkEC.SEMs.BizObject.LSTM.LstCompany" />
+  <ActionMapping Key="ModifyLstCompany" Type="ArkEC.SEMs.Business.LSTM.LstCompanySerivce" Method="ModifyLstCompany" />
+  <ActionMapping Key="DeleteLstCompany" Type="ArkEC.SEMs.Business.LSTM.LstCompanySerivce" Method="DeleteLstCompany" />
+  <ActionMapping Key="QueryAllLstCompany" Type="ArkEC.SEMs.Business.LSTM.LstCompanySerivce" Method="QueryAllLstCompany" />
+
+  <ActionMapping Key="NewLstSolution" Type="ArkEC.SEMs.Business.LSTM.LstSolutionSerivce" Method="NewLstSolution" ParamType="ArkEC.SEMs.BizObject.LSTM.LstSolution" />
+  <ActionMapping Key="ModifyLstSolution" Type="ArkEC.SEMs.Business.LSTM.LstSolutionSerivce" Method="ModifyLstSolution" />
+  <ActionMapping Key="DeleteLstSolution" Type="ArkEC.SEMs.Business.LSTM.LstSolutionSerivce" Method="DeleteLstSolution" />
+  <ActionMapping Key="ReadLstSolution" Type="ArkEC.SEMs.Business.LSTM.LstSolutionSerivce" Method="ReadLstSolution" />
+  <ActionMapping Key="ReadLstSolutionItem" Type="ArkEC.SEMs.Business.LSTM.LstSolutionSerivce" Method="ReadLstSolutionItem" />
+  <ActionMapping Key="QueryLstSolution" Type="ArkEC.SEMs.Business.LSTM.LstSolutionSerivce" Method="QueryLstSolution" />
+  <ActionMapping Key="QueryLstCharge" Type="ArkEC.SEMs.Business.LSTM.LstSolutionSerivce" Method="QueryLstCharge" />
+  <ActionMapping Key="GetLstSolutionItems" Type="ArkEC.SEMs.Business.LSTM.LstSolutionSerivce" Method="GetLstSolutionItems" />
+  <ActionMapping Key="ExportLstSolutionPrice" Type="ArkEC.SEMs.Business.LSTM.LstSolutionSerivce" Method="ExportLstSolutionPrice" />
+  <ActionMapping Key="ImportLstSolutionPrice" Type="ArkEC.SEMs.Business.LSTM.LstSolutionSerivce" Method="ImportLstSolutionPrice" />
+  <ActionMapping Key="ExportLstCharges" Type="ArkEC.SEMs.Business.LSTM.LstSolutionSerivce" Method="ExportLstCharges" />
+  <ActionMapping Key="QueryOptimalLstSolution" Type="ArkEC.SEMs.Business.LSTM.LstSolutionSerivce" Method="QueryOptimalLstSolution" />
+  <ActionMapping Key="NewLstSolutionItem" Type="ArkEC.SEMs.Business.LSTM.LstSolutionItemSerivce" Method="NewLstSolutionItem" ParamType="ArkEC.SEMs.BizObject.LSTM.LstSolutionItem" />
+  <ActionMapping Key="ModifyLstSolutionItem" Type="ArkEC.SEMs.Business.LSTM.LstSolutionItemSerivce" Method="ModifyLstSolutionItem" />
+  <ActionMapping Key="DeleteLstSolutionItem" Type="ArkEC.SEMs.Business.LSTM.LstSolutionItemSerivce" Method="DeleteLstSolutionItem" />
+
+  <ActionMapping Key="NewCountryTax" Type="ArkEC.SEMs.Business.LSTM.CountryTaxSerivce" Method="NewCountryTax" ParamType="ArkEC.SEMs.BizObject.LSTM.CountryTax" />
+  <ActionMapping Key="ModifyCountryTax" Type="ArkEC.SEMs.Business.LSTM.CountryTaxSerivce" Method="ModifyCountryTax" />
+  <ActionMapping Key="QueryAllCountryTax" Type="ArkEC.SEMs.Business.LSTM.CountryTaxSerivce" Method="QueryAllCountryTax" />
+
+  <ActionMapping Key="NewSupplier" Type="ArkEC.SEMs.Business.POM.SupplierSerivce" Method="NewSupplier" ParamType="ArkEC.SEMs.BizObject.POM.Supplier" />
+  <ActionMapping Key="ModifySupplier" Type="ArkEC.SEMs.Business.POM.SupplierSerivce" Method="ModifySupplier" />
+  <ActionMapping Key="DeleteSupplier" Type="ArkEC.SEMs.Business.POM.SupplierSerivce" Method="DeleteSupplier" />
+  <ActionMapping Key="ReadSupplier" Type="ArkEC.SEMs.Business.POM.SupplierSerivce" Method="ReadSupplier" />
+  <ActionMapping Key="QuerySuppliers" Type="ArkEC.SEMs.Business.POM.SupplierSerivce" Method="QuerySuppliers" />
+  <ActionMapping Key="ExportSuppliers" Type="ArkEC.SEMs.Business.POM.SupplierSerivce" Method="ExportSuppliers" />
+  <ActionMapping Key="ImportSuppSeqs" Type="ArkEC.SEMs.Business.POM.SupplierSerivce" Method="ImportSuppSeqs" />
+  <ActionMapping Key="QueryQuotedSupplier" Type="ArkEC.SEMs.Business.POM.SupplierSerivce" Method="QueryQuotedSupplier" />
+  <ActionMapping Key="NewSupplierLinker" Type="ArkEC.SEMs.Business.POM.SupplierLinkerSerivce" Method="NewSupplierLinker" ParamType="ArkEC.SEMs.BizObject.POM.SupplierLinker" />
+  <ActionMapping Key="ModifySupplierLinker" Type="ArkEC.SEMs.Business.POM.SupplierLinkerSerivce" Method="ModifySupplierLinker" />
+  <ActionMapping Key="DeleteSupplierLinker" Type="ArkEC.SEMs.Business.POM.SupplierLinkerSerivce" Method="DeleteSupplierLinker" />
+
+  <ActionMapping Key="NewPurchasePrice" Type="ArkEC.SEMs.Business.POM.PurchasePriceSerivce" Method="NewPurchasePrice" ParamType="ArkEC.SEMs.BizObject.POM.PurchasePrice" />
+  <ActionMapping Key="ModifyPurchasePrice" Type="ArkEC.SEMs.Business.POM.PurchasePriceSerivce" Method="ModifyPurchasePrice" />
+  <ActionMapping Key="DeletePurchasePrice" Type="ArkEC.SEMs.Business.POM.PurchasePriceSerivce" Method="DeletePurchasePrice" />
+  <ActionMapping Key="QuerySkuQuotedPrices" Type="ArkEC.SEMs.Business.POM.PurchasePriceSerivce" Method="QuerySkuQuotedPrices" />
+  <ActionMapping Key="ExportPurchasePrices" Type="ArkEC.SEMs.Business.POM.PurchasePriceSerivce" Method="ExportPurchasePrices" />
+  <ActionMapping Key="ImportPurchasePrice" Type="ArkEC.SEMs.Business.POM.PurchasePriceSerivce" Method="ImportPurchasePrice" />
+  <ActionMapping Key="QueryUnQuotedProduct" Type="ArkEC.SEMs.Business.POM.PurchasePriceSerivce" Method="QueryUnQuotedProduct" />
+  <ActionMapping Key="QueryQuotedProduct" Type="ArkEC.SEMs.Business.POM.PurchasePriceSerivce" Method="QueryQuotedProduct" />
+  <ActionMapping Key="GetSuppQuotedPrices" Type="ArkEC.SEMs.Business.POM.PurchasePriceSerivce" Method="GetSuppQuotedPrices" />
+
+  <ActionMapping Key="NewWarehouse" Type="ArkEC.SEMs.Business.WHM.WarehouseSerivce" Method="NewWarehouse" ParamType="ArkEC.SEMs.BizObject.WHM.Warehouse" />
+  <ActionMapping Key="ModifyWarehouse" Type="ArkEC.SEMs.Business.WHM.WarehouseSerivce" Method="ModifyWarehouse" />
+  <ActionMapping Key="DeleteWarehouse" Type="ArkEC.SEMs.Business.WHM.WarehouseSerivce" Method="DeleteWarehouse" />
+  <ActionMapping Key="QueryAllWarehouse" Type="ArkEC.SEMs.Business.WHM.WarehouseSerivce" Method="QueryAllWarehouse" />
+  <ActionMapping Key="ModifyWarehouseSeq" Type="ArkEC.SEMs.Business.WHM.WarehouseSerivce" Method="ModifyWarehouseSeq" />
+
+  <ActionMapping Key="HandlerInOutStock" Type="ArkEC.SEMs.Business.WHM.InOutStockSerivce" Method="HandlerInOutStock" ParamType="ArkEC.SEMs.BizObject.WHM.InOutStock" />
+  <ActionMapping Key="DeleteInOutStock" Type="ArkEC.SEMs.Business.WHM.InOutStockSerivce" Method="DeleteInOutStock" />
+  <ActionMapping Key="ReadInOutStock" Type="ArkEC.SEMs.Business.WHM.InOutStockSerivce" Method="ReadInOutStock" />
+  <ActionMapping Key="QueryInOutStock" Type="ArkEC.SEMs.Business.WHM.InOutStockSerivce" Method="QueryInOutStock" />
+  <ActionMapping Key="ExportInOutStock" Type="ArkEC.SEMs.Business.WHM.InOutStockSerivce" Method="ExportInOutStock" />
+
+  <ActionMapping Key="QueryInventory" Type="ArkEC.SEMs.Business.WHM.InventorySerivce" Method="QueryInventory" />
+  <ActionMapping Key="QueryProdInventory" Type="ArkEC.SEMs.Business.WHM.InventorySerivce" Method="QueryProdInventory" />
+  <ActionMapping Key="ExportInventory" Type="ArkEC.SEMs.Business.WHM.InventorySerivce" Method="ExportInventory" />
+  <ActionMapping Key="ImportInitInventory" Type="ArkEC.SEMs.Business.WHM.InventorySerivce" Method="ImportInitInventory" />
+  <ActionMapping Key="QueryInventoryMoneyStat" Type="ArkEC.SEMs.Business.WHM.InventorySerivce" Method="QueryInventoryMoneyStat" />
+  <ActionMapping Key="ExportInventoryMoneyStat" Type="ArkEC.SEMs.Business.WHM.InventorySerivce" Method="ExportInventoryMoneyStat" />
+
+  <ActionMapping Key="NewSaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="NewSaleOrder" ParamType="ArkEC.SEMs.BizObject.SM.SaleOrder"  />
+  <ActionMapping Key="ModifySaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ModifySaleOrder"  />
+  <ActionMapping Key="DeleteSaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="DeleteSaleOrder"  />
+  <ActionMapping Key="QuerySaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="QuerySaleOrder"  />
+  <ActionMapping Key="ReadSaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ReadSaleOrder"  />
+  <ActionMapping Key="ReadFullSaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ReadFullSaleOrder"  />
+  <ActionMapping Key="CustConfirmSaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="CustConfirmSaleOrder"  />
+  <ActionMapping Key="CancelSaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="CancelSaleOrder"  />
+  <ActionMapping Key="SubmitSaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="SubmitSaleOrder"  />
+  <ActionMapping Key="ReSendSaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ReSendSaleOrder"  />
+  <ActionMapping Key="CloseSaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="CloseSaleOrder"  />
+  <ActionMapping Key="QuerySaleOrderForAS" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="QuerySaleOrderForAS"  />
+  <ActionMapping Key="GetSaleOrderStat" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="GetSaleOrderStat"  />
+  <ActionMapping Key="ExportSaleOrderForSubmit" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ExportSaleOrderForSubmit"  />
+  <ActionMapping Key="ImportSubmitSaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ImportSubmitSaleOrder"  />
+  <ActionMapping Key="GetSaleOrderForPrint" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="GetSaleOrderForPrint"  />
+  <ActionMapping Key="ImportSTMSaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ImportSTMSaleOrder"  />
+  <ActionMapping Key="ImportTaobaoSaleOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ImportTaobaoSaleOrder"  />
+  <ActionMapping Key="SyncSTMSaleOrderForTask" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="SyncSTMSaleOrderForTask"  />
+  <ActionMapping Key="GetSMTSaleOrderList" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="GetSMTSaleOrderList"  />
+  <ActionMapping Key="GetSMTSaleOrderDetailList" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="GetSMTSaleOrderDetailList"  />
+  <ActionMapping Key="HandleSMTSaleOrders" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="HandleSMTSaleOrders"  />
+  <ActionMapping Key="QuerySMTShipLable" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="QuerySMTShipLable"  />
+  <ActionMapping Key="GenerateSMTShipLable" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="GenerateSMTShipLable"  />
+  <ActionMapping Key="ExportSMTShipLableErrors" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ExportSMTShipLableErrors"  />
+  <ActionMapping Key="QuerySMTTrackingEO" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="QuerySMTTrackingEO"  />
+  <ActionMapping Key="GenerateSMTTrackingNumber" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="GenerateSMTTrackingNumber"  />
+  <ActionMapping Key="ExportSMTTrackingNumberErrors" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ExportSMTTrackingNumberErrors"  />
+  <ActionMapping Key="GenerateSMTShipLablePDF" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="GenerateSMTShipLablePDF"  />
+  <ActionMapping Key="ExportSMTShipLablePDFErrors" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ExportSMTShipLablePDFErrors"  />
+  <ActionMapping Key="QuerySMTSaleOrderForShipState" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="QuerySMTSaleOrderForShipState"  />
+  <ActionMapping Key="ModifyShipStateInSMT" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ModifyShipStateInSMT"  />
+  <ActionMapping Key="ExportModifyShipStateInSMTErrors" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ExportModifyShipStateInSMTErrors"  />
+  <ActionMapping Key="QuerySMTSaleOrderForConfirmMessage" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="QuerySMTSaleOrderForConfirmMessage"  />
+  <ActionMapping Key="SendSMTSOConfirmMessage" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="SendSMTSOConfirmMessage"  />
+  <ActionMapping Key="ExportSendSMTSOConfirmMessageErrors" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ExportSendSMTSOConfirmMessageErrors"  />
+  <ActionMapping Key="GetSMTEvaluationOrderList" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="GetSMTEvaluationOrderList"  />
+  <ActionMapping Key="EvaluationSMTOrder" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="EvaluationSMTOrder"  />
+  <ActionMapping Key="ExportEvaluationSMTOrderErrors" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ExportEvaluationSMTOrderErrors"  />
+  <ActionMapping Key="ExportSMTTaskInfos" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ExportSMTTaskInfos"  />
+  <ActionMapping Key="ExportSMTMessage" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ExportSMTMessage"  />
+  <ActionMapping Key="ImportSMTMessage" Type="ArkEC.SEMs.Business.SM.SaleOrderSerivce" Method="ImportSMTMessage"  />
+
+  <ActionMapping Key="NewAS_Problem" Type="ArkEC.SEMs.Business.SM.AS_ProblemSerivce" Method="NewAS_Problem" ParamType="ArkEC.SEMs.BizObject.SM.AS_Problem"  />
+  <ActionMapping Key="ModifyAS_Problem" Type="ArkEC.SEMs.Business.SM.AS_ProblemSerivce" Method="ModifyAS_Problem"  />
+  <ActionMapping Key="DeleteAS_Problem" Type="ArkEC.SEMs.Business.SM.AS_ProblemSerivce" Method="DeleteAS_Problem"  />
+  <ActionMapping Key="SubmitASProblem" Type="ArkEC.SEMs.Business.SM.AS_ProblemSerivce" Method="SubmitASProblem"  />
+  <ActionMapping Key="LoseReceiveRet" Type="ArkEC.SEMs.Business.SM.AS_ProblemSerivce" Method="LoseReceiveRet"  />
+  <ActionMapping Key="CloseASProblem" Type="ArkEC.SEMs.Business.SM.AS_ProblemSerivce" Method="CloseASProblem"  />
+  <ActionMapping Key="ReadASProblemForModify" Type="ArkEC.SEMs.Business.SM.AS_ProblemSerivce" Method="ReadASProblemForModify"  />
+  <ActionMapping Key="ReadASProblem" Type="ArkEC.SEMs.Business.SM.AS_ProblemSerivce" Method="ReadASProblem"  />
+  <ActionMapping Key="GetSOGProductForASP" Type="ArkEC.SEMs.Business.SM.AS_ProblemSerivce" Method="GetSOGProductForASP"  />
+  <ActionMapping Key="QueryASProblem" Type="ArkEC.SEMs.Business.SM.AS_ProblemSerivce" Method="QueryASProblem"  />
+  <ActionMapping Key="QueryASProductForReceive" Type="ArkEC.SEMs.Business.SM.AS_ProblemSerivce" Method="QueryASProductForReceive"  />
+  <ActionMapping Key="GetASProblemStat" Type="ArkEC.SEMs.Business.SM.AS_ProblemSerivce" Method="GetASProblemStat"  />
+
+  <ActionMapping Key="PackageExpressOrder" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="PackageExpressOrder"  />
+  <ActionMapping Key="RePackageExpressOrder" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="RePackageExpressOrder"  />
+  <ActionMapping Key="ShipSaleOrder" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ShipSaleOrder"  />
+  <ActionMapping Key="FinishDelivery" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="FinishDelivery"  />
+  <ActionMapping Key="LoseEO" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="LoseEO"  />
+  <ActionMapping Key="SaveShipCost" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="SaveShipCost"  />
+  <ActionMapping Key="SaveTrackingNumber" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="SaveTrackingNumber"  />
+  <ActionMapping Key="CombinExpressOrder" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="CombinExpressOrder"  />
+  <ActionMapping Key="SplitExpressOrder" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="SplitExpressOrder"  />
+  <ActionMapping Key="CancelEO" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="CancelEO"  />
+  <ActionMapping Key="ReturnEO" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ReturnEO"  />
+  <ActionMapping Key="ReceiveEORet" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ReceiveEORet"  />
+  <ActionMapping Key="GetEOStat" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="GetEOStat"  />
+  <ActionMapping Key="ReadExpressOrder" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ReadExpressOrder"  />
+  <ActionMapping Key="QueryExpressOrder" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="QueryExpressOrder"  />
+  <ActionMapping Key="QueryExpressOrderForCombin" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="QueryExpressOrderForCombin"  />
+  <ActionMapping Key="QueryEOProductForPackage" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="QueryEOProductForPackage"  />
+  <ActionMapping Key="ExportEOProductForPackage" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ExportEOProductForPackage"  />
+  <ActionMapping Key="ExportExpressOrder" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ExportExpressOrder"  />
+  <ActionMapping Key="ImportExpressOrder" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ImportExpressOrder" />
+  <ActionMapping Key="GetDeliveryStat" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="GetDeliveryStat" />
+  <ActionMapping Key="ExportDeliveryEO" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ExportDeliveryEO"  />
+  <ActionMapping Key="ImportDeliveryEO" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ImportDeliveryEO"  />
+  <ActionMapping Key="ImportPre4PXEO" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ImportPre4PXEO"  />
+  <ActionMapping Key="ExportSMTTrackingNumber" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ExportSMTTrackingNumber"  />
+  <ActionMapping Key="ImportEOCostBySMT" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ImportEOCostBySMT"  />
+  <ActionMapping Key="ImportEOCostBy4PX" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ImportEOCostBy4PX"  />
+  <ActionMapping Key="ExportEOCharge" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ExportEOCharge"  />
+  <ActionMapping Key="ExportPackageExpressOrder" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ExportPackageExpressOrder"  />
+  <ActionMapping Key="ExportShippingLable" Type="ArkEC.SEMs.Business.LSTM.ExpressOrderSerivce" Method="ExportShippingLable"  />
+
+  <ActionMapping Key="HandlePurchaseProduct" Type="ArkEC.SEMs.Business.POM.PurchaseProductSerivce" Method="HandlePurchaseProduct" ParamType="ArkEC.SEMs.BizObject.POM.PurchaseProduct" />
+  <ActionMapping Key="ExportPurchaseProduct" Type="ArkEC.SEMs.Business.POM.PurchaseProductSerivce" Method="ExportPurchaseProduct"  />
+  <ActionMapping Key="ImportPurchaseProduct" Type="ArkEC.SEMs.Business.POM.PurchaseProductSerivce" Method="ImportPurchaseProduct"  />
+  <ActionMapping Key="GeneratePurchaseProduct" Type="ArkEC.SEMs.Business.POM.PurchaseProductSerivce" Method="GeneratePurchaseProduct"  />
+  <ActionMapping Key="ReadPurchaseProduct" Type="ArkEC.SEMs.Business.POM.PurchaseProductSerivce" Method="ReadPurchaseProduct"  />
+  <ActionMapping Key="QueryPurchaseProduct" Type="ArkEC.SEMs.Business.POM.PurchaseProductSerivce" Method="QueryPurchaseProduct"  />
+  <ActionMapping Key="GetSuppPurchaseProduct" Type="ArkEC.SEMs.Business.POM.PurchaseProductSerivce" Method="GetSuppPurchaseProduct"  />
+
+  <ActionMapping Key="NewPurchaseOrder" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="NewPurchaseOrder" ParamType="ArkEC.SEMs.BizObject.POM.PurchaseOrder" />
+  <ActionMapping Key="ModifyPurchaseOrder" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="ModifyPurchaseOrder"  />
+  <ActionMapping Key="DeletePurchaseOrder" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="DeletePurchaseOrder"  />
+  <ActionMapping Key="ReadPurchaseOrder" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="ReadPurchaseOrder"  />
+  <ActionMapping Key="SimpleReadPurchaseOrder" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="SimpleReadPurchaseOrder"  />
+  <ActionMapping Key="QueryPurchaseOrder" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="QueryPurchaseOrder"  />
+  <ActionMapping Key="GetPOStat" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="GetPOStat"  />
+  <ActionMapping Key="GetProductsByPOForRev" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="GetProductsByPOForRev"  />
+  <ActionMapping Key="SubmitPurchaseOrder" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="SubmitPurchaseOrder"  />
+  <ActionMapping Key="ClosePurchaseOrder" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="ClosePurchaseOrder"  />
+  <ActionMapping Key="ExportPurchaseOrderForHD" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="ExportPurchaseOrderForHD"  />
+  <ActionMapping Key="ImportPurchaseOrderForHD" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="ImportPurchaseOrderForHD"  />
+  <ActionMapping Key="ExportPOProducts" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="ExportPOProducts"  />
+  <ActionMapping Key="ExportPOProdList" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="ExportPOProdList"  />
+  <ActionMapping Key="ExportPOUnRevProdList" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="ExportPOUnRevProdList"  />
+  <ActionMapping Key="ExportUnRevProdList" Type="ArkEC.SEMs.Business.POM.PurchaseOrderSerivce" Method="ExportUnRevProdList"  />
+
+  <ActionMapping Key="GenerateReceiveRemindEmail" Type="ArkEC.SEMs.Business.SYS.SysEmailService" Method="GenerateReceiveRemindEmail"  />
+  <ActionMapping Key="DeleteSysEmail" Type="ArkEC.SEMs.Business.SYS.SysEmailService" Method="DeleteSysEmail"  />
+  <ActionMapping Key="QuerySysEmail" Type="ArkEC.SEMs.Business.SYS.SysEmailService" Method="QuerySysEmail"  />
+  <ActionMapping Key="GetSysEmailStat" Type="ArkEC.SEMs.Business.SYS.SysEmailService" Method="GetSysEmailStat"  />
+  <ActionMapping Key="ReadEmail" Type="ArkEC.SEMs.Business.SYS.SysEmailService" Method="ReadEmail"  />
+  <ActionMapping Key="SendEmail" Type="ArkEC.SEMs.Business.SYS.SysEmailService" Method="SendEmail"  />
+
+  <ActionMapping Key="GenerateSaleReport" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="GenerateSaleReport" />
+  <ActionMapping Key="GetStatTimeX" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="GetStatTimeX" />
+  <ActionMapping Key="GetSaleSiteStat" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="GetSaleSiteStat" />
+  <ActionMapping Key="QuerySaleAnalysisObjs" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="QuerySaleAnalysisObjs" />
+  <ActionMapping Key="ExportSaleAnalysisObjs" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="ExportSaleAnalysisObjs"  />
+  <ActionMapping Key="ImportSaleAnalysisObjs" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="ImportSaleAnalysisObjs"  />
+  <ActionMapping Key="GetSAOProduts" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="GetSAOProduts" />
+  <ActionMapping Key="QuerySAOSaleStat" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="QuerySAOSaleStat" />
+  <ActionMapping Key="QuerySAOSaleByDateStat" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="QuerySAOSaleByDateStat" />
+  <ActionMapping Key="QuerySAOSaleByAreaStat" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="QuerySAOSaleByAreaStat" />
+  <ActionMapping Key="GetSAOOrderCountStatByHour" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="GetSAOOrderCountStatByHour" />
+  <ActionMapping Key="GetSAOOrderCountStatByArea" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="GetSAOOrderCountStatByArea" />
+  <ActionMapping Key="QuerySAOSkuProdSaleStat" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="QuerySAOSkuProdSaleStat" />
+  <ActionMapping Key="GetSaleSiteQtyStat" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="GetSaleSiteQtyStat" />
+  <ActionMapping Key="GetSaleSiteProfitStat" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="GetSaleSiteProfitStat" />
+  <ActionMapping Key="GetSAOTotalSaleStatByArea" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="GetSAOTotalSaleStatByArea" />
+  <ActionMapping Key="ExportMarketingCost" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="ExportMarketingCost" />
+  <ActionMapping Key="ImportMarketingCost" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="ImportMarketingCost" />
+  <ActionMapping Key="GetSAOTypes" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="GetSAOTypes" />
+  <ActionMapping Key="ExportSAOSaleStat" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="ExportSAOSaleStat" />
+  <ActionMapping Key="GetTrackTimes" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="GetTrackTimes" />
+  <ActionMapping Key="TrackSaleAnalysis" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="TrackSaleAnalysis" />
+  <ActionMapping Key="ExportTrackSaleAnalysis" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="ExportTrackSaleAnalysis" />
+  <ActionMapping Key="ExportSMTSearchAnalysis" Type="ArkEC.SEMs.Business.SM.SaleReport" Method="ExportSMTSearchAnalysis" />
+
+  <ActionMapping Key="AuthoriseSMT" Type="ArkEC.SEMs.Business.CommonService" Method="AuthoriseSMT" />
+  
+</Handlers>

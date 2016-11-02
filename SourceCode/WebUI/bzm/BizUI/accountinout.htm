@@ -1,0 +1,764 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="expires" content="Saturday 31 December 2022 23:59 GMT" />
+    <link type='text/css' rel='Stylesheet' href='/bzm/css/compress/ui-web-1.0.min.css' />
+    <link type='text/css' rel='Stylesheet' href='/bzm/css/ui-accountinout.css' />
+    <!-------------- 页面样式 ------------------->
+    <!--------------------------------->
+</head>
+<body>
+    <form id="form" runat="server">
+        <div id="pageWaittingArea" style="text-align: center; margin: 300px 0px 0px 0px;">
+            <div style="font: 12px/1.5 Arial, Helvetica, sans-serif; letter-spacing: 0px;">system loading, please wait!</div>
+            <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+        <div id="pageFrame" style="display: none">
+            <div id="pageHeader">
+                <div id="sysSymbol">
+                    <img src="/bzm/Css/Images/syslogo.png" style="height: 35px" />
+                </div>
+                <div id="userOpera">
+                    <a id="userInfo" href="javascript:void(0)"></a><span id="userInfoDivide">|</span>
+                    <a id="signOut" href="javascript:void(0)"></a><span id="signOutDivide">|</span>
+                    <a id="language" href="javascript:void(0)"></a>
+                </div>
+                <div id="bizMenuBar">
+                    <div id="menuContainer"></div>
+                </div>
+            </div>
+
+            <!-------------- 页面内容 ------------------->
+            <div id="pageContent">
+
+                <!-------------- 详细页面内容 ------------------->
+                <div id="pageTitleTag">
+                    <ul>
+                        <li id="accountOutTag" class="selected" tag="tagAccountOut">
+                            <div></div>
+                            <span id="lbAccountOutTag"></span>
+                        </li>
+                        <li id="accountInTag" tag="tagAccountIn">
+                            <div></div>
+                            <span id="lbAccountInTag"></span>
+                        </li>
+                        <li id="fundRecordTag" tag="tagFundRecord">
+                            <div></div>
+                            <span id="lbFundRecordTag"></span>
+                            <div class="last"></div>
+                        </li>
+                    </ul>
+                    <!-------------- 当前时间 ------------------->
+                    <div id="frtimesTag">
+                        <span class="titleFont">当前月份:</span>
+                        <select id="ddlAccoutTime" class="dropdown-list"></select>
+                    </div>
+                    <!--------------------------------->
+                </div>
+
+                <div id="pageContentForm">
+                    <div id="tagAccountOut">
+                        <div class="formToolbar">
+                            <span id="lbAccountOutTitle" class="lb-title"></span>
+                            <span id="lbAOMonth" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btQueryOutRecord" type="button" class="normal-bt separetor" />
+                                <input id="btBatchAOR" type="button" class="normal-bt separetor"/>
+                                <input id="btNewOutRecord" type="button" class="normal-bt" />
+                                
+                                <div id="dvImportOutRecords" class="multiButtonContainer">
+                                    <ul>
+                                        <li id="btImportSMTAOR" tag="importsmtcharge"></li>
+                                        <li id="btImport4PXAOR" tag="import4pxcharge"></li>
+                                        <li id="btExportOutRecord"></li>
+                                        <li id="lbImportAOR" tag="importaor"></li>
+                                        <!--<li id="btImportReceveBill" tag="receivebill"></li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="submitForm form-width-c" style="margin: 5px 10px -5px 10px; border-bottom-width: 0px; width: 1228px">
+                            <div class="submitForm-tr first-item last-item">
+                                <span class="left-cell">
+                                    <span id="lbTotalUnOutSymbol"></span>
+                                    <span id="lbTotalUnOut"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mainform">
+                            <table id="accountOutList"></table>
+                        </div>
+                    </div>
+                    <div id="tagAccountIn" style="display: none">
+                        <div class="formToolbar">
+                            <span id="lbAccountInTitle" class="lb-title"></span>
+                            <span id="lbAIMonth" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btQueryInRecord" type="button" class="normal-bt separetor" />
+                                <input id="btBatchInRecord" type="button" class="normal-bt separetor" />
+                                <input id="btNewInRecord" type="button" class="normal-bt" />
+                                <div id="dvImportInRecords" class="multiButtonContainer">
+                                    <ul>
+                                        <li id="btImportAirExpress" tag="airexpress-receive"></li>
+                                        <li id="btImportTaobao" tag="zhifubao-receive"></li>
+                                        <li id="btExportInRecord"></li>
+                                        <li id="btImportReceveBill" tag="receivebill"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="submitForm form-width-c" style="margin: 5px 10px -5px 10px; border-bottom-width: 0px; width: 1228px">
+                            <div class="submitForm-tr first-item last-item">
+                                <span class="left-cell">
+                                    <span id="lbTotalReceiveSymbol"></span>
+                                    <span id="lbTotalReceive"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mainform">
+                            <table id="accountInList"></table>
+                        </div>
+                    </div>
+                    <div id="tagFundRecord" style="display: none">
+                        <div class="formToolbar">
+                            <span id="lbFundRecordTitle" class="lb-title"></span>
+                            <span id="lbFRMonth" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btQueryFundRecord" type="button" class="normal-bt separetor" />
+                                <input id="btExportFundRecord" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div class="mainform">
+                            <table id="fundRecordList"></table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerAccountOutFrm" style="display: none;">
+                    <div class="submitForm form-width-b">
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbPayObjectSymbol" class="title"></span>
+                                <input id="txtPayObject" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                <span class="lb-alert">*</span>
+                                <span id="lbSymbol_5" class="lb-symbol"></span>
+                            </span>
+                            <span>
+                                <span id="lbCostSubjectSymbol" class="title"></span>
+                                <span id="selectCostSubject"></span>
+                                <span class="lb-alert">*</span>
+                                <span id="lbSymbol_4" class="lb-symbol"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span>
+                                <span id="lbBizContentSymbol" class="title"></span>
+                                <input id="txtBizContent" type="text" class="text-long-input-a" onkeypress="uicontrol.func.checkInput(event);" />
+                                <span class="lb-alert">*</span>
+                                <span id="lbSymbol_2" class="lb-symbol"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbPayoutSymbol" class="title"></span>
+                                <input id="txtPayout" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" value="0.00" />
+                            </span>
+                            <span>
+                                <span id="lbOutCurrencySymbol" class="title"></span>
+                                <select id="ddlOutCurrency" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbAOOperatedbySymbol" class="title"></span>
+                                <span id="lbAOOperatedby"></span>
+                            </span>
+                            <span>
+                                <span id="lbAOOperateTimeSymbol" class="title"></span>
+                                <input type="text" id="txtAOOperateTime" />
+                            </span>
+                        </div>                        
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbSalePlatformSymbol" class="title"></span>
+                                <select id="ddlSalePlatform" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbSaleAreaSymbol" class="title"></span>
+                                <select id="ddlSaleArea" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div id="dvOutRemark" class="submitForm-tr">
+                            <span id="lbAOutRemarkSymbol" class="title"></span>
+                            <textarea id="txtAOutRemark" cols="70" rows="2" class="multitext-input-b" onkeypress="uicontrol.func.checkInput(event);"></textarea>
+                        </div>
+                        <div id="dvFundPaid" class="submitForm-tr last-item">
+                            <div style="height: 195px;">
+                                <div style="height: 30px">
+                                    <span id="lbPaidTitle" class="lb-title list-title"></span>
+                                    <input id="btAddPaid" type="button" class="normal-bt" style="float: right;" />
+                                </div>
+                                <div>
+                                    <table id="paidfundList"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerPayoutFrm" style="display: none;">
+                    <div class="submitForm form-width-b">
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbAORCodeForPaySymbol" class="title"></span>
+                                <span id="lbAORCodeForPay"></span>
+                            </span>
+                            <span>
+                                <span id="lbOperateTimeForPaySymbol" class="title"></span>
+                                <span id="lbOperateTimeForPay"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbCostSubjectForPaySymbol" class="title"></span>
+                                <span id="lbCostSubjectForPay"></span>
+                            </span>
+                            <span>
+                                <span id="lbAOPriceAreaSymbol" class="title"></span>
+                                <span id="lbAOPriceArea"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbPayObjectForPaySymbol" class="title"></span>
+                                <span id="lbPayObjectForPay"></span>
+                            </span>
+                            <span>
+                                <span id="lbPayoutForPaySymbol" class="title"></span>
+                                <span id="lbPayoutForPay"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbBizContentForPaySymbol" class="title"></span>
+                            <span id="lbBizContentForPay"  style='width: 850px; display: inline-block'></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbAOutRemarkForPaySymbol" class="title"></span>
+                            <span id="lbAOutRemarkForPay"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <div style="height: 245px;">
+                                <div style="height: 30px">
+                                    <span id="lbPaidForPayTitle" class="lb-title list-title"></span>
+                                    <span id="lbRemainPay" class="lb-title list-title" style="margin: 0px 0px 0px 5px"></span>
+                                    <input id="btAddPaidForPay" type="button" class="normal-bt" style="float: right;" />
+                                </div>
+                                <div>
+                                    <table id="paidfundForPayList"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handerFundForAOFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbFundAccountForAOSymbol" class="title"></span>
+                                <select id="ddlFundAccountForAO" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbCurrencyForAOSymbol" class="title"></span>
+                                <select id="ddlCurrencyForAO" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div id="dvFundPaidForAO" class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbFundPaidForAOSymbol" class="title"></span>
+                                <input id="txtFundPaidForAO" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" value="0.00" />
+                            </span>
+                            <span>
+                                <span id="lbFundLosedForAOSymbol" class="title"></span>
+                                <input id="txtFundLosed" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" value="0.00" />
+                            </span>
+                        </div>
+                        <div id="dvRateForAO" class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbRateForAOSymbol" class="title"></span>
+                                <input id="txtRateForAO" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" value="0.00" />
+                                (<span id="lbRateForAOAlert" class="lb-symbol"></span>)
+                            </span>
+                            <span>
+                                <span id="lbOutFundForAOSymbol" class="title"></span>
+                                <input id="txtOutFundForAO" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" value="0.00" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbOutFundSymbol" class="title"></span>
+                            <input type="text" id="txtOutFundTime" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerCancelAccountOutFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbAlertForCancelSymbol"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerAbortAccountOutFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbAlertForAbortSymbol"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerReceiveFrm" style="display: none;">
+                    <div class="submitForm form-width-d">
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbAIRTypeSymbol" class="title"></span>
+                                <select id="ddlAIRType" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbReceiveObjectSymbol" class="title"></span>
+                                <input id="txtReceiveObject" type="text" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                                <span class="lb-alert">*</span>
+                                <span id="lbSymbol_6" class="lb-symbol"></span>
+                            </span>
+                        </div>
+                        <div id="dvSaleAreaForAI" class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbSalePlatformForRvSymbol" class="title"></span>
+                                <select id="ddlSalePlatformForRv" class="dropdown-list"></select>
+                                <span id="lbAlert_1" class="lb-alert">*</span>
+                                <span id="lbSymbol_8" class="lb-symbol"></span>
+                            </span>
+                            <span>
+                                <span id="lbSaleAreaForRvSymbol" class="title"></span>
+                                <select id="ddlSaleAreaForRv" class="dropdown-list"></select>
+                                <span id="lbAlert_2" class="lb-alert">*</span>
+                                <span id="lbSymbol_9" class="lb-symbol"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span>
+                                <span id="lbRvBizContentSymbol" class="title"></span>
+                                <input id="txtRvBizContent" type="text" class="text-long-input-a" onkeypress="uicontrol.func.checkInput(event);" />
+                                <span class="lb-alert">*</span>
+                                <span id="lbSymbol_7" class="lb-symbol"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbReceiveSymbol" class="title"></span>
+                                <input id="txtReceive" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" value="0.00" />
+                                <span class="lb-alert">*</span>
+                                <span id="lbSymbol_3" class="lb-symbol"></span>
+                            </span>
+                            <span>
+                                <span id="lbCurrencyForRvSymbol" class="title"></span>
+                                <select id="ddlCurrencyForRv" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbAROperatedbySymbol" class="title"></span>
+                                <span id="lbAROperatedby"></span>
+                            </span>
+                            <span>
+                                <span id="lbAROperateTimeSymbol" class="title"></span>
+                                <input type="text" id="txtAROperateTime" />
+                            </span>
+                        </div>
+                        <div id="dvRvRemark" class="submitForm-tr">
+                            <span id="lbRvRemarkSymbol" class="title"></span>
+                            <textarea id="txtRvRemark" cols="70" rows="2" class="multitext-input-b" onkeypress="uicontrol.func.checkInput(event);"></textarea>
+                        </div>
+                        <div id="dvFundReceive" class="submitForm-tr last-item">
+                            <div style="height: 195px;">
+                                <div style="height: 30px">
+                                    <span id="lbFundReceiveTitle" class="lb-title list-title"></span>
+                                    <span id="lbRemainReceive_1" class="lb-title list-title" style="margin: 0px 0px 0px 5px"></span>
+                                    <input id="btNewFundReceive" type="button" class="normal-bt" style="float: right;" />
+                                </div>
+                                <div>
+                                    <table id="fundReceiveList"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerFundIncomeFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbFundInType" class="title"></span>
+                                <select id="ddlFundInType" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbFundIncomeSymbol" class="title"></span>
+                                <input type="text" id="txtFundIncomeTime" />
+                            </span>
+                        </div>
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbFundAccountForFISymbol" class="title"></span>
+                                <select id="ddlFundAccountForFI" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbCurrencyForFISymbol" class="title"></span>
+                                <select id="ddlCurrencyForFI" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div id="dvFundPaidForFI" class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbReceiveFundForFISymbol" class="title"></span>
+                                <input id="txtReceiveFundForFI" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" value="0.00" />
+                            </span>
+                            <span>
+                                <span id="lbRvLosedForFISymbol" class="title"></span>
+                                <input id="txtRvLosedForFI" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" value="0.00" />
+                            </span>
+                        </div>
+                        <div id="dvRateForFI" class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbRvRateForFISymbol" class="title"></span>
+                                <input id="txtRvRateForFI" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" value="0.00" />
+                                (<span id="lbRvRateForFIAlert" class="lb-symbol"></span>)
+                            </span>
+                            <span>
+                                <span id="lbCheckRvSumSymbol" class="title"></span>
+                                <input id="txtCheckRvSum" type="text" class="text-input" onkeypress="uicontrol.func.checkInputNumber(event);" value="0.00" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerFreezeFundFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span>
+                                <span id="lbFreezeFundTimeSymbol" class="title"></span>
+                                <input type="text" id="txtFreezeFundTime" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerCancelAccountInFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbAlertForCancelRvSymbol"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="handlerAbortAccountInFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbAlertForAbortAIRSymbol"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerReceiveInFrm" style="display: none;">
+                    <div class="submitForm form-width-d">
+                        <div class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbARCodeSymbol" class="title"></span>
+                                <span id="lbARCode"></span>
+                            </span>
+                            <span>
+                                <span id="lbARCreateTimeSymbol" class="title"></span>
+                                <span id="lbARCreateTime"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbRSubjectTypeForMSymbol" class="title"></span>
+                                <span id="lbRSubjectTypeForM"></span>
+                            </span>
+                            <span id="dvARPriceArea">
+                                <span id="lbARPriceAreaSymbol" class="title"></span>
+                                <span id="lbARPriceArea"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbRvObjectSymbol" class="title"></span>
+                                <span id="lbRvObject"></span>
+                            </span>
+                            <span>
+                                <span id="lbReceiveForMSymbol" class="title"></span>
+                                <span id="lbReceiveForM"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbRIBizContentSymbol" class="title"></span>
+                            <span id="lbRIBizContent"  style='width: 850px; display: inline-block'></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbRvRemarkForMSymbol" class="title"></span>
+                            <span id="lbRvRemarkForM"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <div style="height: 195px;">
+                                <div style="height: 30px">
+                                    <span id="lbFundReceiveForMTitle" class="lb-title list-title"></span>
+                                    <span id="lbRemainReceive" class="lb-title list-title" style="margin: 0px 0px 0px 5px"></span>
+                                    <input id="btNewFundReceiveForM" type="button" class="normal-bt" style="float: right;" />
+                                </div>
+                                <div>
+                                    <table id="fundReceiveForMList"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="queryPayoutFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbPayKeywordSymbol" class="title"></span>
+                            <input id="txtPayKeyword" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbCostSubjectForQSymbol" class="title"></span>
+                                <span id="selectCostSubjectForQ"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbSalePlatformSymbolForQ" class="title"></span>
+                                <select id="ddlSalePlatformForQ" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbSaleAreaSymbolForQ" class="title"></span>
+                                <select id="ddlSaleAreaForQ" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbOutCurrencyForQSymbol" class="title"></span>
+                                <select id="ddlOutCurrencyForQ" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbPayStateForQSymbol" class="title"></span>
+                                <select id="ddlPayStateForQ" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbPayTimeForQSymbol" class="title"></span>
+                            <input type="text" id="fromDatePickerForPay" />
+                            <span id="lbToSymbol"></span>
+                            <input type="text" id="toDatePickerForPay" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="queryAccoutInFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbRvKeywordForQSymbol" class="title"></span>
+                            <input id="txtRvKeywordForQ" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbRSubjectTypeForQSymbol" class="title"></span>
+                                <select id="ddlAIRTypeForQ" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbSalePlatformForRvForQSymbol" class="title"></span>
+                                <select id="ddlSalePlatformForRvForQ" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbSaleAreaForRvForQSymbol" class="title"></span>
+                                <select id="ddlSaleAreaForRvForQ" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbCurrencyForRvForQSymbol" class="title"></span>
+                                <select id="ddlCurrencyForRvForQ" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbReceiveStateForQSymbol" class="title"></span>
+                                <select id="ddlReceiveStateForQ" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbReceiveTimeForQSymbol" class="title"></span>
+                            <input type="text" id="fromDatePickerForReceive" />
+                            <span id="lbReceiveToSymbol"></span>
+                            <input type="text" id="toDatePickerForReceive" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="queryFundFlowRecordFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbFFRKeywordForQSymbol" class="title"></span>
+                            <input id="txtFFRKeywordForQ" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span class="left-cell">
+                                <span id="lbFFRFundAccountForQSymbol" class="title"></span>
+                                <select id="ddlFFRFundAccountForQ" class="dropdown-list"></select>
+                            </span>
+                            <span>
+                                <span id="lbFFRActionSymbol" class="title"></span>
+                                <select id="ddlFFRAction" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbFFRTimeForQSymbol" class="title"></span>
+                            <input type="text" id="fromDatePickerForFFR" />
+                            <span id="lbFFRToSymbol"></span>
+                            <input type="text" id="toDatePickerForFFR" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="handlerImportFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                         <div id="dvAliExpress" class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbPriceArea_ImportSymbol" class="title"></span>
+                                <select id="ddlSMTSaleSite" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                         <div id="dvZhifubao" class="submitForm-tr first-item">
+                            <span class="left-cell">
+                                <span id="lbZFBArea_ImportSymbol" class="title"></span>
+                                <select id="ddlZFBSaleSite" class="dropdown-list"></select>
+                            </span>
+                        </div>
+                        <div id="dvNormalImport" class="submitForm-tr last-item">
+                            <span id="lbImportFileSymbol" class="title"></span>
+                            <input id="importFile" type="file" name="importFile" />
+                            <span id="lbimportAlert" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--------------------------------->
+
+                <!-------------- 个人信息部分 ------------------->
+                <div id="myInfoFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbUserName_my" class="title"></span>
+                            <span id="viewUserName"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbEmail_my" class="title"></span>
+                            <span id="viewEmail"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbPwd_my" class="title"></span>
+                            <span id="viewPwd">******</span>
+                            <input id="btSendPwd" type="button" class="normal-bt separetor" />
+                            <input id="btModifyPwd" type="button" class="normal-bt separetor" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbTel_my" class="title"></span>
+                            <span id="viewTel"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbContactInfo_my" class="title"></span>
+                            <span id="viewContact" style="display: inline-block"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="handlerPwdFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbOldPwdSymbol" class="title"></span>
+                            <input id="txtOldPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_1" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbNewPwdSymbol" class="title"></span>
+                            <input id="txtNewPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_2" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbConfirmPwdSymbol" class="title"></span>
+                            <input id="txtConfirmPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_3" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="checkSalePlatformFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbCheckSSSymbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------->
+            </div>
+            <!--------------------------------->
+
+            <div id="pageFooter">
+                <span>Copyright&copy;2003-2011  ArkEC, All rights reserved.</span>
+            </div>
+        </div>
+
+        <div id="alertDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="alertInfo"></span>
+            </p>
+        </div>
+
+        <div id="askDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="askInfo"></span>
+            </p>
+        </div>
+
+        <div id="switchLanguageFrm" style="display: none">
+	        <div class="submitForm form-width">
+                <div class="submitForm-tr first-item last-item">
+                    <span id="lbLanguage" class="title"></span> 
+                    <select id="ddlLanguage" class="dropdown-list"></select>
+                </div>
+            </div>
+        </div>
+
+        <div id="processBg"></div>
+        <div id="processBar">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+
+        <div id="processBg_opera"></div>
+        <div id="processBar_opera">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+    </form>
+    
+    <script type="text/javascript" src="/bzm/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/BZM/Scripts/BizService/compress/biz-1.0.min.js"></script>
+    <script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-web-1.0.min.js"></script>
+    <!-------------- 页面脚本 ------------------->
+    <!--<script type="text/javascript" src="/BZM/Scripts/BizUI/ui-accountinout.js"></script>-->
+    <script type="text/javascript" src="/BZM/Scripts/BizUI/compress/ui-accountinout-1.0.min.js"></script>
+    <!--------------------------------->
+</body>
+</html>

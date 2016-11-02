@@ -1,0 +1,521 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="expires" content="Saturday 31 December 2022 23:59 GMT" />
+
+    <link type='text/css' rel='Stylesheet' href='/bzm/css/compress/ui-web-1.0.min.css' />
+    <!-------------- 页面样式 ------------------->
+    <link type="text/css" rel="Stylesheet" href="/BZM/Css/ui-salereport.css" />
+    <!--------------------------------->
+</head>
+<body>
+    <form id="form" runat="server">
+        <div id="pageWaittingArea" style="text-align: center; margin: 300px 0px 0px 0px;">
+            <div style="font: 12px/1.5 Arial, Helvetica, sans-serif; letter-spacing: 0px;">system loading, please wait!</div>
+            <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+        <div id="pageFrame" style="display: none">
+            <div id="pageHeader">
+                <div id="sysSymbol">
+                    <img src="/bzm/Css/Images/syslogo.png" style="height: 35px" />
+                </div>
+                <div id="userOpera">
+                    <a id="userInfo" href="javascript:void(0)"></a><span id="userInfoDivide">|</span>
+                    <a id="signOut" href="javascript:void(0)"></a><span id="signOutDivide">|</span>
+                    <a id="language" href="javascript:void(0)"></a>
+                </div>
+                <div id="bizMenuBar">
+                    <div id="menuContainer"></div>
+                </div>
+            </div>
+
+            <!-------------- 页面内容 ------------------->
+            <div id="pageContent">
+
+                <!-------------- 详细页面内容 ------------------->
+                <div id="pageTitleTag">
+                    <ul>
+                        <li id="sitesalestatTag" class="selected" tag="tagSiteSaleStat">
+                            <div></div>
+                            <span id="lbSiteSaleStatTag"></span>
+                        </li>
+                        <li id="sitesaleqtystatTag" tag="tagSiteSaleQtyStat">
+                            <div></div>
+                            <span id="lbSiteSaleStatQtyTag"></span>
+                        </li>
+                        <li id="sitesaleprofitstatTag" tag="tagSiteSaleProfitStat">
+                            <div></div>
+                            <span id="lbSiteSaleStatProfitTag"></span>
+                        </li>
+                        <li id="salehourtimestatTag" tag="tagSaleHourTimeStat">
+                            <div></div>
+                            <span id="lbSaleHourTimeTag"></span>
+                        </li>
+                        <li id="saleprofitbysitestatTag" tag="tagSaleProfitbySiteStat">
+                            <div></div>
+                            <span id="lbSaleProfitbySiteTag"></span>
+                        </li>
+                        <li id="prodsalestatTag" tag="tagProdSaleStat">
+                            <div style="color: #0000CC"></div>
+                            <span id="lbProdSaleStatTag"></span>
+                        </li>
+                        <li id="tracksaleanalysisTag" tag="tagTrackSaleAnalysisTag">
+                            <div></div>
+                            <span id="lbTrackSaleAnalysisTag"></span>
+                        </li>
+                        <li id="asoTag" tag="tagASOTag">
+                            <div></div>
+                            <span id="lbASOTag"></span>
+                        </li>
+                        <li id="salestattatTag" tag="tagSaleStat">
+                            <div></div>
+                            <span id="lbSaleStatTag"></span>
+                            <div class="last"></div>
+                        </li>
+                    </ul>
+                    <!-------------- 销售平台 ------------------->
+                    <div id="shopTitleTag">
+                        <span id="lbSaleSite_ComSymbol" class="titleFont"></span>
+                        <select id="ddlSalePlatform" class="dropdown-list shopOption"></select>
+                    </div>
+                    <!--------------------------------->
+                </div>
+                <div id="pageContentForm">
+                    <div id="tagSiteSaleStat">
+                        <div class="formToolbar">
+                            <span>
+                                <span id="lbSiteSaleStatTitle" class="lb-title"></span>
+                                <div id="dvSSStatLabel_11" style="float: left; margin: 5px 5px 5px 25px; display: none; color: #4B4B4B; font-size: 11px">
+                                    <div style="height: 8px; width: 8px; background-color: #4B4B4B; float: left; margin: 5px"></div>
+                                    <span id="lbSSStatLabel_11Symobl" style="float: left"></span>
+                                    <span id="lbSSStatTotalPrice_11" style="float: left;"></span>
+                                </div>
+                                <div id="dvSSStatLabel_20" style="float: left; margin: 5px 5px 5px 10px; display: none; color: #4B4B4B; font-size: 11px">
+                                    <div style="height: 8px; width: 8px; background-color: #7A6FE3; float: left; margin: 5px"></div>
+                                    <span id="lbSSStatLabel_20Symobl" style="float: left; color: #7A6FE3; font-size: 11px"></span>
+                                    <span id="lbSSStatTotalPrice_20" style="float: left;"></span>
+                                </div>
+                                <div id="dvSSStatLabel_1" style="float: left; margin: 5px 5px 5px 10px; display: none; color: #4B4B4B; font-size: 11px">
+                                    <div style="height: 8px; width: 8px; background-color: #009933; float: left; margin: 5px"></div>
+                                    <span id="lbSSStatLabel_1Symobl" style="float: left;"></span>
+                                    <span id="lbSSStatTotalPrice_1" style="float: left;"></span>
+                                </div>
+                                <div id="dvSSStatLabel_12" style="float: left; margin: 5px 5px 5px 10px; display: none; color: #4B4B4B; font-size: 11px">
+                                    <div style="height: 8px; width: 8px; background-color: #BBBBBB; float: left; margin: 5px"></div>
+                                    <span id="lbSSStatLabel_12Symobl" style="float: left;"></span>
+                                    <span id="lbSSStatTotalPrice_12" style="float: left;"></span>
+                                </div>
+                            </span>
+                            <div class="operaToolBar">
+                                <input id="btQuerySiteSale" tag="sitesale" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div id="salesitestatTable" class="mainform">
+                            <div id="dvSiteSaleGraph" style="padding: 10px;"></div>
+                        </div>
+                    </div>
+                    <div id="tagSiteSaleQtyStat" style="display: none">
+                        <div class="formToolbar">
+                            <span>
+                                <span id="lbSiteSaleQtyStatTitle" class="lb-title"></span>
+                                <div id="dvSSQtyStatLabel_11" style="float: left; margin: 5px 5px 5px 25px; display: none">
+                                    <div style="height: 8px; width: 8px; background-color: #4B4B4B; float: left; margin: 5px"></div>
+                                    <span id="lbSSQtyStat_11Symobl" style="float: left; color: #4B4B4B; font-size: 11px"></span>
+                                    <span id="lbSSQtyStat_11" style="float: left;"></span>
+                                </div>
+                                <div id="dvSSQtyStatLabel_20" style="float: left; margin: 5px 5px 5px 10px; display: none">
+                                    <div style="height: 8px; width: 8px; background-color: #7A6FE3; float: left; margin: 5px"></div>
+                                    <span id="lbSSQtyStat_20Symobl" style="float: left; color: #7A6FE3; font-size: 11px"></span>
+                                    <span id="lbSSQtyStat_20" style="float: left;"></span>
+                                </div>
+                                <div id="dvSSQtyStatLabel_1" style="float: left; margin: 5px 5px 5px 10px; display: none">
+                                    <div style="height: 8px; width: 8px; background-color: #009933; float: left; margin: 5px"></div>
+                                    <span id="lbSSQtyStat_1Symobl" style="float: left; color: #009933; font-size: 11px"></span>
+                                    <span id="lbSSQtyStat_1" style="float: left;"></span>
+                                </div>
+                                <div id="dvSSQtyStatLabel_12" style="float: left; margin: 5px 5px 5px 10px; display: none">
+                                    <div style="height: 8px; width: 8px; background-color: #BBBBBB; float: left; margin: 5px"></div>
+                                    <span id="lbSSQtyStat_12Symobl" style="float: left; color: #9D9D9D; font-size: 11px"></span>
+                                    <span id="lbSSQtyStat_12" style="float: left;"></span>
+                                </div>
+                            </span>
+                            <div class="operaToolBar">
+                                <input id="btQuerySiteSaleQty" tag="sitesaleqty" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div id="sitesaleqtyTable" class="mainform">
+                            <div id="dvSiteSaleQtyGraph" style="padding: 10px;"></div>
+                        </div>
+                    </div>
+                    <div id="tagSiteSaleProfitStat" style="display: none">
+                        <div class="formToolbar">
+                            <span>
+                                <span id="lbSiteSaleProfitStatTitle" class="lb-title"></span>
+                                <div id="dvSSProfitStatLabel_11" style="float: left; margin: 5px 5px 5px 25px; display: none">
+                                    <div style="height: 8px; width: 8px; background-color: #4B4B4B; float: left; margin: 5px"></div>
+                                    <span id="lbSSProfitStat_11Symobl" style="float: left; color: #4B4B4B; font-size: 11px"></span>
+                                    <span id="lbSSProfitStat_11" style="float: left;"></span>
+                                </div>
+                                <div id="dvSSProfitStatLabel_20" style="float: left; margin: 5px 5px 5px 10px; display: none">
+                                    <div style="height: 8px; width: 8px; background-color: #7A6FE3; float: left; margin: 5px"></div>
+                                    <span id="lbSSProfitStat_20Symobl" style="float: left; color: #7A6FE3; font-size: 11px"></span>
+                                    <span id="lbSSProfitStat_20" style="float: left;"></span>
+                                </div>
+                                <div id="dvSSProfitStatLabel_1" style="float: left; margin: 5px 5px 5px 10px; display: none">
+                                    <div style="height: 8px; width: 8px; background-color: #009933; float: left; margin: 5px"></div>
+                                    <span id="lbSSProfitStat_1Symobl" style="float: left; color: #009933; font-size: 11px"></span>
+                                    <span id="lbSSProfitStat_1" style="float: left;"></span>
+                                </div>
+                                <div id="dvSSProfitStatLabel_12" style="float: left; margin: 5px 5px 5px 10px; display: none">
+                                    <div style="height: 8px; width: 8px; background-color: #BBBBBB; float: left; margin: 5px"></div>
+                                    <span id="lbSSProfitStat_12Symobl" style="float: left; color: #9D9D9D; font-size: 11px"></span>
+                                    <span id="lbSSProfitStat_12" style="float: left;"></span>
+                                </div>
+                            </span>
+                            <div class="operaToolBar">
+                                <input id="btQuerySiteSaleProfit" tag="sitesaleprofit" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div id="siteSaleProfitTable" class="mainform">
+                            <div id="dvSiteSaleProfitGraph" style="padding: 10px;"></div>
+                        </div>
+                    </div>
+                    <div id="tagSaleHourTimeStat" style="display: none">
+                        <div class="formToolbar">
+                            <span id="lbSaleHourTimeSymbol" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btSaleHourTime" tag="salehourtime" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div id="salehourtimestatTable" class="mainform">
+                            <div id="dvSaleHourTimeGraph" style="padding: 10px; height: 250px"></div>
+                            <div id="dvSaleAreaGraph" style="padding: 10px; height: 250px"></div>
+                        </div>
+                    </div>
+                    <div id="tagSaleProfitbySiteStat" style="display: none">
+                        <div class="formToolbar">
+                            <span id="lbSaleProfitbySiteSymbol" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btSaleProfitbySite" tag="saleprofitbysite" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div id="saleprofitbysiteTable" class="mainform">
+                            <div id="dvSalepricebysitearea" style="padding: 10px; height: 160px"></div>
+                            <div id="dvSaletoalprofitbysitearea" style="padding: 10px; margin: 10px 0px 0px 0px; height: 150px"></div>
+                            <div id="dvSaleprofitbysitearea" style="padding: 10px; margin: 10px 0px 0px 0px; height: 150px"></div>
+                        </div>
+                    </div>
+                    <div id="tagProdSaleStat" style="display: none">
+                        <div class="formToolbar">
+                            <span id="lbProdSaleStat" class="lb-title"></span>
+                            <div class="operaToolBar"> 
+                                <input id="btSMTSearchAnalysis" tag="smtsearchanalysis" type="button" class="normal-bt separetor" value="速卖通搜索分析" />
+                                <input id="btStatProdSale" type="button" class="normal-bt separetor" />
+                                <input id="btExportProdSale" type="button" class="normal-bt separetor" />
+                                <input id="btExportMarketingCost" type="button" class="normal-bt separetor" />
+                                <input id="btImportMarketingCost" tag="markingcost" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div class="mainform">
+                            <table id="prodsalestatList"></table>
+                        </div>
+                    </div>
+                    <div id="tagTrackSaleAnalysisTag" style="display: none">
+                        <div class="formToolbar">
+                            <span id="lbTrackSATitle" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btTrackSaleAnalysis" type="button" class="normal-bt separetor" />
+                                <input id="btExportTrackSaleAnalysis" type="button" class="normal-bt separetor" />
+                            </div>
+                        </div>
+                        <div id="dvTrackSaleAnalysis" class="mainform">
+                            <table id="tracksaleanalysisTable"></table>
+                        </div>
+                    </div>
+                    <div id="tagASOTag" style="display: none">
+                        <div class="formToolbar">
+                            <span id="lbASOTitle" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btQueryASO" type="button" class="normal-bt separetor" />
+                                <input id="btExportASO" type="button" class="normal-bt separetor" />
+                                <input id="btImportASO" type="button" tag="saleanalysisobj" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div class="mainform">
+                            <table id="asoList"></table>
+                        </div>
+                    </div>
+                    <div id="tagSaleStat" style="display: none">
+                        <div class="formToolbar">
+                            <span id="lbSaleStatTitle" class="lb-title"></span>
+                            <div class="operaToolBar">
+                                <input id="btGenerateSR" type="button" class="normal-bt" />
+                            </div>
+                        </div>
+                        <div id="salereportTable" class="mainform">
+                            <div class="s-table-tr">
+                                <span id="lbSaleReportTitle" class="title"></span>
+                                <input id="importSRFile" type="file" name="importSRFile" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="querySiteSaleStatFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbSSStatTimeSymbol" class="title"></span>
+                            <input type="text" id="txtSSStatFromTime" />
+                            <span id="lbToSymbol"></span>
+                            <input type="text" id="txtSSStatToTime" />
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbSSStatSiteSymbol" class="title"></span>
+                            <span class="optionContainer" style="width: 630px"><ul id="ulSSStatSite"></ul></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="querySaleHourTimeFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbSHTTimeSymbol" class="title"></span>
+                            <input type="text" id="txtSHTFromTime" />
+                            <span id="lbToSymbol_1"></span>
+                            <input type="text" id="txtSHTToTimeTime" />
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbSHTAreaSymbol" class="title"></span>
+                            <span class="optionContainer">
+                                <span id="chkSMTArea"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="queryProdSaleStatFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbProdSaleSAOTypeSymbol" class="title"></span>
+                            <select id="ddlProdSaleSAOType" class="dropdown-list"></select>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbProdSaleKeySymbol" class="title"></span>
+                            <input id="txtProdSaleKey" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbProdSaleFromTimeSymbol" class="title"></span>
+                            <input type="text" id="txtProdSaleFromTime" />
+                            <span id="lbToSymbol_3"></span>
+                            <input type="text" id="txtProdSaleToTime" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbProdSaleAreaSymbol" class="title"></span>
+                            <span class="optionContainer">
+                                <span id="chkProdSaleArea"></span>
+                            </span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbProdSaleSortSymbol" class="title"></span>
+                            <span class="optionContainer"><ul id="ulprodsalestat"></ul></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="querySAOFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbSAOTypeSymbol" class="title"></span>
+                            <select id="ddlSAOType" class="dropdown-list"></select>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbSAOKeywordSymbol" class="title"></span>
+                            <input id="txtSAOKeyword" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="handlerImportFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbImportFileSymbol" class="title"></span>
+                            <input id="importFile" type="file" name="importFile" />
+                            <span id="lbimportAlert" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="viewSAOProdFrm" style="display: none;">
+                    <table id="saoproductList"></table>
+                </div>
+                
+                <div id="viewSAOSaleDetailStatFrm" style="display: none;">
+                    <div id="saosaledetailstatTabs">
+                        <ul>
+                            <li><a id="lbSAODetalStatSaleSymbol" href="#saodetailsaleSale"></a></li>
+                            <li><a id="lbSAODetalStatPriceSymbol" href="#saodetailsalePrice"></a></li>
+                            <li><a id="lbSAODetalStatAreaSymbol" href="#saodetailsaleArea"></a></li>
+                            <li><a id="lbSAODetalStatHourTimeSymbol" href="#saodetailsaleHourTime"></a></li>
+                            <li><a id="lbSAODetalStatSkuSymbol" href="#saodetailsaleSku"></a></li>
+                        </ul>
+                        <div id="saodetailsaleSale">
+                            <div id="dvSaodetailsaleQty" style="padding: 10px; height: 180px">Loading graph...</div>
+                            <div id="dvSaodetailsaleSale" style="padding: 10px;">Loading graph...</div>
+                        </div>
+                        <div id="saodetailsalePrice">
+                            <div id="dvSaodetailsalePrice" style="padding: 10px; height: 400px">Loading graph...</div>
+                        </div>
+                        <div id="saodetailsaleArea">
+                            <div id="dvSaodetailsaleArea" style="padding: 0px 10px 0px 10px; height: 160px"">Loading graph...</div>
+                            <div id="dvSaodetailavagprofitArea" style="padding: 20px 10px 10px 10px; height: 160px"">Loading graph...</div>
+                            <div id="dvSaodetailavagpriceArea" style="padding: 10px 10px 10px 10px; height: 160px"">Loading graph...</div>
+                        </div>
+                        <div id="saodetailsaleHourTime">
+                            <div id="dvSaodetailsaleHourTime" style="padding: 10px;">Loading graph...</div>
+                        </div>
+                        <div id="saodetailsaleSku">
+                            <table id="saodetailsaleskuList"></table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="queryTrackSaleAnalysisFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbTrackType" class="title"></span>
+                            <span class="optionContainer" style="width: 630px"><ul id="ulTracktype"></ul></span>
+                        </div>
+                        <div class="submitForm-tr first-item">
+                            <span id="lbTrackSAOTypeSymbol" class="title"></span>
+                            <select id="ddlTrackSAOType" class="dropdown-list"></select>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbTrackSAOKeySymbol" class="title"></span>
+                            <input id="txtTrackSAOKey" type="text" class="text-long-input" onkeypress="uicontrol.func.checkInput(event);" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbFromTrackTimeSymbol" class="title"></span>
+                            <input type="text" id="txtFromTrackTime" />
+                            <span id="lbToSymbol_2"></span>
+                            <input type="text" id="txtToTrackTime" />
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbTrackDaysSymbol" class="title"></span>
+                            <input type="text" id="txtTrackDays" value="7" onkeypress="uicontrol.func.checkInputInt(event);" />
+                            <span>(天)</span>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------->
+
+                <!-------------- 个人信息部分 ------------------->
+                <div id="myInfoFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbUserName_my" class="title"></span>
+                            <span id="viewUserName"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbEmail_my" class="title"></span>
+                            <span id="viewEmail"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbPwd_my" class="title"></span>
+                            <span id="viewPwd">******</span>
+                            <input id="btSendPwd" type="button" class="normal-bt separetor" />
+                            <input id="btModifyPwd" type="button" class="normal-bt separetor" />
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbTel_my" class="title"></span>
+                            <span id="viewTel"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbContactInfo_my" class="title"></span>
+                            <span id="viewContact" style="display: inline-block"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="handlerPwdFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item">
+                            <span id="lbOldPwdSymbol" class="title"></span>
+                            <input id="txtOldPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_1" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr">
+                            <span id="lbNewPwdSymbol" class="title"></span>
+                            <input id="txtNewPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_2" class="lb-symbol"></span>
+                        </div>
+                        <div class="submitForm-tr last-item">
+                            <span id="lbConfirmPwdSymbol" class="title"></span>
+                            <input id="txtConfirmPwd" type="password" class="text-input" onkeypress="uicontrol.func.checkInput(event);" />
+                            <span class="lb-alert">*</span>
+                            <span id="lbGlobalSymbol_3" class="lb-symbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="checkSalePlatformFrm" style="display: none;">
+                    <div class="submitForm form-width">
+                        <div class="submitForm-tr first-item last-item">
+                            <span id="lbCheckSSSymbol"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------->
+            </div>
+            <!--------------------------------->
+
+            <div id="pageFooter">
+                <span>Copyright&copy;2003-2011  ArkEC, All rights reserved.</span>
+            </div>
+        </div>
+
+        <div id="alertDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="alertInfo"></span>
+            </p>
+        </div>
+
+        <div id="askDialog" style="display: none">
+	        <p>
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:2px 10px 0"></span>
+                <span id="askInfo"></span>
+            </p>
+        </div>
+
+        <div id="switchLanguageFrm" style="display: none">
+	        <div class="submitForm form-width">
+                <div class="submitForm-tr first-item last-item">
+                    <span id="lbLanguage" class="title"></span> 
+                    <select id="ddlLanguage" class="dropdown-list"></select>
+                </div>
+            </div>
+        </div>
+
+        <div id="processBg"></div>
+        <div id="processBar">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+
+        <div id="processBg_opera"></div>
+        <div id="processBar_opera">
+	        <img src="/BZM/Css/Images/loading.gif" />
+        </div>
+    </form>
+
+    
+    <script type="text/javascript" src="/bzm/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/BZM/Scripts/BizService/compress/biz-1.0.min.js"></script>
+    <script type="text/javascript" src="/bzm/Scripts/bizui/compress/ui-web-1.0.min.js"></script>
+    <script type="text/javascript" src="/bzm/Scripts/jscharts.js"></script>
+    <!-------------- 页面脚本 ------------------->
+    <!--<script type="text/javascript" src="/BZM/Scripts/BizUI/ui-salereport.js"></script>-->
+    <script type="text/javascript" src="/BZM/Scripts/BizUI/compress/ui-salereport-1.0.min.js"></script>
+    <!--------------------------------->
+</body>
+</html>
