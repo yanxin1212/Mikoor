@@ -7,5 +7,9 @@ namespace ArkEC.SEMs.DomainModel
 {
     public class TaskConfig
     {
+        public void Run()
+        {
+            Console.WriteLine("Task Running...");
+        }
     }
 }
