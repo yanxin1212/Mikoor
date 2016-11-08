@@ -5,8 +5,14 @@ using System.Text;
 
 namespace ArkEC.SEMs.IService
 {
+    /// <summary>
+    /// 任务服务接口
+    /// </summary>
     public interface ITaskService
     {
-        void RunTask();
+        /// <summary>
+        /// 运行任务
+        /// </summary>
+        void Execute();
     }
 }

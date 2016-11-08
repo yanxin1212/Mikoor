@@ -11,7 +11,7 @@ namespace TaskRunner
     {
         static void Main(string[] args)
         {
-            TaskServiceFactory.Create().RunTask();
+            TaskServiceFactory.Create().Execute();
         }
     }
 }

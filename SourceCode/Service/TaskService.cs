@@ -10,7 +10,7 @@ namespace ArkEC.SEMs.Service
 {
     public class TaskService : ITaskService
     {
-        void ITaskService.RunTask()
+        void ITaskService.Execute()
         {
             List<TaskConfig> taskConfigList = GetTaskConfigList();
             foreach (TaskConfig t in taskConfigList)
@@ -19,6 +19,10 @@ namespace ArkEC.SEMs.Service
             }
         }
 
+        /// <summary>
+        /// 获取任务配置列表
+        /// </summary>
+        /// <returns></returns>
         private List<TaskConfig> GetTaskConfigList()
         {
             return new List<TaskConfig> { new TaskConfig(), new TaskConfig() };
