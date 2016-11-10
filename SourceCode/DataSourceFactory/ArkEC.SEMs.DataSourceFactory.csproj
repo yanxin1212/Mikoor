@@ -42,6 +42,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataSource\ArkEC.SEMs.DataSource.csproj">
+      <Project>{C2258BAA-7F8F-458E-9D59-7D4433C17AFC}</Project>
+      <Name>ArkEC.SEMs.DataSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IDataSource\ArkEC.SEMs.IDataSource.csproj">
+      <Project>{5C2F4837-520A-4E54-A49F-4DBEE4442C52}</Project>
+      <Name>ArkEC.SEMs.IDataSource</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
