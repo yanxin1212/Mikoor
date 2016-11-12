@@ -8,8 +8,8 @@
     <ProjectGuid>{5C2F4837-520A-4E54-A49F-4DBEE4442C52}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IDataSource</RootNamespace>
-    <AssemblyName>IDataSource</AssemblyName>
+    <RootNamespace>ArkEC.SEMs.IMapper</RootNamespace>
+    <AssemblyName>ArkEC.SEMs.IMapper</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ArkEC.SEMs.DomainModel;
+using ArkEC.SEMs.Model;
 using ArkEC.SEMs.IService;
 using System.Threading;
 

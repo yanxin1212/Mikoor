@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace ArkEC.SEMs.DomainModel
+namespace ArkEC.SEMs.Model
 {
     /// <summary>
     /// 任务配置
