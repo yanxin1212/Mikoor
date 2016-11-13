@@ -53,14 +53,9 @@ namespace ArkEC.SEMs.Model
         public MethodInfo DoneMethod { get; set; }
 
         /// <summary>
-        /// 任务异常信息构造程序
-        /// </summary>
-        public MethodInfo GenerateErrorInfoMethod { get; set; }
-
-        /// <summary>
         /// 执行状态
         /// </summary>
-        public string Status { get; set; }
+        public TaskConfigStatus Status { get; set; }
 
         /// <summary>
         /// 最近开始时间
@@ -93,6 +88,21 @@ namespace ArkEC.SEMs.Model
         public uint Creator { get; set; }
 
         /// <summary>
+        /// 每次任务执行之前需要执行的方法
+        /// </summary>
+        public Action<TaskConfig> BeforeExecute { get; set; }
+
+        /// <summary>
+        /// 每次任务执行之后需要执行的方法
+        /// </summary>
+        public Action<TaskConfig> AfterExecute { get; set; }
+
+        /// <summary>
+        /// 任务异常信息构造程序
+        /// </summary>
+        public Action<TaskConfig, Exception> GenerateError { get; set; }
+
+        /// <summary>
         /// 执行
         /// </summary>
         public void Execute()
@@ -100,9 +110,16 @@ namespace ArkEC.SEMs.Model
             Thread.Sleep(GetIntervalFromNowToNextTime());
             while (true)
             {
-                this.LatestStartTime = DateTime.Now;
-                ExecuteOneTime();
-                this.LatestEndTime = DateTime.Now;
+                try
+                {
+                    BeforeExecute(this);
+                    ExecuteOneTime();
+                    AfterExecute(this);
+                }
+                catch (Exception e)
+                {
+                    GenerateError(this, e);
+                }
                 Thread.Sleep(Interval);
             }
         }
@@ -136,5 +153,21 @@ namespace ArkEC.SEMs.Model
         {
             Console.WriteLine(string.Format("{0} Ran, Now {1}, Interval {2}", Name, DateTime.Now, Interval));
         }
+    }
+
+    /// <summary>
+    /// 任务配置状态
+    /// </summary>
+    public enum TaskConfigStatus
+    {
+        /// <summary>
+        /// 执行中
+        /// </summary>
+        Executing = 0,
+
+        /// <summary>
+        /// 未执行
+        /// </summary>
+        Unexecuted = 1
     }
 }
