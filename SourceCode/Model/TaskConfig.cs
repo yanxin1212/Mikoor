@@ -60,12 +60,12 @@ namespace ArkEC.SEMs.Model
         /// <summary>
         /// 最近开始时间
         /// </summary>
-        public DateTime LatestStartTime { get; set; }
+        public DateTime LastStartTime { get; set; }
 
         /// <summary>
         /// 最近结束时间
         /// </summary>
-        public DateTime LatestEndTime { get; set; }
+        public DateTime LastEndTime { get; set; }
 
         /// <summary>
         /// 任务总数

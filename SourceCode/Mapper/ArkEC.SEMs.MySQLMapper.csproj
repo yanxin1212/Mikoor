@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RamDatabase.cs" />
     <Compile Include="TaskConfigMapper.cs" />
+    <Compile Include="TaskErrorDataMapper.cs" />
+    <Compile Include="TaskExecutionHistoryMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IMapper\ArkEC.SEMs.IMapper.csproj">

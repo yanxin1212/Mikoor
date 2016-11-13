@@ -51,7 +51,7 @@ namespace ArkEC.SEMs.Service
         private void SetTaskStarted(TaskConfig taskConfig)
         {
             taskConfig.Status = TaskConfigStatus.Executing;
-            taskConfig.LatestStartTime = DateTime.Now;
+            taskConfig.LastStartTime = DateTime.Now;
             TaskConfigMapper.Update(taskConfig);
         }
 
@@ -62,7 +62,7 @@ namespace ArkEC.SEMs.Service
         private void SetTaskEnded(TaskConfig taskConfig)
         {
             taskConfig.Status = TaskConfigStatus.Unexecuted;
-            taskConfig.LatestEndTime = DateTime.Now;
+            taskConfig.LastEndTime = DateTime.Now;
             TaskConfigMapper.Update(taskConfig);
         }
 

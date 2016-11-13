@@ -28,17 +28,4 @@ namespace ArkEC.SEMs.MySQLMapper
             RamDatabase.TaskConfigList.Add(obj);
         }
     }
-
-    /// <summary>
-    /// 内存数据库，用于调试
-    /// </summary>
-    internal class RamDatabase
-    {
-        public static List<TaskConfig> TaskConfigList { get; set; }
-
-        static RamDatabase()
-        {
-            TaskConfigList = new List<TaskConfig>();
-        }
-    }
 }
