@@ -93,14 +93,16 @@ namespace ArkEC.SEMs.Model
         public uint Creator { get; set; }
 
         /// <summary>
-        /// 运行
+        /// 执行
         /// </summary>
         public void Execute()
         {
             Thread.Sleep(GetIntervalFromNowToNextTime());
             while (true)
             {
+                this.LatestStartTime = DateTime.Now;
                 ExecuteOneTime();
+                this.LatestEndTime = DateTime.Now;
                 Thread.Sleep(Interval);
             }
         }
@@ -132,7 +134,7 @@ namespace ArkEC.SEMs.Model
         /// </summary>
         private void ExecuteOneTime()
         {
-            Console.WriteLine(string.Format("{0} Running, FirstTime {1}, Now {2}, Interval {3}", Name, NextTime, DateTime.Now, Interval));
+            Console.WriteLine(string.Format("{0} Ran, Now {1}, Interval {2}", Name, DateTime.Now, Interval));
         }
     }
 }
