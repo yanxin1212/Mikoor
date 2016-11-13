@@ -9,6 +9,8 @@ namespace TaskRunner
 {
     class Program
     {
+        static DateTime now = new DateTime(2016, 11, 15, 11, 24, 0);
+
         static void Main(string[] args)
         {
             TaskServiceFactory.Create().Execute();

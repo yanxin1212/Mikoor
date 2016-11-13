@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Reflection;
+using System.Threading;
 
 namespace ArkEC.SEMs.Model
 {
@@ -22,14 +23,14 @@ namespace ArkEC.SEMs.Model
         public string Site { get; set; }
 
         /// <summary>
-        /// 开始时间
+        /// 下次执行时间
         /// </summary>
-        public uint StartTime { get; set; }
+        public DateTime NextTime { get; set; }
 
         /// <summary>
-        /// 执行周期
+        /// 执行间隔
         /// </summary>
-        public TimeSpan Cycle { get; set; }
+        public TimeSpan Interval { get; set; }
 
         /// <summary>
         /// 任务程序集
@@ -94,9 +95,44 @@ namespace ArkEC.SEMs.Model
         /// <summary>
         /// 运行
         /// </summary>
-        public void Run()
+        public void Execute()
         {
-            Console.WriteLine("Task Running...");
+            Thread.Sleep(GetIntervalFromNowToNextTime());
+            while (true)
+            {
+                ExecuteOneTime();
+                Thread.Sleep(Interval);
+            }
+        }
+
+        /// <summary>
+        /// 获取从现在开始到下次执行时间的间隔
+        /// </summary>
+        /// <returns></returns>
+        private TimeSpan GetIntervalFromNowToNextTime()
+        {
+            DateTime now = DateTime.Now;
+            if (NextTime == DateTime.MinValue)
+            {
+                return TimeSpan.Zero;
+            }
+            else if (NextTime > now)
+            {
+                return NextTime - now;
+            }
+            else
+            {
+                long remainder = (now - NextTime).Ticks % Interval.Ticks;
+                return remainder == 0 ? TimeSpan.Zero : Interval - new TimeSpan(remainder);
+            }
+        }
+
+        /// <summary>
+        /// 执行一次任务
+        /// </summary>
+        private void ExecuteOneTime()
+        {
+            Console.WriteLine(string.Format("{0} Running, FirstTime {1}, Now {2}, Interval {3}", Name, NextTime, DateTime.Now, Interval));
         }
     }
 }

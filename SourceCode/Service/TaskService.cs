@@ -5,27 +5,22 @@ using System.Text;
 using ArkEC.SEMs.Model;
 using ArkEC.SEMs.IService;
 using System.Threading;
+using ArkEC.SEMs.MapperFactory;
 
 namespace ArkEC.SEMs.Service
 {
+    /// <summary>
+    /// 任务服务实现
+    /// </summary>
     public class TaskService : ITaskService
     {
         void ITaskService.Execute()
         {
-            List<TaskConfig> taskConfigList = GetTaskConfigList();
+            List<TaskConfig> taskConfigList = TaskConfigMapperFactory.Create().GetTaskConfigList();
             foreach (TaskConfig t in taskConfigList)
             {
-                new Thread(t.Run).Start();
+                new Thread(t.Execute).Start();
             }
-        }
-
-        /// <summary>
-        /// 获取任务配置列表
-        /// </summary>
-        /// <returns></returns>
-        private List<TaskConfig> GetTaskConfigList()
-        {
-            return new List<TaskConfig> { new TaskConfig(), new TaskConfig() };
         }
     }
 }
