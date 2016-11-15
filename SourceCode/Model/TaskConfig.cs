@@ -90,12 +90,17 @@ namespace ArkEC.SEMs.Model
         /// <summary>
         /// 每次任务执行之前需要执行的方法
         /// </summary>
-        public Action<TaskConfig> BeforeExecute { get; set; }
+        public Action<TaskConfig> BeforeExecution { get; set; }
+
+        /// <summary>
+        /// 任务执行的方法
+        /// </summary>
+        public Action<TaskConfig> Execution { get; set; }
 
         /// <summary>
         /// 每次任务执行之后需要执行的方法
         /// </summary>
-        public Action<TaskConfig> AfterExecute { get; set; }
+        public Action<TaskConfig> AfterExecution { get; set; }
 
         /// <summary>
         /// 任务异常信息构造程序
@@ -112,9 +117,9 @@ namespace ArkEC.SEMs.Model
             {
                 try
                 {
-                    BeforeExecute(this);
-                    ExecuteOneTime();
-                    AfterExecute(this);
+                    BeforeExecution(this);
+                    Execution(this);
+                    AfterExecution(this);
                 }
                 catch (Exception e)
                 {
@@ -144,14 +149,6 @@ namespace ArkEC.SEMs.Model
                 long remainder = (now - NextTime).Ticks % Interval.Ticks;
                 return remainder == 0 ? TimeSpan.Zero : Interval - new TimeSpan(remainder);
             }
-        }
-
-        /// <summary>
-        /// 执行一次任务
-        /// </summary>
-        private void ExecuteOneTime()
-        {
-            Console.WriteLine(string.Format("{0} Ran, Now {1}, Interval {2}", Name, DateTime.Now, Interval));
         }
     }
 

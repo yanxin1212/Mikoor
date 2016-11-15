@@ -27,9 +27,9 @@ namespace ArkEC.SEMs.Service
         {
             DateTime now = DateTime.Now;
             TaskConfigMapper = TaskConfigMapperFactory.Create();
-            TaskConfigMapper.Add(new TaskConfig { Name = "Task1", NextTime = DateTime.MinValue, Interval = new TimeSpan(0, 0, 10) });
-            TaskConfigMapper.Add(new TaskConfig { Name = "Task2", NextTime = now.AddDays(-1).AddSeconds(3), Interval = new TimeSpan(0, 0, 8) });
-            TaskConfigMapper.Add(new TaskConfig { Name = "Task3", NextTime = now.AddSeconds(10), Interval = new TimeSpan(0, 0, 5) });
+            TaskConfigMapper.Add(new TaskConfig { Name = "Task1", NextTime = DateTime.MinValue, Interval = new TimeSpan(0, 0, 10), Execution = ExecuteTaskOne, BeforeExecution = SetTaskStarted, AfterExecution = SetTaskEnded, GenerateError = WriteErrorLog });
+            TaskConfigMapper.Add(new TaskConfig { Name = "Task2", NextTime = now.AddDays(-1).AddSeconds(3), Interval = new TimeSpan(0, 0, 8), Execution = ExecuteTaskTwo, BeforeExecution = SetTaskStarted, AfterExecution = SetTaskEnded, GenerateError = WriteErrorLog });
+            TaskConfigMapper.Add(new TaskConfig { Name = "Task3", NextTime = now.AddSeconds(10), Interval = new TimeSpan(0, 0, 5), Execution = ExecuteTaskThree, BeforeExecution = SetTaskStarted, AfterExecution = SetTaskEnded, GenerateError = WriteErrorLog });
         }
 
         void ITaskService.Execute()
@@ -37,9 +37,6 @@ namespace ArkEC.SEMs.Service
             List<TaskConfig> taskConfigList = TaskConfigMapper.Get();
             foreach (TaskConfig t in taskConfigList)
             {
-                t.BeforeExecute = SetTaskStarted;
-                t.AfterExecute = SetTaskEnded;
-                t.GenerateError = WriteErrorLog;
                 new Thread(t.Execute).Start();
             }
         }
@@ -48,7 +45,7 @@ namespace ArkEC.SEMs.Service
         /// 标识任务为开始执行
         /// </summary>
         /// <param name="taskConfig">任务</param>
-        private void SetTaskStarted(TaskConfig taskConfig)
+        private static void SetTaskStarted(TaskConfig taskConfig)
         {
             taskConfig.Status = TaskConfigStatus.Executing;
             taskConfig.LastStartTime = DateTime.Now;
@@ -59,7 +56,7 @@ namespace ArkEC.SEMs.Service
         /// 标识任务为执行结束
         /// </summary>
         /// <param name="taskConfig">任务配置</param>
-        private void SetTaskEnded(TaskConfig taskConfig)
+        private static void SetTaskEnded(TaskConfig taskConfig)
         {
             taskConfig.Status = TaskConfigStatus.Unexecuted;
             taskConfig.LastEndTime = DateTime.Now;
@@ -71,9 +68,33 @@ namespace ArkEC.SEMs.Service
         /// </summary>
         /// <param name="taskConfig">任务配置</param>
         /// <param name="e">异常</param>
-        private void WriteErrorLog(TaskConfig taskConfig, Exception e)
+        private static void WriteErrorLog(TaskConfig taskConfig, Exception e)
         {
             Console.WriteLine("{0} Error: {1}", taskConfig.Name, e.Message);
+        }
+
+        /// <summary>
+        /// 执行任务一
+        /// </summary>
+        private static void ExecuteTaskOne(TaskConfig taskConfig)
+        {
+            Console.WriteLine(string.Format("{0} Ran, Now {1}, Interval {2}", taskConfig.Name, DateTime.Now, taskConfig.Interval));
+        }
+
+        /// <summary>
+        /// 执行任务二
+        /// </summary>
+        private static void ExecuteTaskTwo(TaskConfig taskConfig)
+        {
+            Console.WriteLine(string.Format("{0} Ran, Now {1}, Interval {2}", taskConfig.Name, DateTime.Now, taskConfig.Interval));
+        }
+
+        /// <summary>
+        /// 执行任务三
+        /// </summary>
+        private static void ExecuteTaskThree(TaskConfig taskConfig)
+        {
+            Console.WriteLine(string.Format("{0} Ran, Now {1}, Interval {2}", taskConfig.Name, DateTime.Now, taskConfig.Interval));
         }
     }
 }
