@@ -18,6 +18,13 @@ namespace ArkEC.SEMs.IMapper
         List<TaskConfig> Get();
 
         /// <summary>
+        /// 获取任务配置
+        /// </summary>
+        /// <param name="name">任务配置名称</param>
+        /// <returns>任务配置</returns>
+        TaskConfig Get(string name);
+
+        /// <summary>
         /// 新增任务配置
         /// </summary>
         /// <param name="obj">任务配置</param>

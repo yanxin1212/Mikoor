@@ -7,6 +7,7 @@ using ArkEC.SEMs.IMapper;
 using ArkEC.SEMs.IService;
 using ArkEC.SEMs.MapperFactory;
 using ArkEC.SEMs.Model;
+using System.Reflection;
 
 namespace ArkEC.SEMs.Service
 {
@@ -27,9 +28,33 @@ namespace ArkEC.SEMs.Service
         {
             DateTime now = DateTime.Now;
             TaskConfigMapper = TaskConfigMapperFactory.Create();
-            TaskConfigMapper.Add(new TaskConfig { Name = "Task1", NextTime = DateTime.MinValue, Interval = new TimeSpan(0, 0, 10), Execution = ExecuteTaskOne, BeforeExecution = SetTaskStarted, AfterExecution = SetTaskEnded, GenerateError = WriteErrorLog });
-            TaskConfigMapper.Add(new TaskConfig { Name = "Task2", NextTime = now.AddDays(-1).AddSeconds(3), Interval = new TimeSpan(0, 0, 8), Execution = ExecuteTaskTwo, BeforeExecution = SetTaskStarted, AfterExecution = SetTaskEnded, GenerateError = WriteErrorLog });
-            TaskConfigMapper.Add(new TaskConfig { Name = "Task3", NextTime = now.AddSeconds(10), Interval = new TimeSpan(0, 0, 5), Execution = ExecuteTaskThree, BeforeExecution = SetTaskStarted, AfterExecution = SetTaskEnded, GenerateError = WriteErrorLog });
+            if (TaskConfigMapper.Get("Task1") == null)
+            {
+                TaskConfig Task1 = CreateNewTaskConfig("Task1");
+                Task1.Execution = ExecuteTaskOne;
+                Task1.Interval = new TimeSpan(0, 0, 10);
+                Task1.NextTime = DateTime.MinValue;
+                Task1.Site = "www.1.com";
+                TaskConfigMapper.Add(Task1);
+            }
+            if (TaskConfigMapper.Get("Task2") == null)
+            {
+                TaskConfig Task2 = CreateNewTaskConfig("Task2");
+                Task2.Execution = ExecuteTaskTwo;
+                Task2.Interval = new TimeSpan(0, 0, 8);
+                Task2.NextTime = now.AddDays(-1).AddSeconds(3);
+                Task2.Site = "www.2.com";
+                TaskConfigMapper.Add(Task2);
+            }
+            if (TaskConfigMapper.Get("Task3") == null)
+            {
+                TaskConfig Task3 = CreateNewTaskConfig("Task3");
+                Task3.Execution = ExecuteTaskThree;
+                Task3.Interval = new TimeSpan(0, 0, 5);
+                Task3.NextTime = now.AddSeconds(10);
+                Task3.Site = "www.3.com";
+                TaskConfigMapper.Add(Task3);
+            }
         }
 
         void ITaskService.Execute()
@@ -39,6 +64,31 @@ namespace ArkEC.SEMs.Service
             {
                 new Thread(t.Execute).Start();
             }
+        }
+
+        /// <summary>
+        /// 创建任务配置
+        /// </summary>
+        /// <param name="name">名称</param>
+        /// <returns>任务配置</returns>
+        private static TaskConfig CreateNewTaskConfig(string name)
+        {
+            TaskConfig taskConfig = new TaskConfig();
+            taskConfig.AfterExecution = SetTaskEnded;
+            taskConfig.BeforeExecution = SetTaskStarted;
+            taskConfig.TypeItem = typeof(TaskService);
+            taskConfig.BizAssembly = taskConfig.TypeItem.Assembly;
+            taskConfig.Creator = 0;
+            taskConfig.EndedCount = 0;
+            taskConfig.ErrorCount = 0;
+            taskConfig.GenerateError = WriteErrorLog;
+            taskConfig.ItemMethod = null;
+            taskConfig.LastEndTime = DateTime.MinValue;
+            taskConfig.LastStartTime = DateTime.MinValue;
+            taskConfig.Name = name;
+            taskConfig.Status = TaskConfigStatus.Unexecuted;
+            taskConfig.TotalCount = 0;
+            return taskConfig;
         }
 
         /// <summary>

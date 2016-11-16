@@ -17,6 +17,11 @@ namespace ArkEC.SEMs.MySQLMapper
             return RamDatabase.TaskConfigList;
         }
 
+        TaskConfig ITaskConfigMapper.Get(string name)
+        {
+            return RamDatabase.TaskConfigList.Find(x => x.Name == name);
+        }
+
         void ITaskConfigMapper.Add(TaskConfig obj)
         {
             RamDatabase.TaskConfigList.Add(obj);

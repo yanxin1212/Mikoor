@@ -48,11 +48,6 @@ namespace ArkEC.SEMs.Model
         public MethodInfo ItemMethod { get; set; }
 
         /// <summary>
-        /// 任务执行程序
-        /// </summary>
-        public MethodInfo DoneMethod { get; set; }
-
-        /// <summary>
         /// 执行状态
         /// </summary>
         public TaskConfigStatus Status { get; set; }
@@ -93,7 +88,7 @@ namespace ArkEC.SEMs.Model
         public Action<TaskConfig> BeforeExecution { get; set; }
 
         /// <summary>
-        /// 任务执行的方法
+        /// 任务执行程序
         /// </summary>
         public Action<TaskConfig> Execution { get; set; }
 
